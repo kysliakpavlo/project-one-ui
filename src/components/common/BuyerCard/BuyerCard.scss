@@ -1,0 +1,40 @@
+.buyer-card{
+    display: flex;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+    .contanct-info{
+        border-right: 2px dashed #000;
+        @media screen and (max-width: 768px) {
+            border-bottom: 2px dashed #000;
+            border-right: 0px dashed #000;
+            max-width: 100%;
+            padding-bottom: 20px;
+        }
+        .buyer-number{
+            font-size: 150px;
+            text-align: center;
+            font-weight: bold;
+            padding: 100px 10px;
+            @media screen and (max-width: 768px) {
+                padding: 50px 10px;
+            }
+        }
+        .contact-details{
+            font-weight: bolder;
+        }
+    }
+    .terms-conditions{
+        @media screen and (max-width: 767px) {
+            padding-top: 20px;    
+            max-width: 100%;        
+        }
+        .buyer-number{
+            font-size: 20px;
+        }
+        p{
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+    }
+}

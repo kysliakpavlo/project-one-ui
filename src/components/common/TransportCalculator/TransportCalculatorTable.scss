@@ -1,0 +1,42 @@
+.transport-calculator-table {
+    font-size: 14px;
+    padding: 10px 0;
+    .close-btn {
+        top: 0;
+        right: 0;
+        border: 0;
+        padding: 0;
+        z-index: 1;
+        width: 39px;
+        height: 31px;
+        border-radius: 0;
+        position: absolute;
+        svg {
+            padding: 3px;
+            fill: #223123;
+            margin-top: -4px;
+            border-radius: 100%;
+            background-color: #fff;
+        }
+    }
+    .table-wrapper {
+        overflow-y: auto;
+        max-height: 200px;
+        text-align: center;
+        table {
+            margin: 0;
+        }
+        thead > tr > th {
+            white-space: nowrap;
+            background-color: #e5e5e5;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #cbcbcb;
+        }
+    }
+    .more-btn {
+        float: right;
+        margin-top: 10px;
+    }
+}

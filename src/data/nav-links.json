@@ -1,0 +1,43 @@
+[
+	{
+		"groupName": "Buy",
+		"subMenu": [
+			{
+				"url": "/search-results",
+				"groupName": "Browse by Asset Types",
+				"groupIdentifier": "Asset",
+				"subSubMenu": []
+			},
+			{
+				"url": "/auctions",
+				"groupName": "Browse By Auctions",
+				"groupIdentifier": "Auctions",
+				"subSubMenu": []
+			}
+		]
+	},
+	{
+		"url": "/sell-with-us",
+		"groupName": "Sell With Us"
+	},
+	{
+		"groupName": "About us",
+		"subMenu": [
+			{
+				"url": "/about-us",
+				"groupName": "About us",
+				"groupIdentifier": "aboutUs"
+			},
+			{
+				"url": "/faq",
+				"groupName": "FAQ",
+				"groupIdentifier": "aboutUs"
+			},
+			{
+				"url": "/contact-us",
+				"groupName": "Contact us",
+				"groupIdentifier": "aboutUs"
+			}
+		]
+	}
+]

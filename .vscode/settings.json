@@ -1,0 +1,14 @@
+{
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "wordWrapColumn",
+	"editor.wordWrapColumn": 200,
+	"editor.formatOnSave": true,
+	"workbench.colorCustomizations": {
+        "tab.activeBackground": "#000000f5",
+        "tab.hoverBackground": "#0000007a",
+    },
+	"prettier.singleAttributePerLine": true,
+	"prettier.singleQuote": true,
+}

@@ -1,0 +1,44 @@
+@import '../../../scss/variable.scss';
+
+.app-spinner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > div {
+        width: 4px;
+        margin: 2px;
+        height: 35px;
+        border-radius: 2px;
+        background-color: var(--cta-color-1);
+        &:nth-child(1) {
+            animation: line-scale 1s -0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+        }
+        &:nth-child(2) {
+            animation: line-scale 1s -0.3s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+        }
+        &:nth-child(3) {
+            animation: line-scale 1s -0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+        }
+        &:nth-child(4) {
+            animation: line-scale 1s -0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+        }
+        &:nth-child(5) {
+            animation: line-scale 1s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+        }
+    }
+    &.overlay {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1100;
+        position: fixed;
+        background-color: $semi-tranparent-bg;
+    }    
+}
+@keyframes line-scale {
+    0% { transform: scaley(1) }
+    50% { transform: scaley(0.4) }
+    100% { transform: scaley(1) }
+}

@@ -1,0 +1,323 @@
+$transparent: transparent;
+$fi-primary: rgba(0, 0, 0, 0.6);
+$fi-secondary: rgba(0, 0, 0, 0.87);
+$fi-primary-blue: rgb(33, 150, 243);
+$fi-invalid: #dc3545;
+$fi-invalid-light: rgba(220, 53, 69, 0.25);
+$fi-disabled: rgba(0, 0, 0, 0.38);
+$fi-white: #fff;
+$fi-white-light: rgba(255, 255, 255, 0.6);
+$fi-white-disable: rgba(255, 255, 255, 0.2);
+$fi-white-bg: #223c38;
+
+.form-group.floating-input {
+	position: relative;
+	padding-top: 6px;
+	line-height: 1.5;
+	
+	& > .form-control,
+	& > .dropdown {
+		box-sizing: border-box;
+		margin: 0;
+		border: solid 1px;
+		border-radius: 4px;
+		padding: 10px 15px;
+		width: 100%;
+		height: inherit;
+		box-shadow: none; /* Firefox */
+		transition: border 0.2s, box-shadow 0.2s;
+		& + label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			width: 100%;
+			max-height: 100%;
+			font-size: 75%;
+			line-height: 15px;
+			cursor: text;
+			font-weight: 500;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+			&::before,
+			&::after {
+				content: "";
+				display: block;
+				box-sizing: border-box;
+				margin-top: 6px;
+				border-top: solid 1px;
+				min-width: 10px;
+				height: 8px;
+				pointer-events: none;
+				box-shadow: inset 0 1px $transparent;
+				transition: border-color 0.2s, box-shadow 0.2s;
+			}
+			&::before {
+				margin-right: 4px;
+				border-radius: 4px 0;
+			}
+			&::after {
+				flex-grow: 1;
+				margin-left: 4px;
+				border-radius: 0 4px;
+			}
+		}
+		&:not(:focus):placeholder-shown {
+			& + label {
+				font-size: inherit;
+				line-height: 60px;
+				max-width: calc(100% - 16px);
+				
+				&::before,
+				&::after {
+					border-top-color: $transparent;
+				}
+			}
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+
+	& > select,
+	& > .dropdown {
+		// -moz-appearance:none;
+		// -webkit-appearance:none;
+		// appearance:none;
+		padding: 12px 24px 12px 15px !important;
+		background-repeat: no-repeat;
+		background-position-x: 100%;
+		background-position-y: 5px;
+	}
+
+	.invalid-feedback {
+		top: 18px;
+		left: 100%;
+		width: auto;
+		color: #fff;
+		margin: 0 4px;
+		padding: 5px 10px;
+		position: absolute;
+		background: #f11;
+		border-radius: 4px;
+		width: auto;
+		max-width: 200px;
+		&:before {
+			top: 10px;
+			left: -5px;
+			width: 10px;
+			content: "";
+			height: 10px;
+			position: absolute;
+			transform: rotate(45deg);
+			background-color: inherit;
+		}
+	}
+
+	& > .form-control.is-invalid,
+	& > .dropdown.is-invalid {
+		background-size: 30px;
+	}
+
+	&.has-addon > .form-control,
+	&.has-addon > .dropdown {
+		padding-right: 30px;
+		& ~ .addon-icon {
+			top: 17px;
+			right: 10px;
+			position: absolute;
+		}
+	}
+
+	& > .dropdown {
+		border-top-color: transparent;
+		padding-right: 0;
+		& > button.dropdown-toggle {
+			width: 100%;
+			overflow: hidden;
+			padding: 0 12px 0 0;
+			height: 1.2rem;
+			line-height: 1.2;
+			border: 0 !important;
+			outline: 0 !important;
+			box-shadow: none !important;
+			background-color: transparent !important;
+			& + .dropdown-menu {
+				.btn-group {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.form-group.floating-input {
+	& > .form-control,
+	& > .dropdown {
+		border-color: $fi-primary;
+		border-top-color: $transparent;
+		color: $fi-secondary;
+		background-color: $transparent;
+		& + label {
+			border-color: $fi-primary;
+			color: $fi-primary;
+			
+			&::before {
+				border-left: solid 1px $transparent;
+			}
+			&::after {
+				border-right: solid 1px $transparent;
+			}
+		}
+		&:not(:focus):placeholder-shown {
+			border-top-color: $fi-primary;
+			& + label {
+				&::before,
+				&::after {
+					border-top-color: $transparent;
+				}
+			}
+		}
+		&:focus {
+			background-color: $transparent;
+		}
+		&.is-invalid {
+			border-color: $fi-invalid;
+			border-top-color: $transparent;
+			& + label {
+
+				&::before,
+				&::after {
+					border-top-color: $fi-invalid !important;
+				}
+			}
+			&:not(:focus):placeholder-shown {
+				border-top-color: $fi-invalid;
+			}
+			&:focus {
+				border-top-color: $transparent;
+				box-shadow: inset 1px 0 $fi-invalid-light, inset -1px 0 $fi-invalid-light, inset 0 -1px $fi-invalid-light;
+
+				& + label {
+					&::before,
+					&::after {
+						box-shadow: inset 0 1px $fi-invalid-light;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Disabled */
+.form-group.floating-input {
+	& > .form-control:disabled,
+	& > .dropdown:disabled {
+		&,
+		& + label {
+			border-color: $fi-disabled;
+			border-top-color: $transparent;
+			color: $fi-disabled;
+			pointer-events: none;
+		}
+		& + label::before,
+		& + label::after,
+		&:placeholder-shown,
+		&:placeholder-shown + label {
+			border-top-color: $fi-disabled;
+		}
+		&:placeholder-shown + label {
+			&::before,
+			&::after {
+				border-top-color: $transparent;
+			}
+		}
+	}
+}
+
+.white.form-group.floating-input {
+	select {
+		cursor: pointer;
+		text-transform: capitalize;
+		option {
+			text-transform: capitalize;
+			cursor: pointer;
+		}
+	}
+	& > .form-control,
+	& > .dropdown {
+		border-color: $fi-white;
+		border-top-color: $transparent;
+		color: $fi-white;
+		background-color: $transparent;
+		line-height: 1;
+		& + label {
+			border-color: $fi-white;
+			color: $fi-white-light;
+			&::before,
+			&::after {
+				border-top-color: $fi-white;
+			}
+			&::before {
+				border-left: solid 1px $transparent;
+			}
+			&::after {
+				border-right: solid 1px $transparent;
+			}
+		}
+		&:not(:focus):placeholder-shown {
+			border-top-color: $fi-white;
+			& + label {
+				&::before,
+				&::after {
+					border-top-color: $transparent;
+				}
+			}
+		}
+		&:disabled {
+			border-color: $fi-white;
+			border-top-color: $transparent;
+			color: $fi-white-light;
+			background-color: $fi-white-disable;
+			& + label {
+				color: $fi-white-light;
+				border-color: $fi-white;
+				&::before,
+				&::after {
+					border-top-color: $fi-white;
+				}
+			}
+		}
+		& > option {
+			background-color: $fi-white-bg;
+			text-transform: capitalize;
+		}
+	}
+}
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution: 0.001dpcm) {
+	@supports (-webkit-appearance: none) {
+		.form-group.floating-input {
+			& > .form-control,
+			& > .dropdown {
+				&,
+				& + label,
+				& + label::before,
+				& + label::after {
+					transition-duration: 0.1s;
+				}
+			}
+		}
+	}
+}
+
+.tooltip.validation-msg {
+	& > .arrow::before {
+		border-bottom-color: $fi-invalid;
+	}
+	& > .tooltip-inner {
+		background-color: $fi-invalid;
+	}
+}

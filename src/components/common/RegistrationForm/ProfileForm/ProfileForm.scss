@@ -1,0 +1,103 @@
+@import '../../../../scss/variable.scss';
+
+.card-info {
+	width: 20rem;
+	height: 10rem;
+	padding: 16px;
+	position: relative;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 1px solid #ddd;
+	.card-holder-name {
+		bottom: 15px;
+		margin-bottom: 0;
+		position: absolute;
+	}
+	.card-number {
+		top: 60px;
+		font-weight: bold;
+		position: absolute;
+		letter-spacing: 8px;
+		text-transform: uppercase;
+	}
+	.card-expiry {
+		bottom: 50px;
+		margin-bottom: 0;
+		position: absolute;
+	}
+	.card-type {
+		width: 50px;
+		right: 16px;
+		bottom: 16px;
+		position: absolute;
+	}
+}
+.custom-btn-svg {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	&:hover {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		-webkit-appearance: none;
+		border-radius: 0;
+	}
+	&:active {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		-webkit-appearance: none;
+		border-radius: 0;
+	}
+}
+
+.pay-button {
+	background-color: var(--cta-color-1);
+	color: $white-color;
+	border: none;
+	box-shadow: none;
+	float: right;
+	border-radius: 4px;
+}
+.pay-button:disabled {
+	opacity: 0.5;
+}
+.payway-card-block {
+	display: flex;
+	justify-content: center;
+}
+.payway-credit-card-iframe {
+	@media screen and (max-width: 767px) {
+		height: 256px;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.cards-wrap-inline {
+		margin-left: 0;
+		.col:last-child {
+			float: right;
+		}
+	}
+
+	.card-form {
+		display: inline-block;
+	}
+}
+
+.registration-view {
+	.lastRow {
+		@media (min-width: 1439px) {
+			.cards-wrap-inline:last-of-type {
+				padding-left: 0;
+			}
+		}
+		@media (max-width: 1098px) {
+			.cards-wrap-inline {
+				flex-direction: column;
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+@import "../../../scss/variable.scss";
+.bid-history-popover {
+  padding: 0px;
+  max-width: 450px;
+  width: 450px;
+  z-index: 2;
+  .close-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    align-content: center;
+    background-color: var(--primary--color);
+    border: none;
+    svg {
+      padding-top: 5px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  .popover-header {
+    font-family: var(--paragraph-font-family, "Roboto");
+    background-color: var(--primary--color);
+    color: $white-color;
+    .bid-history {
+      text-align: center;
+      font-family: var(--paragraph-font-family, "Roboto");
+      display: inline;
+    }
+    svg {
+      float: right;
+      background-color: $white-color;
+      border-radius: 16px;
+      vertical-align: middle;
+      margin-top: -2px;
+      cursor: pointer;
+    }
+  }
+  .popover-body {
+    max-height: 300px;
+    // overflow-y: scroll;
+    border: 1px solid $header-font;
+    padding: 0;
+    .bidders-table {
+      width: 100%;
+      margin-left: 0 !important;
+      & > tr {
+        border-bottom: 1px solid $light-green;
+        height: 30px;
+        & > td > svg {
+          color: $light-green;
+        }
+      }
+      & > tr th:first-child {
+        width: 50%;
+      }
+      & > tr th:nth-child(2) {
+        width: 40%;
+      }
+      & > tr th:last-child {
+        width: 20%;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 5px;
+    max-width: 450px;
+    width: 96%;
+  }
+}

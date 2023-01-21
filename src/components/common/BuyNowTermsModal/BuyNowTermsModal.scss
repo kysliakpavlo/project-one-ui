@@ -1,0 +1,21 @@
+.buy-now-terms {
+  top: 30%;
+  .rt-aln {
+    text-align: right;
+  }
+  .inc-gst {
+    float: right;
+    font-size: 14px;
+  }
+  .buy-now-total {
+    font-weight: 900;
+    margin: 10px;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 38px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #66b82b;
+    background-color: #ebffce;
+  }
+}

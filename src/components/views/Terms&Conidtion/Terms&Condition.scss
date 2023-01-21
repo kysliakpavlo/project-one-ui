@@ -1,0 +1,100 @@
+@import '../../../scss/variable.scss';
+.page-content {
+  background-color: $grey-background-color;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.terms-condition {
+  padding: 40px 0;
+  font-weight: 500;
+  background-color: $grey-background-color;
+
+  .page-header {
+    padding-left: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .terms-content {
+    // letter-spacing: 1px;
+  }
+  h3 {
+    font-family: var(--paragraph-font-family, 'Roboto');
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 2em;
+  }
+  h2 {
+    margin-bottom: 1em;
+
+    strong {
+      font-size: 22px;
+    }
+  }
+  p,
+  li {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: $dark-color;
+    strong {
+      font-size: 14px;
+    }
+  }
+  p + h3 {
+    margin-top: 3em;
+  }
+  strong {
+    font-family: var(--paragraph-font-family, 'Roboto');
+    font-weight: 900;
+    font-size: 18px;
+  }
+  .div-static-header {
+    margin-left: 25px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .div-static-header .div-logo {
+      float: right;
+      margin-left: 0px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .div-static-header {
+      margin-left: 0px;
+      margin-left: 15px;
+      margin-right: 15px;
+      padding: 0px 8px 8px 8px;
+      margin-top: 75px;
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .div-static-header {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 70px;
+      padding: 0px 8px 8px 8px;
+    }
+    .div-static-header .div-head .p-static-header {
+      font-size: 15px;
+      margin-top: 35px;
+    }
+    .div-static-header .div-logo .img-static-header {
+      width: 105px;
+      height: 90px;
+    }
+    .search-bar .search__advanced {
+      margin-top: 5px;
+    }
+  }
+  a {
+    color: #000;
+    text-decoration: underline;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

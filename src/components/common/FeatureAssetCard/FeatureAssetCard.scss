@@ -1,0 +1,317 @@
+@import "../../../scss/variable.scss";
+.featured-asset-card {
+    margin: 0 0 26px 0 !important;
+    width: 100% !important;
+    padding: 8px;
+    .title {
+        @media (min-width: 320px) and (max-width: 1024px) {
+            margin-bottom: 6px;
+            font-size: 16px;
+            width: 294px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0 10px;
+        }
+    }
+    .countdown-timer {
+        font-weight: bold;
+        height: 40px;
+    }
+    .card {
+        border-radius: 3px;
+        height: 236px;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+        @media (min-width: 320px) and (max-width: 1024px) {
+            height: 352px;
+        }
+        @media only screen and (min-width: 1025px) and (max-width: 1180px) { 
+            height: 352px; 
+        }
+
+        .img-block {
+            width: 58%;
+            position: relative;
+            @media (min-width: 320px) and (max-width: 1024px) {
+                width: 100%;
+                height: 236px;
+            }
+            @media only screen and (min-width: 1025px) and (max-width: 1180px) {
+                width: 100%;
+                height: 236px;
+            }
+            .card-img{
+                width: 100%;
+                height: 236px !important;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 3px;
+                position: relative;
+                cursor: pointer;
+            }
+            .navigate-next-btn {
+                background-color: #ffffff80;
+                right: -2px;
+                top: 80px;
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+                svg {
+                    fill: #223c38;
+                    margin: 8px;
+                }
+            }
+            .navigate-prev-btn {
+                background-color: #ffffff80;
+                left: 0px;
+                top: 80px;
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+                svg {
+                    fill: #223c38;
+                    margin: 8px;
+                }
+            }
+            .img-bottom {
+                background-color: #ffffff80;
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                height: 50px;
+                align-items: center;
+                width: 100%;
+                .view-btn {
+                    width: 136px;
+                    height: 30px;
+                    background: $green-color;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: center;
+                    border-radius: 1px 2px 2px 2px;
+                    position: absolute;
+                    left: 23px;
+                    padding: 4px 10px;
+                }
+                .notify-btn {
+                    border-radius: 1px 2px 2px 2px;
+                    position: absolute;
+                    right: 10px;
+                    width: 120px;
+                    height: 30px;
+                    padding: 0px 10px 0px 10px;
+                    background: #223c38;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: center;
+                    border-style: none;
+                    @media only screen and (max-width: 767px) {
+                        right: 26px;
+                    }
+                    svg {
+                        fill: white;
+                    }
+                }
+                .btn-notifyme {
+                    border-radius: 1px 2px 2px 2px;
+                    position: absolute;
+                    right: 10px;
+                    width: 120px;
+                    height: 30px;
+                    padding: 0px 5px 0px 5px;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: center;
+                    border-style: none;
+                    @media only screen and (max-width: 767px) {
+                        right: 26px;
+                        padding: 4px;
+                    }
+                    svg {
+                        fill: white;
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+
+        .details-block {
+            width: 42%;
+            padding: 15px;
+            position: relative;
+            @media (min-width: 320px) and (max-width: 1024px) {
+                width: 100%;
+                position: inherit;
+            }
+            @media only screen and (min-width: 1025px) and (max-width: 1180px) { 
+                width: 100%;
+                position: static; 
+            }
+            .title {
+                font-size: 16px;
+                height: 47px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                position: relative;
+                margin-top: 60px;
+                margin-bottom: 0;
+                strong {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+            .auction-now-open {
+                background-color: $green-color;
+                color: #fff;
+            }
+            .auction-open-soon {
+                background-color: #ebffce;
+            }
+            .status-tag {
+                height: 50px;
+                width: 227px;
+                font-size: 14px;
+                position: absolute;
+                font-weight: bolder;
+                background-color: #20b889;
+                color: #fff;
+                padding: 5px 10px;
+                right: 0;
+                top: 10px;
+                left: -5px;
+                z-index: 1;
+                @media (min-width: 320px) and (max-width: 1024px) {
+                    right: 90px;
+                    top: 5%;
+                }
+                @media only screen and (min-width: 1025px) and (max-width: 1180px) { 
+                    right: 90px;
+                    top: 5%;
+                 }
+                .label {
+                    font-size: 10px;
+                }
+                div {
+                    font-size: 11px;
+                }
+                .date-tag {
+                    border-right: 2px solid;
+                }
+                span {
+                    padding: 0 5px;
+                }
+            }
+            .location-detals {
+                font-size: 12px;
+                height: 55px;
+                .label {
+                    font-size: 10px;
+                }
+            }
+            .bidding-details {
+                font-size: 12px;
+                .label {
+                    font-size: 10px;
+                }
+                .bid-type {
+                    height: 16px;
+                    margin-top: 5px;
+                }
+                .bid-now {
+                    .btn-buy-now {
+                        width: 105px;
+                        height: 30px;
+                        padding: 0px 0px 0px 0px;
+                        background: #f17026;
+                        color: #ffffff;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-align: center;
+                        position: absolute;
+                        bottom: 11px;
+                        border-radius: 16px;
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                    .bid-now-btn {
+                        width: 96px;
+                        height: 30px;
+                        padding: 0px 10px 0px 10px;
+                        background: #f17026;
+                        color: #ffffff;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-align: center;
+                        border-radius: 1px 2px 2px 2px;
+                        position: absolute;
+                        bottom: 11px;
+                    }
+                }
+            }
+            .tab-details {
+                display: flex;
+                justify-content: center;
+                font-size: 12px;
+                padding-left: 21px;
+                @media (min-width: 320px) and (max-width: 1024px) {
+                    height: 60px;
+                }
+                .time-remain {
+                    font-size: 12px;
+                    margin-right: 2px;
+                    margin-left: 4px;
+                }
+                .label {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .bid-now {
+            @media (min-width: 320px) and (max-width: 1024px) {
+                display: flex;
+                .bid-now-btn {
+                    width: auto;
+                    height: 30px;
+                    padding: 0px 10px 0px 10px;
+                    background: #f17026;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: center;
+                    border-radius: 1px 2px 2px 2px;
+                }
+                .btn-buy-now {
+                    width: 120px;
+                    height: 30px;
+                    padding: 0px 0px 0px 0px;
+                    background: #f17026;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: center;
+                    border-radius: 1px 2px 2px 2px;
+                    position: absolute;
+                    bottom: 11px;
+                    border-radius: 16px;
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

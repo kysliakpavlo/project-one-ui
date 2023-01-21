@@ -1,0 +1,19 @@
+@import "../../../scss/variable.scss";
+
+
+.container {
+    &-xxl {
+        max-width: 1524px;
+        margin: 0 auto;
+    }
+}
+
+.textImagePanel img{
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+h2{
+    font-family: var(--heading-font-family, "Ubuntu");
+	font-weight: 500;
+}

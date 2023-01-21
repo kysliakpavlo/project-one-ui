@@ -1,0 +1,443 @@
+//Homeview
+
+@import '../../../scss/variable.scss';
+
+.home-view {
+	.search-bar-visible {
+		position: relative;
+		margin-bottom: 40px;
+
+		@media (max-width: 1024px) {
+			height: 230px;
+		}
+	}
+
+	.scrollable-parent {
+		justify-content: center;
+
+		.btn-primary:not(:disabled):not(.disabled):active {
+			box-shadow: none;
+		}
+	}
+
+	.scrollable {
+		.prev {
+			position: relative;
+			top: 20px;
+
+			&:focus {
+				box-shadow: unset;
+			}
+
+			&:active {
+				background-color: unset;
+				border: none;
+				box-shadow: unset;
+			}
+
+			&:active:focus {
+				box-shadow: unset;
+			}
+
+			svg {
+				fill: $green-color;
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		.next {
+			position: relative;
+			top: 20px;
+
+			&:focus {
+				box-shadow: unset;
+			}
+
+			&:active {
+				background-color: unset;
+				border: none;
+				box-shadow: unset;
+			}
+
+			&:active:focus {
+				box-shadow: unset;
+			}
+
+			svg {
+				fill: $green-color;
+				width: 50px;
+				height: 50px;
+			}
+		}
+	}
+}
+
+.backdrop {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.home-view .search-bar-invisible {
+	.search-bar {
+		// transition: width 0.5s;
+		// width: 60%;
+		// left: 0;
+		// right: 0;
+		// margin-left: auto;
+		// margin-right: auto;
+
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			//   width: 80%;
+		}
+
+		@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+			//   width: 100%;
+			z-index: 3 !important;
+		}
+	}
+}
+
+.home-view .auction-button {
+	z-index: 1;
+}
+
+.home-view {
+	overflow: hidden;
+	//   min-height: 160vh;
+	background-color: $white-color;
+
+	.btn-outline-dark {
+		border-width: 2px;
+	}
+
+	.btn-primary {
+		border: none;
+	}
+
+	.react-multi-carousel-list {
+		justify-content: center;
+
+		@media (max-width: 1200px) {
+			justify-content: unset;
+		}
+	}
+
+	.react-multi-carousel-list.button-carousel {
+		height: 60px;
+
+		@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.react-multi-carousel-track {
+			margin: 0 28px;
+
+			@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+				margin: 0;
+
+				.react-multi-carousel-item {
+					width: max-content !important;
+					margin: 5px 10px;
+
+					.btn-primary {
+						border: none;
+					}
+				}
+			}
+		}
+
+		.react-multiple-carousel__arrow {
+			@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+				background-color: $white-color;
+				padding: 0;
+				top: calc(18% + 1px);
+				right: -15px;
+				width: 18%;
+				border: 0px solid;
+				border-radius: initial;
+			}
+		}
+
+		.react-multiple-carousel__arrow::before {
+			@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+				position: relative;
+				content: '';
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				border-right: 5px solid $green-color;
+				border-top: 5px solid $green-color;
+				transform: rotate(45deg);
+				margin-right: 0.5em;
+			}
+		}
+
+		.react-multiple-carousel__arrow--left {
+			@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+				transform: rotate(180deg);
+				left: -15px;
+			}
+		}
+	}
+
+	.tab-btn {
+		height: 50px;
+		border-radius: 3px;
+		font-size: 14px;
+		font-weight: bold;
+		min-width: 150px;
+		padding: 2px 10px;
+
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			font-size: 12px;
+			padding: 6px;
+			height: 33px;
+		}
+
+		@media (min-width: 320px) and (max-width: 767px) {
+			height: 33px;
+			padding: 8px;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: initial;
+		}
+	}
+
+	.cards-container {
+		.auction-filter-wrap {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 22px;
+			align-items: center;
+
+			@media (max-width: 767px) {
+				flex-direction: column;
+				gap: 1em;
+			}
+
+			.auction-left {
+				display: flex;
+				align-items: center;
+
+				a,
+				p {
+					display: inline-block;
+					font-size: 37px;
+					font-weight: 400;
+				}
+
+				p {
+					margin-right: 44px;
+					margin-bottom: 0;
+				}
+
+				a {
+					width: 100px;
+					border-radius: 6px;
+					color: #fff;
+					padding: 6px;
+				}
+
+				.view-more-auction-button {
+					margin-left: auto;
+					margin-right: auto;
+					width: 147px;
+					height: 45px;
+					font-size: 18px;
+					border-radius: 5px;
+					padding: 15px 0;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					margin-bottom: 0 !important;
+
+					@media (min-width: 320px) and (max-width: 1024px) {
+						// height: 32px;
+						width: 116px;
+					}
+				}
+			}
+		}
+
+		hr {
+			margin-top: 0 !important;
+		}
+
+		.col-12 {
+			.view-more-auction-button {
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				width: 229px;
+				height: 45px;
+				font-size: 14px;
+				border-radius: 5px;
+				padding: 15px 0;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				line-height: 18px;
+				color: #fff;
+
+				@media (min-width: 320px) and (max-width: 1024px) {
+					height: 32px;
+					width: 116px;
+				}
+			}
+		}
+
+		@media only screen and (min-device-width: 800px) and (max-device-width: 810px) {
+			max-width: 800px;
+		}
+
+		@media only screen and (min-device-width: 712px) and (max-device-width: 767px) {
+			.featured-asset-card,
+			.auction-card {
+				max-width: 386px;
+				margin-left: auto !important;
+				margin-right: auto !important;
+			}
+		}
+	}
+}
+
+.home-view .auction-button:hover {
+	// opacity: 0.8;
+	// color: $white-color;
+	// // border: 1px solid $light-green;
+	color: #fff;
+}
+
+.home-view .view-more-auction-button:hover {
+	color: #fff;
+}
+
+@media (max-width: 767px) {
+	.home-view {
+		.search-bar-visible {
+			height: unset;
+			.search-bar {
+				width: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.home-view .search-bar {
+		// width: 80%;
+		left: 0;
+	}
+}
+
+.category-filter-mobile {
+	max-width: unset;
+}
+
+.sell-with-us-banner {
+	height: 240px;
+	width: 100%;
+	background-image: linear-gradient(
+			90deg,
+			var(--cta-color-1) -9%,
+			rgba(255, 255, 255, 0) 65%
+		),
+		url('./hand-remote-car.png');
+	background-position: center center;
+	background-size: cover;
+	border-radius: 11px;
+	background-repeat: no-repeat;
+	margin: 4.5em 0;
+
+	.sell-with-content {
+		top: 4vh;
+		left: 6vw;
+
+		h1,
+		p,
+		a {
+			color: #fff;
+		}
+
+		p {
+			font-weight: 100;
+		}
+
+		a {
+			background-color: var(--primary--color);
+			width: 12em;
+			font-size: 11px;
+			padding: 7px;
+		}
+	}
+}
+
+.auction-filter {
+	@media (max-width: 1090px) {
+		width: 130px;
+	}
+
+	.card-body {
+		padding: 0;
+
+		> div {
+			width: 100%;
+
+			.category-filter-mobile {
+				padding: 0;
+
+				select {
+					width: 100%;
+				}
+			}
+		}
+
+		.row {
+			display: block;
+		}
+	}
+}
+
+.auction-filter-dropdowns {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 22px;
+
+	.auction-filter {
+		min-width: 247px;
+		@media (max-width: 767px) {
+			min-width: 170px;
+		}
+
+		select {
+			width: 100%;
+			outline: none;
+		}
+
+		select,
+		.dropdown {
+			height: 45px;
+		}
+		.form-group {
+			padding-top: 0;
+		}
+	}
+}
+
+//Remove default before/after for location <select> only on homeview
+.auction-filter-wrap .form-group.floating-input .form-label::before,
+.auction-filter-wrap .form-group.floating-input .form-label::after {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.browse-by-category {
+		margin-top: 150px;
+	}
+}

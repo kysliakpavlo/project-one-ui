@@ -1,0 +1,96 @@
+@import "../../../scss/variable.scss";
+.eoi-view {
+  .search-bar {
+    background-color: $green-background;
+    .search-home {
+      border: none;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .view-header {
+    @media only screen and (min-device-width: 320px) and (max-device-width: 1180px) {
+      margin-top: 90px;
+    }
+  }
+  .sort-block {
+    width: 100%;
+  }
+  .react-multi-carousel-list.button-carousel {
+    height: 60px;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .react-multi-carousel-track {
+      margin: 0 28px;
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        margin: 0;
+        .react-multi-carousel-item {
+          width: max-content !important;
+          .btn-primary {
+            border: none;
+          }
+        }
+      }
+    }
+    .react-multiple-carousel__arrow {
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        background-color: #f4f4f4;
+        padding: 0;
+        top: calc(18% + 1px);
+        right: -25px;
+        width: 18%;
+        border: 0px solid;
+        border-radius: initial;
+      }
+    }
+    .react-multiple-carousel__arrow::before {
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        position: relative;
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-right: 5px solid $green-color;
+        border-top: 5px solid $green-color;
+        transform: rotate(45deg);
+        margin-right: 0.5em;
+      }
+    }
+    .react-multiple-carousel__arrow--left {
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        transform: rotate(180deg);
+        left: -25px;
+      }
+    }
+  }
+  .btn-outline-dark {
+    border-width: 2px;
+  }
+  .btn-primary {
+    border: none;
+  }
+  .tab-btn {
+    height: 50px;
+    min-width: 150px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 23px;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      font-size: 12px;
+      padding: 6px;
+      height: 33px;
+    }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+      height: 33px;
+      min-width: 120px;
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: initial;
+    }
+  }
+}

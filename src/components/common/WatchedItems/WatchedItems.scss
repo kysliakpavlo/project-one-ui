@@ -1,0 +1,321 @@
+@import './../../../scss/variable.scss';
+.watched-item-block {
+  width: 100%;
+  .no-results-block {
+    background-color: $light-grey;
+    margin: 0;
+  }
+  .footer-section {
+    margin-bottom: 50px;
+  }
+  .cards-block-mobile {
+    display: none;
+    @media (min-width: 320px) and (max-width: 767px) {
+      display: block;
+      margin-top: -70px;
+      .pagination-container {
+        display: none;
+      }
+      .card-row {
+        .asset-item-card {
+          .asset-item-grid-card {
+            background-color: $white-color;
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+            .asset-actions {
+              .btn-bidHistory {
+                display: block;
+                border-radius: 3px;
+                background-color: $header-font;
+                border-color: $header-font;
+                color: $white-color;
+              }
+              .btn-notifyme {
+                display: none;
+              }
+            }
+            .bidHistory-expand-block {
+              margin-top: 20px;
+              width: auto;
+              max-width: max-content;
+              .bid-history-table {
+                width: max-content;
+              }
+            }
+          }
+        }
+        .placebid-col {
+          .mobile-place-bid {
+            background-color: $white-color;
+            align-items: center;
+            .current-bid-section {
+              width: 90%;
+            }
+            .view-tabs {
+              display: none;
+            }
+            .placebid-row {
+              padding: 0;
+              max-width: max-content;
+              .bid-amount-section,
+              .fees-premium-section,
+              .terms-conditions-section {
+                padding: 17px 0 22px;
+              }
+              .bid-amount-section {
+                padding-top: 0;
+                .current-bid {
+                  background-color: transparent;
+                  color: $header-font;
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .nav-images {
+        display: none;
+      }
+    }
+  }
+  .cards-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 88px;
+    .table-responsive-sm,
+    .cmn-card {
+      @media (min-width: 320px) and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+  .large-cards-block {
+    margin-top: 88px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    .checkbox-custom-css {
+      margin-bottom: 12px;
+      height: 20px;
+      cursor: pointer;
+      text-align: right;
+      // display: inline-block;
+      .custom-checkbox .custom-control-label::before {
+        height: 18px;
+        width: 18px;
+        border-radius: 2px;
+        padding: 8px 8px 8px 8px;
+        border-color: var(--primary--color);
+        box-shadow: none;
+        border-width: 2px;
+      }
+      .was-validated
+        .custom-control-input:valid:checked
+        ~ .custom-control-label::before,
+      .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+        background-color: var(--primary--color);
+      }
+      .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: var(--primary--color);
+      }
+      .custom-checkbox
+        .custom-control-input:checked
+        ~ .custom-control-label::after {
+        /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e); */
+        width: 13px;
+        height: 7px;
+        transform: rotate(-45deg);
+        border-color: #ffffff;
+        border-width: 2px;
+        border-style: solid;
+        border-top: none;
+        border-right: none;
+        top: 8px;
+        left: -21px;
+      }
+      .custom-control-input.is-valid ~ .custom-control-label {
+        color: #223d38;
+        font-weight: 400;
+        font-size: 12px;
+        text-decoration: underline;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 20px;
+        line-height: 12px;
+        padding-top: 6px;
+      }
+    }
+    .checkbox-custom-css::before {
+      content: 'Select All';
+      margin-left: -20px;
+      position: absolute;
+      right: 38px;
+      font-weight: 900;
+    }
+    .container {
+      .watch-list-layout {
+        width: 95%;
+        // display: inline-block;
+      }
+      .checkbox-custom-css {
+        margin-bottom: 12px;
+        height: 20px;
+        cursor: pointer;
+        text-align: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // display: inline-block;
+        .custom-checkbox .custom-control-label::before {
+          height: 18px;
+          width: 18px;
+          border-radius: 2px;
+          padding: 8px 8px 8px 8px;
+          border-color: var(--primary--color);
+          box-shadow: none;
+          border-width: 2px;
+        }
+        .was-validated
+          .custom-control-input:valid:checked
+          ~ .custom-control-label::before,
+        .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+          background-color: var(--primary--color);
+        }
+        .custom-control-input:checked ~ .custom-control-label::before {
+          background-color: var(--primary--color);
+        }
+        .custom-checkbox
+          .custom-control-input:checked
+          ~ .custom-control-label::after {
+          /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e); */
+          width: 13px;
+          height: 7px;
+          transform: rotate(-45deg);
+          border-color: #ffffff;
+          border-width: 2px;
+          border-style: solid;
+          border-top: none;
+          border-right: none;
+          top: 8px;
+          left: -21px;
+        }
+        .custom-control-input.is-valid ~ .custom-control-label {
+          color: #223d38;
+          font-weight: 400;
+          font-size: 12px;
+          text-decoration: underline;
+          text-align: left;
+          margin-left: 0;
+          padding-left: 20px;
+          line-height: 12px;
+          padding-top: 6px;
+        }
+      }
+      .checkbox-custom-css::before {
+        content: '';
+      }
+    }
+  }
+  .row {
+    // margin: 0 0 10px 0;
+  }
+  h3 {
+    display: inline;
+  }
+  .img-with-caption {
+    display: table-caption;
+    cursor: pointer;
+  }
+  .pull-right-btn {
+    text-align: right;
+    margin-bottom: 10px;
+    // margin-left: 27px;
+    width: 100%;
+    margin-top: 22px;
+    margin-bottom: 39px;
+    .bg-color-btn {
+      width: 220px;
+      font-family: Univers-65-bold;
+      height: 32px;
+      padding: 0px 10px 0px 10px;
+      background: var(--primary--color);
+      color: $white-color;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      border: transparent;
+    }
+  }
+  .restrict-action {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  // .table{
+  //     font-size: 10px;
+  //     thead{
+  //         background-color: #d5e9b9;
+  //     }
+  //     td{
+  //         img{
+  //             height: 50px;
+  //             width: 80px;
+  //         }
+  //         .date-time-align{
+  //             width: 65px;
+  //         }
+
+  //         .placebid-content{
+  //             padding-left: 0;
+  //             button {
+  //                // padding-left: 4px;
+  //                 height: 20px;
+  //                 font-size: 10px;
+
+  //             }
+  //             input {
+  //                 height: 20px;
+  //                 font-size: 10px;
+  //                 width: 100px;
+  //                 padding-left: 0;
+  //             }
+  //             .form-check-input{
+  //                 margin-top: 0;
+  //             }
+  //         }
+  //     }
+  //     .place-bid {
+  //         font-size: 12px;
+  //         margin-right: 0;
+  //         padding: 0px;
+  //         width: 100% !important;
+  //         margin-left: 0px !important;
+  //         height: 20px;
+  //     }
+  //     .notOnline-auction-bidbtn {
+  //         width: 70% !important;
+  //         margin-left: 0px !important;
+  //         height: 20px;
+  //       }
+  //     .placebid-radio{
+  //         div {
+  //             margin-bottom: 2px;
+  //         }
+  //         padding: 0;
+  //         margin-top: 4px;
+  //         .form-check-input{
+  //             margin-top: 0;
+  //         }
+  //     }
+  // }
+  .buy-now,
+  .asset-sold {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    height: auto;
+  }
+  .asset-sold {
+    pointer-events: none;
+  }
+}

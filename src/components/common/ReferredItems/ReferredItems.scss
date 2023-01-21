@@ -1,0 +1,135 @@
+@import "./../../../scss/variable.scss";
+.referred-item-block {
+  .cards-block-mobile {
+    display: none;
+    @media (min-width: 320px) and (max-width: 767px) {
+      display: block;
+      .pagination-container {
+        display: none;
+      }
+      .card-row {
+        .placebid-col {
+          .mobile-place-bid {
+            background-color: $white-color;
+            align-items: center;
+            .current-bid-section {
+              width: 90%;
+            }
+            .placebid-row {
+              padding: 0;
+              max-width: max-content;
+              .bid-amount-section,
+              .fees-premium-section,
+              .terms-conditions-section {
+                padding: 17px 0 22px;
+              }
+            }
+          }
+        }
+      }
+      .nav-images {
+        display: none;
+      }
+    }
+  }
+  .cards-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 88px;
+    .table-responsive-sm,
+    .cmn-card {
+      @media (min-width: 320px) and (max-width: 767px) {
+        display: none;
+      }
+    }
+    .current-bid-block {
+      @media (min-width: 768px) and (max-width: 1080px) {
+        padding-right: 0px;
+      }
+    }
+  }
+  .large-cards-block {
+    margin-top: 88px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img-with-caption {
+    display: table-caption;
+    cursor: pointer;
+  }
+  .pull-right-btn {
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 27px;
+    width: 100%;
+  }
+  .restrict-action {
+    pointer-events: none;
+    opacity: 0.5;
+    display: none;
+  }
+  // .table{
+  //     font-size: 10px;
+  //     thead{
+  //         background-color: #d5e9b9;
+  //     }
+  //     td{
+  //         img{
+  //             height: 50px;
+  //             width: 80px;
+  //         }
+  //         .date-time-align{
+  //             width: 65px;
+  //         }
+
+  //         .placebid-content{
+  //             padding-left: 0;
+  //             button {
+  //                // padding-left: 4px;
+  //                 height: 20px;
+  //                 font-size: 10px;
+
+  //             }
+  //             input {
+  //                 height: 20px;
+  //                 font-size: 10px;
+  //                 width: 100px;
+  //                 padding-left: 0;
+  //             }
+  //             .form-check-input{
+  //                 margin-top: 0;
+  //             }
+  //         }
+  //         .action-allowed{
+  //             .row{
+  //                 display: inline-block;
+  //             }
+  //         }
+  //     }
+  //     .place-bid {
+  //         font-size: 12px;
+  //         margin-right: 0;
+  //         padding: 0px;
+  //         width: 100% !important;
+  //         margin-left: 0px !important;
+  //         height: 20px;
+  //     }
+  //     .notOnline-auction-bidbtn {
+  //         width: 70% !important;
+  //         margin-left: 0px !important;
+  //         height: 20px;
+  //       }
+  //     .placebid-radio{
+  //         div {
+  //             margin-bottom: 2px;
+  //         }
+  //         padding: 0;
+  //         margin-top: 4px;
+  //         .form-check-input{
+  //             margin-top: 0;
+  //         }
+  //     }
+  // }
+}

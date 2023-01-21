@@ -1,0 +1,299 @@
+@import '../../../scss/variable.scss';
+
+.place-bid {
+	.current-bid-section {
+		.current-bid {
+			width: 80%;
+			height: 28px;
+			color: #fff;
+			margin: 10px auto;
+			line-height: 28px;
+			text-align: center;
+			border-radius: 15px;
+			// background-color: #223d38;
+
+			margin-left: 0;
+		}
+
+		.highest-bidder {
+			background-color: var(--primary--color);
+			width: 90%;
+			margin: 10px 0;
+
+			//prevent stacking which was lowering the place bid bar
+			position: absolute;
+			top: -85px;
+			left: 5vw;
+
+			@media (max-width: 767px) {
+				margin: auto;
+			}
+
+			.highest-bidder-indicator {
+				top: 0;
+				right: 20px;
+				width: 38px;
+				height: 28px;
+				text-align: center;
+				border-radius: 3px;
+
+				@media only screen and (min-width: 768px) and (max-width: 1199px) {
+					right: 4px;
+					top: 1px;
+				}
+
+				@media (min-width: 320px) and (max-width: 767px) {
+					top: 1px;
+					right: 66px;
+				}
+
+				svg {
+					width: 20px;
+					height: 20px;
+					fill: #ffffff;
+				}
+			}
+		}
+	}
+
+	&.card {
+		padding: 8px 24px;
+		position: relative;
+		color: #000;
+		font-size: 14px;
+		border: none;
+		display: flex;
+
+		.close-btn {
+			top: 0;
+			right: 0;
+			padding: 0;
+			z-index: 1;
+			width: 39px;
+			height: 31px;
+			border-radius: 0;
+			line-height: 28px;
+			position: absolute;
+			border-radius: 5px;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
+
+			svg {
+				padding: 3px;
+				fill: $dark-orange;
+				margin-top: -4px;
+				border-radius: 100%;
+				background-color: $white-color;
+			}
+		}
+
+		.placebid-row {
+			margin: 0;
+			flex-wrap: nowrap;
+
+			@media screen and (max-width: 767px) {
+				flex-wrap: wrap;
+
+				.col-sm-4 {
+					flex: none;
+					max-width: 590px;
+				}
+			}
+		}
+
+		.account-page-terms {
+			font-size: 16px;
+			font-family: var(--paragraph-font-family, 'Roboto');
+			font-weight: 900;
+
+			svg {
+				height: 17px;
+				width: 17px;
+				fill: var(--cta-color-1);
+				margin-left: 5px;
+			}
+		}
+
+		.bid-amount-section {
+			padding: 8px 6px 5px;
+
+			@media screen and (max-width: 767px) {
+				border-right: 0;
+				padding-bottom: 10px;
+				border-bottom: 1px solid $header-font;
+			}
+
+			.current-bid-section {
+				.current-bid {
+					width: 80%;
+					height: 28px;
+					color: #000;
+					font-size: 20px;
+					margin: 10px auto;
+					line-height: 28px;
+					text-align: center;
+					border-radius: 8px;
+					// background-color: var(--primary--color);
+					background-color: transparent;
+				}
+
+				.highest-bidder {
+					background-color: #66b82b;
+					width: max-content;
+					margin: 10px -10px;
+
+					.highest-bidder-indicator {
+						top: 0;
+						right: 20px;
+						width: 38px;
+						height: 28px;
+						text-align: center;
+						border-radius: 3px;
+
+						@media only screen and (min-width: 768px) and (max-width: 1199px) {
+							right: 4px;
+							top: 1px;
+						}
+
+						@media (min-width: 320px) and (max-width: 767px) {
+							top: 1px;
+							right: 66px;
+						}
+
+						svg {
+							width: 20px;
+							height: 20px;
+							fill: #ffffff;
+						}
+					}
+				}
+			}
+		}
+
+		.fees-premium-section {
+			//   min-width: 260px;
+			@media screen and (max-width: 767px) {
+				border-right: 0;
+				border-bottom: 1px solid $header-font;
+				padding-left: 5px;
+				padding-bottom: 10px;
+			}
+
+			.fees-premium-label {
+				width: 100%;
+				height: 27px;
+				border: 1px solid;
+				font-weight: bold;
+				line-height: 25px;
+				text-align: center;
+				border-radius: 3px;
+				// margin-bottom: 19px;
+				background-color: #f8f8f8;
+			}
+
+			.fees-details {
+				display: flex;
+				margin: 0 -3px;
+				flex-wrap: nowrap;
+				white-space: nowrap;
+
+				+ .fees-details {
+					margin-top: 7px;
+				}
+
+				& > :first-child {
+					padding: 0;
+					min-width: 130px;
+				}
+			}
+
+			.total-fee {
+				display: block;
+				// margin-top: 20px;
+				line-height: 40px;
+				white-space: nowrap;
+
+				.amount {
+					font-size: 18px;
+					min-width: max-content;
+					margin-right: 5px;
+					text-align: center;
+					border-radius: 3px;
+					border: 2px solid $green-color;
+					background-color: $light-green-background;
+				}
+
+				.inc-gst {
+					font-weight: bold;
+				}
+			}
+		}
+
+		.terms-conditions-section {
+			padding: 73px 16px 0;
+
+			@media screen and (min-width: 320px) and (max-width: 767px) {
+				padding: 10px;
+
+				.form-group {
+					padding-bottom: 10px;
+				}
+			}
+
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				padding: 63px 16px 0;
+			}
+
+			label.form-label {
+				margin-bottom: 3px;
+				font-weight: bold;
+
+				svg {
+					width: 17px;
+					height: 17px;
+					fill: var(--cta-color-1);
+					margin-left: 4px;
+				}
+			}
+
+			.place-bid-btn {
+				font-weight: bold;
+				font-size: 18px;
+				padding: 1px;
+				width: 100%;
+				border-radius: 3px;
+
+				@media screen and (min-width: 768px) and (max-width: 1024px) {
+					width: 85%;
+				}
+
+				svg {
+					width: 20px;
+					height: 20px;
+					margin-right: 8px;
+
+					path {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.fixed-tooltip {
+	z-index: 101;
+}
+
+.form-group {
+	.accept a {
+		color: #000;
+		text-decoration: underline;
+	}
+	> div a {
+		color: #000;
+		text-decoration: underline;
+	}
+}

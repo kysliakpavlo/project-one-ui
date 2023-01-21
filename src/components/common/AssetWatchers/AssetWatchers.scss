@@ -1,0 +1,33 @@
+.app-header,
+.footer-subscribe,
+.app-footer {
+  display: none;
+}
+.asset-watchers {
+  .pull-right {
+    float: right;
+  }
+  .accordion {
+    .card {
+      .card-header {
+        cursor: pointer;
+        .next-svg {
+          fill: #000000;
+          width: 16px;
+          height: 16px;
+        }
+        .more-svg {
+          fill: #000000;
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .table-striped {
+        td {
+          font-weight: 700;
+          font-family: Univers-45;
+        }
+      }
+    }
+  }
+}

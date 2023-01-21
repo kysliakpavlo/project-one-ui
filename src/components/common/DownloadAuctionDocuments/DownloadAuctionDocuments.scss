@@ -1,0 +1,107 @@
+.download-auction-documents {
+  display: block;
+  position: relative;
+  .btn {
+    white-space: nowrap;
+  }
+  .slt-dark {
+    border-radius: 16px;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  button.btn-warning{
+    border-radius: 8px;
+
+    &:hover{
+      color: #fff;
+      opacity: 0.5;
+    }
+  }
+}
+.documents-download {
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+  .modal-title {
+    margin-top: 3px;
+  }
+  .modal-body {
+    .download-text {
+      font-size: 12px;
+    }
+    .download-btn {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .checkbox-custom-css {
+      margin-bottom: 12px;
+      height: auto;
+      padding-left: 10px;
+      .document-block {
+        .document-name {
+          color: #223d38;
+          font-weight: 400;
+          font-size: 14px;
+          text-decoration: underline;
+          text-align: left;
+          margin-left: 0;
+          line-height: 20px;
+          padding-top: 2px;
+          max-width: 100%;
+          word-break: break-word;
+        }
+        button {
+          float: right;
+          font-size: 12px;
+          padding: 5px;
+        }
+      }
+      .custom-control-label {
+        padding-left: 15px;
+        text-decoration: underline;
+      }
+      .custom-checkbox .custom-control-label::before {
+        height: 18px;
+        width: 18px;
+        border-radius: 4px;
+        padding: 8px 8px 8px 8px;
+        border-color: #66b82b;
+        box-shadow: none;
+        border-width: 2px;
+      }
+      .was-validated
+        .custom-control-input:valid:checked
+        ~ .custom-control-label::before,
+      .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+        background-color: #66b82b;
+      }
+      .custom-checkbox
+        .custom-control-input:checked
+        ~ .custom-control-label::after {
+        width: 13px;
+        height: 7px;
+        transform: rotate(-45deg);
+        border-color: #ffffff;
+        border-width: 2px;
+        border-style: solid;
+        border-top: none;
+        border-right: none;
+        top: 8px;
+        left: -21px;
+      }
+      .custom-control-input.is-valid ~ .custom-control-label {
+        color: #223d38;
+        font-weight: 400;
+        font-size: 14px;
+        text-decoration: underline;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 20px;
+        line-height: 20px;
+        padding-top: 2px;
+        max-width: 100%;
+        word-break: break-word;
+      }
+    }
+  }
+}

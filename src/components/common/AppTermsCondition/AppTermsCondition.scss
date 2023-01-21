@@ -1,0 +1,64 @@
+@import "../../../scss/variable.scss";
+
+.term-condition-block {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white-color;
+    position: relative;
+    padding: 0 20px;
+    @media (min-width: 768px) and (max-width: 1024px) {
+      margin-top: 40px;
+    }
+    .auction-detail {
+        padding: 40px 0;
+
+        .plain-bar {
+            height: 20px;
+            background-color: $green-background;
+            position: relative;
+            svg {
+                height: 52px;
+                position: absolute;
+                z-index: 1;
+                right: 15%;
+                top: -14px;
+                background-color: $white-color;
+                width: 60px;
+            }
+        }
+        .header {
+            font-weight: 900;
+            padding-top: 40px;
+            .title, .auction-time {
+                padding: 10px 0px;
+            }
+            .auction-time {
+                padding: 10px 20px;
+                color: $white-color;
+                background-color: $light-green;
+                display: inline-block;
+            }
+        }
+        .head-lines {
+            text-decoration: underline;
+            line-height: 40px;
+            font-weight: 900;
+            font-size: 28px;
+            padding: 10px 0px;
+
+        }
+        .head-lines-small {
+            text-decoration: underline;
+            line-height: 40px;
+            font-weight: 900;
+            font-size: 18px;
+            padding: 10px 0px;
+            font-family: var(--paragraph-font-family, "Roboto");
+            .form-check-input {
+                margin-top: 13px;
+            }
+        }
+        
+    }
+}

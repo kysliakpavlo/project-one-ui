@@ -1,0 +1,83 @@
+@import "../../../scss/variable.scss";
+.pdf-viewer {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.pdf-controls {
+    height: 40px;
+    line-height: 40px;
+    width: auto;
+    background-color: var(--primary--color);
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    .span-prev {
+        margin-right: 30px;
+        cursor: pointer;
+        vertical-align: middle;
+        @media only screen and (max-width: 767px) {
+            margin-right: 0px;
+        }
+    }
+    .span-next {
+        margin-left: 30px;
+        cursor: pointer;
+        vertical-align: middle;
+        @media only screen and (max-width: 767px) {
+            margin-left: 5px;
+        }
+    }
+    .zoom-controls {
+        position: absolute;
+        left: 50px;
+        @media only screen and (max-width: 767px) {
+            left: 15px;
+        }
+        .zoom-in,
+        .zoom-out {
+            border: 1px solid var(--cta-color-1);
+            height: 30px;
+            border-radius: 4px;
+            margin-top: 5px;
+            cursor: pointer;
+            vertical-align: middle;
+            svg {
+                height: 20px;
+                margin-top: -4px;
+                margin-left: 5px;
+            }
+        }
+
+        .zoom-out {
+            margin-left: 10px;
+        }
+    }
+
+    .print-controls {
+        position: absolute;
+        bottom: 0px;
+        right: 50px;
+        .print {
+            cursor: pointer;
+        }
+    }
+    .totalPages {
+        color: var(--cta-color-1);
+        vertical-align: middle;
+    }
+    svg {
+        fill: var(--cta-color-1);
+        height: 30px;
+        width: 30px;
+    }
+
+    .disabled {
+        svg {
+            fill: var(--cta-color-1);
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}

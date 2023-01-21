@@ -1,0 +1,95 @@
+# This script depends on two environment variables to be set in Bitbucket Pipelines
+# 1. $HEROKU_API_KEY - Local environment var that contains your Heroku account's API key
+# 2. $HEROKU_STAGING - Local environment var that contains your staging app name in Heroku
+# 3. $HEROKU_PRODUCTION - Local environment var that contains your production app name in Heroku
+
+image: node:14.15.1
+
+# Doing a full clone to be able to push back to Heroku.
+clone:
+  depth: full
+
+pipelines:
+  branches:
+    # When code is pushed to the develop branch it is deployed automatically to the staging environment.
+     develop:
+       - step:
+           caches:
+             - node
+           script:
+             - npm cache clean --force
+             - rm -rf node_modules
+             - rm -rf build
+             - npm install
+             - CI=false npm run build
+             - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_DEVELOPMENT.git HEAD:master
+    # When code is pushed to the develop branch it is deployed automatically to the staging environment.
+     develop-ux-ui:
+      - step:
+          caches:
+            - node
+          script:
+            - npm cache clean --force
+            - rm -rf node_modules
+            - rm -rf build
+            - npm install
+            - CI=false npm run build
+            - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_UI_UX.git HEAD:master
+      # When code is pushed to the qa branch it is deployed automatically to the staging environment of QA app.
+     qa-branch:
+      - step:
+          caches:
+            - node
+          script:
+            - npm cache clean --force
+            - rm -rf node_modules
+            - rm -rf build
+            - npm install
+            - CI=false npm run build
+            - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_QA.git HEAD:master
+    # When code is pushed to the master branch it is deployed automatically to the production environment.
+     staging:
+       - step:
+           caches:
+             - node
+           script:
+             - npm cache clean --force
+             - rm -rf node_modules
+             - rm -rf build
+             - npm install
+             - CI=false npm run build
+             - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_QA.git HEAD:master
+      # ev auction pushed to staging
+     ev-auction:
+      - step:
+          caches:
+            - node
+          script:
+            - npm cache clean --force
+            - rm -rf node_modules
+            - rm -rf build
+            - npm install
+            - CI=false npm run build
+            - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_QA.git HEAD:master
+     # When code is pushed to the master branch it is deployed automatically to the production environment.
+     production:
+       - step:
+           caches:
+             - node
+           script:
+             - npm cache clean --force
+             - rm -rf node_modules
+             - rm -rf build
+             - npm install
+             - CI=false npm run build
+             - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_PRODUCTION.git HEAD:master
+             
+     staging_non_prod:
+       - step:
+           caches:
+             - node
+           script:
+             - npm cache clean --force
+             - rm -rf node_modules
+             - npm install
+             - git push -f https://heroku:$HEROKU_API_KEY_DEVELOPMENT@git.heroku.com/$HEROKU_NON_PROD_STAGING.git HEAD:master

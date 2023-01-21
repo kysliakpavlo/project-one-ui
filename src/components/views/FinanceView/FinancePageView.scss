@@ -1,0 +1,62 @@
+@import '../../../scss/variable.scss';
+.search-bar {
+	margin: 20px;
+	margin-left: 0px;
+}
+.finance-view {
+	.div-static-header {
+		margin-left: 0px;
+		margin-top: 3em;
+		border-radius: 8px;
+	}
+	@media (min-width: 320px) and (max-width: 767px) {
+		.div-static-header {
+			width: 100%;
+			margin-top: 110px;
+		}
+		.containers {
+			margin-right: 0px !important;
+		}
+	}
+	@media screen and (min-width: 768px) and (max-width: 1180px) {
+		.div-static-header .div-logo {
+			float: right;
+		}
+		.containers {
+			margin-right: 0px !important;
+		}
+	}
+	font-weight: 400;
+	p {
+		font-size: 14px;
+		margin-left: 10px;
+		margin-right: 10px;
+		text-align: justify;
+	}
+	.containers {
+		background-color: white;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: 20px;
+		margin-right: 20px;
+	}
+	strong {
+		font-family: var(--paragraph-font-family, 'Roboto');
+
+		font-weight: 900;
+	}
+	a {
+		color: black;
+		img {
+			display: none;
+			content: url('https://static.slatteryauctions.com.au/wp-content/uploads/2014/12/Slattery-Finance-Logo.png');
+			background-size: cover;
+		}
+	}
+	.financial-enquiry {
+		width: auto;
+	}
+	form:not(.financial-enquiry) {
+		display: none;
+	}
+}

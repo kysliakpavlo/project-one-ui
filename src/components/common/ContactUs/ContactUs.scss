@@ -1,0 +1,492 @@
+@import "../../../scss/variable.scss";
+
+.div-contact > .container{
+	margin-bottom: 7em;
+}
+
+.search-bar {
+  margin-left: -10px;
+  top: 0px;
+}
+.section {
+  z-index: 0;
+  position: relative;
+  margin-top: 20px;
+}
+
+.short-search{
+  display: none;
+}
+
+h2.form-title{
+	text-align: center;
+	margin: 1.5em 0;
+}
+
+.section--contact-header {
+//   background: #FAFBF8;
+//   width: 1090px;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    padding: 0 40px;
+    width: 100%;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1180px) {
+    margin-top: 40px;
+    padding: 0 40px;
+    width: 100%;
+  }
+  h1 span {
+    border-bottom: 2px solid #fff;
+    display: block;
+    width: 43%;
+    font-size: 50px;
+    font-weight: 700;
+    color: $white-color;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      width: 100%;
+    }
+  }
+  .contact-head {
+    width: 53%;
+    float: left;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+      width: 100%;
+      margin-top: 20px;
+      flex: none;
+      .section--contact-header .row {
+        flex-wrap: wrap;
+      }
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1180px) {
+      width: 100%;
+      margin-top: 20px;
+      flex: none;
+      .section--contact-header .row {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .contact-desc {
+    margin-top: 35px;
+    color: $white-color;
+    margin-left: auto;
+    margin-right: auto;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+      margin-top: 0;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      margin-left: 0;
+    }
+  }
+  .row {
+    flex-wrap: unset;
+    margin-right: auto;
+    margin-left: auto;
+    // max-width: 1170px;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+      flex-wrap: wrap;
+    }
+  }
+  .div-address {
+    text-align: center;
+    vertical-align: top;
+    padding: 0;
+    padding-top: 20px;
+    color: $white-color;
+    overflow-x: scroll;
+    display: flex;
+    margin-bottom: 10px;
+    .col-adrs {
+      margin-bottom: 10px;
+      min-width: 200px;
+    }
+    .loca {
+      margin-bottom: 0px;
+    }
+    .div-adrs-desc {
+      // width:200px;
+      overflow-wrap: break-word;
+      p {
+        margin-bottom: 0px;
+      }
+      .div-viewmap {
+        cursor: pointer;
+        span {
+          color: $green-color;
+        }
+      }
+      .div-viewmap:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .map-contents {
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+    filter: #{"grayscale()"};
+	margin-bottom: 3vh;
+	border-radius: 10px;
+
+    
+    @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+      height: 400px;
+    }
+  }
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  .div_sub {
+    width: 325px;
+    height: 50px;
+    margin-left: 600px;
+    background-color: $description-color !important;
+    border-color: $description-color !important;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .div_sub:hover {
+    background-color: $green-color !important;
+    border-color: $green-color !important;
+  }
+  .msg-p {
+    margin-top: -15px;
+  }
+  /* Style the container/contact-us section */
+  .div-enq {
+    border-radius: 5px;
+    background-color: #b2db95;
+    padding: 10px;
+  }
+  .desc-div {
+    width: 24%;
+    float: left;
+    margin-top: 6px;
+    padding: 20px;
+    margin-left: 190px;
+  }
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  .column1 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  @media only screen and (min-device-width: 735px) and (max-device-width: 1024px) {
+    .div_sub {
+      margin-left: 395px;
+      width: 310px;
+    }
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+    .div_sub {
+      margin-left: 30px;
+    }
+  }
+  @media only screen and (min-device-width: 735px) and (max-device-width: 1024px) {
+    .desc-div {
+      margin-left: 0px;
+      width: 48%;
+    }
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+    .desc-div {
+      margin-left: 0px;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+    .column {
+      margin-top: -35px;
+    }
+  }
+}
+
+.div-enquire-form {
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+    margin: auto;
+	border-radius: 8px;
+
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+    width: 100%;
+  }
+}
+.divSuccessmsg {
+  padding: 30px;
+  height: 150px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.07);
+  background: $light-green-background;
+  color: $green-background;
+  text-align: center;
+  width: 1090px;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+    width: 100%;
+    padding: 10px;
+  }
+  h2 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 22px;
+  }
+  .icon-success {
+    color: $white-color;
+    border-radius: 100%;
+    font-size: 100px;
+    display: block;
+    background-color: $light-green;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+  .location-contents {
+    // display: block !important;
+    display: none !important;
+}
+}
+@media only screen and (min-device-width: 735px) and (max-device-width: 1024px) {
+  .location-contents {
+    // display: block !important;
+    display: none !important;
+}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+  .div-address {
+    display: none !important;
+  }
+}
+@media only screen and (min-device-width: 735px) and (max-device-width: 1024px) {
+  .div-address {
+    display: none !important;
+  }
+}
+// @media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
+//     .contact-desc{
+//         margin-top: -15px!important;
+//         margin-left: 50px!important;
+
+//     }
+//     .section--contact-header .row{
+//         flex-wrap: wrap!important;
+
+//     }
+// }
+@media only screen and (min-device-width: 735px) and (max-device-width: 1024px) {
+  .contact-desc {
+    // margin-top: -15px!important;
+    margin-left: 45px;
+  }
+  .section--contact-header .row {
+    flex-wrap: wrap;
+  }
+}
+// @media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
+//     .contact-head{
+//         margin-left: 35px!important;
+//         width: 60%!important;
+//         margin-top: 55px!important;
+//     }
+//     .section--contact-header .row{
+//         flex-wrap: wrap;
+//     }
+// }
+// @media only screen and (min-device-width : 735px) and (max-device-width : 1024px) {
+//     .contact-head{
+//         margin-left: 35px!important;
+//         width: 100%!important;
+//         margin-top: 55px!important;
+//     }
+//     .section--contact-header .row{
+//         flex-wrap: wrap;
+//     }
+// }
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+  .contact-head h1 span {
+    width: 100%;
+  }
+}
+
+// @media only screen and (min-device-width : 735px) and (max-device-width : 1024px) {
+//     .svg-down{
+//         margin-left: 615px;
+//     }
+// }
+.location-contents {
+  display: none;
+  padding: 20px 0;
+  font-weight: 500;
+  margin-top: 20px;
+  background-color: $green-background;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    margin-top: 0px;
+  }
+  .page-header {
+    font-family: Univers-65-bold;
+    font-size: 36px;
+  }
+  .city-block {
+    margin: 10px 0;
+    border-bottom: 2px solid $white-color;
+    color: $white-color;
+    cursor: pointer;
+    .card {
+      background-color: $green-background;
+    }
+    .card-header {
+      font-weight: 700;
+      font-size: 24px;
+      color: $white-color;
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 18px;
+      }
+      @media only screen and (min-device-width: 767px) and (max-device-width: 1024px) {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 24px;
+      }
+
+      .btn-link {
+        color: $white-color;
+      }
+    }
+    .card-body {
+      padding: 15px;
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 18px;
+      }
+      .div-viewmap {
+        cursor: pointer;
+        span {
+          color: $green-color;
+          text-decoration: underline;
+        }
+      }
+    }
+    svg {
+      fill: $white-color;
+      float: right;
+    }
+  }
+  p {
+    font-size: 16px;
+  }
+  strong {
+    font-family: var(--paragraph-font-family, "Roboto");
+
+    font-weight: 900;
+  }
+}
+
+.gm-style .gm-style-iw-c,
+.gm-style .gm-style-iw-t::after {
+  text-align: center;
+  background-color: $green-background;
+  color: $white-color;
+  font-family: Univers-45;
+  // top: -40px;
+  overflow: hidden !important;
+  div {
+    background-color: red;
+  }
+  .gm-style-iw-d {
+    background-color: red;
+  }
+  button {
+    color: $white-color;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 200px !important;
+  }
+}
+.gm-style .gm-style-iw-t::after {
+  background: $green-background;
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.gm-ui-hover-effect {
+  display: none !important;
+}
+.gm-style img {
+  height: 35px;
+  width: 25px;
+}
+.info-window {
+  display: flex;
+  cursor: pointer;
+  .content-block {
+    padding: 0 10px;
+  }
+}
+.div-contact {
+  .div-static-header {
+    margin-top: 25px;
+  }
+  // .search-bar {
+  //   // margin-top: 30px;
+  // }
+
+  @media screen and (min-width: 768px) and (max-width: 1180px) {
+    .div-static-header .div-logo {
+      float: right;
+    }
+    .div-static-header {
+      margin-left: 0px;
+      margin-top: 125px;
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .div-static-header {
+      margin-top: 130px;
+    }
+    .search-bar .search__advanced {
+      margin-top: 5px;
+    }
+  }
+}

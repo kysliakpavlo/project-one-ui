@@ -1,0 +1,197 @@
+.cards-wrap-inline {
+  flex-wrap: wrap;
+  clear: both;
+  margin-bottom: 20px;
+  //   padding: 0;
+  @media screen and (max-device-width: 768px) {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    flex-direction: column;
+    .card-block {
+      width: 100%;
+      box-shadow: none;
+    }
+  }
+  .col {
+    padding: 0;
+  }
+}
+.registration-view {
+  background-color: #ffffff;
+}
+.card-block {
+  clear: both;
+  width: 529px;
+  min-height: 256px; // 201px;
+  padding: 8px 8px 8px 8px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  margin-bottom: 20px;
+  .form-group.form-input .form-label {
+    display: none;
+  }
+  .form-group.form-input .form-control {
+    position: relative;
+    top: -9px;
+  }
+
+  @media screen and (max-device-width: 768px) {
+    width: 100%;
+    box-shadow: none;
+    margin-bottom: 0;
+    min-height: 220px;
+    .card-layout {
+      margin-bottom: 0;
+    }
+    .block-data {
+      .desktop-v {
+        display: none;
+      }
+    }
+
+    .mobile-v {
+      display: block;
+    }
+  }
+
+  @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    width: 100%;
+  }
+  .mobile-v {
+    display: none;
+  }
+  .desktop-v {
+    display: block;
+  }
+  input {
+    border: none;
+    outline: none;
+    outline-style: none;
+    border-bottom: 0.25px solid #000000;
+    margin-bottom: 9px;
+  }
+  .header-style {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    .custom-btn-svg {
+      background-color: transparent;
+    }
+  }
+  .editCard-bg {
+    .icon-block {
+      display: flex;
+      min-width: 70px;
+      justify-content: space-between;
+    }
+  }
+
+  .detail-personal {
+    margin-right: 17px;
+    width: 120px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .no-detail {
+    width: auto;
+  }
+  .no-card-details {
+    height: auto;
+    min-height: auto;
+  }
+  .block-data {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .password-check {
+    .data-section {
+      .password-strength-field {
+        .password-patterns {
+          top: 145px;
+        }
+      }
+    }
+  }
+  .data-section {
+    font-weight: bold;
+    font-size: 14px;
+    width: 78%;
+    @media screen and (max-device-width: 768px) {
+      //width: 148px;
+      width: 78%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .license {
+    @media screen and (max-device-width: 768px) {
+      margin-left: 0;
+    }
+  }
+
+  .title {
+    svg {
+      fill: var(--cta-color-1);
+    }
+  }
+  .verify {
+    display: grid;
+    span {
+      position: relative;
+      top: -9px;
+      color: #ff3823;
+    }
+    @media screen and (max-device-width: 768px) {
+      span {
+        top: -5px;
+      }
+    }
+  }
+  .OtpCode {
+    margin-left: 19px;
+    @media screen and (max-device-width: 767px) {
+      width: 24%;
+    }
+    button {
+      background: #223d38;
+    }
+  }
+}
+.no-card-details {
+  min-height: auto;
+}
+.editCard-bg {
+  background: #ffffff;
+  svg {
+    cursor: pointer;
+  }
+}
+.defaultCard-bg {
+  background: #f7f6f6;
+  svg {
+    cursor: pointer;
+  }
+}
+.editLicense {
+  margin-left: 22px;
+}
+.pl-md-5,
+.px-md-5 {
+  padding: 0 !important;
+}
+
+.data-section.code-verify {
+  width: 49%;
+  @media screen and (max-device-width: 767px) {
+    width: 45% !important;
+  }
+
+  @media screen and(min-device-width: 768px) and (max-device-width: 1024px) {
+    width: 57% !important;
+  }
+}

@@ -1,0 +1,171 @@
+.marketing-subscription {
+	@media screen and (max-device-width: 767px) {
+		margin-top: -85px;
+	}
+
+	.marketing-section-title {
+		min-height: 50px;
+	}
+
+	.card {
+		border: none;
+		background: transparent;
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		@media screen and (max-device-width: 767px) {
+			display: block;
+			margin-top: 1em;
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			justify-content: center;
+			div {
+				margin: 0 10px;
+			}
+		}
+		border: none;
+		background: transparent;
+		font-size: 18px;
+		color: var(--primary--color);
+		padding: 18px;
+
+		.custom-control-label {
+			color: var(--primary--color);
+			font-size: 14px;
+			margin-top: 5px;
+		}
+	}
+	.card .card-body {
+		padding: 0 18px 18px 18px;
+		.notify-content {
+			padding: 10px;
+		}
+	}
+	.location-card {
+		width: 529px;
+		@media screen and (max-device-width: 767px) {
+			width: 100%;
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		p {
+			font-weight: bold;
+			font-size: 14px;
+			color: var(--primary--color);
+		}
+		.state-list {
+			display: flex;
+			flex-flow: wrap;
+			@media screen and(max-device-width: 767px) {
+				width: 100% !important;
+			}
+		}
+		.location-list {
+			display: flex;
+			.label-block-css {
+				width: 67px;
+				color: var(--primary--color);
+				@media screen and (max-device-width: 767px) {
+					width: 50px;
+				}
+			}
+		}
+		.custom-switch {
+			padding-left: 36px;
+			width: 97px;
+			@media screen and (max-device-width: 767px) {
+				padding-left: 36px;
+				width: 46px;
+			}
+		}
+		.custom-control-label {
+			color: var(--primary--color);
+			font-size: 14px;
+		}
+	}
+	.categories-block {
+		background-color: #fff;
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+		min-height: 255px;
+		@media screen and (max-device-width: 767px) {
+			min-height: 255px;
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			width: 529px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.card-header {
+			background-color: #fff;
+			font-weight: bold;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				justify-content: left;
+			}
+		}
+		.categories-list {
+			display: flex;
+			flex-direction: row;
+			flex-flow: wrap;
+		}
+		.location-list {
+			display: flex;
+			.label-block-css {
+				width: 186px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				margin-right: 20px;
+				color: var(--primary--color);
+				@media screen and (max-device-width: 767px) {
+					width: 246px;
+				}
+				label {
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					width: 100%;
+					overflow: hidden;
+				}
+			}
+		}
+		.subscribeBtn {
+			text-align: right;
+			margin-top: 29px;
+		}
+	}
+	.last-inputs {
+		text-align: center;
+		@media screen and (max-device-width: 767px) {
+			text-align: end;
+		}
+	}
+	.location-list {
+		display: flex;
+		font-size: 14px;
+		line-height: 32px;
+	}
+	.opt-out-toggle {
+		margin-left: 23px;
+	}
+	.col-custom {
+		padding: 0;
+	}
+	.mar-top {
+		margin-top: 0px;
+		@media screen and (max-device-width: 767px) {
+			margin-top: 25px;
+		}
+	}
+	.label-block-css.opt-all-css {
+		color: var(--primary--color);
+		font-size: 14px;
+		font-weight: 400px !important;
+	}
+	.title-pref {
+		font-weight: bold;
+		line-height: 32px;
+	}
+}

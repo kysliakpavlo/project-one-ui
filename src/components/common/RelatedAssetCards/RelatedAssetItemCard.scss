@@ -1,0 +1,191 @@
+@import "../../../scss/variable.scss";
+
+.related-asset-item-card {
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+    .download-auction-documents{
+        text-align: center;
+        left: 0;
+        right: 0;
+        position: absolute;
+        bottom: 50px;
+        left:25px;
+        .slt-dark{
+            margin-right: 0;
+        }
+    }
+    .related-asset-current-bid {
+        left: 10%;
+        width: 80%;
+        bottom: 52px;
+        padding: 3px;
+        color: #000;
+        border-radius: 37px;
+        background: #fff;
+        padding-left: 12px
+    }
+    .watch-list {
+        border: 0;
+        padding: 0;
+        position: absolute;
+        top: 6px;
+        left: 5px;
+
+        color: $white-color;
+        text-align: center;
+        background-color: $semi-tranparent-bg;
+        &.active {
+            background-color: var(--cta-color-1);
+        }
+    }
+    .buy-now {
+        display: flex;
+        justify-content: center;
+        // position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        .btn-under {
+            background-color: #fff;
+            color: #000;
+            width: 100px;
+            height: 28px;
+            text-align: center;
+            padding: 2px;
+            margin-right: 10px;
+            margin-left: 2px;
+            @media only screen and (min-width: 768px) and (max-width: 1199px) {
+                margin-right: 10px;
+            }
+        }
+        .btn-buynow {
+            border-radius: 8px;
+            color: $white-color;
+            width: 130px;
+            height: 28px;
+            text-align: center;
+            padding: 1px;
+            opacity: 1;
+            margin-left: 10px;
+            svg {
+                fill: $white-color;
+            }
+        }
+    }
+    .card-img-top {
+        height: 186px;
+        min-width: 244px;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+    }
+  
+    .card-header {
+        height: 30px;
+        color: #000;
+        font-size: 16px;
+        overflow: hidden;
+        padding: 6px 10px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        background-color: #fff;
+    }
+    .card-body.asset-basic-details {
+        font-size: 14px;
+        // padding: 12px 15px;
+        white-space: nowrap;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+        .row + .row {
+            margin-top: 6px;
+        }
+        .detail {
+            color: #27272E;
+            overflow: hidden;
+            font-weight: lighter;
+            text-overflow: ellipsis;
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: var(--cta-color-1);
+                margin-right: 7px;
+            }
+        }
+    }
+    .card-body.asset-action-section {
+        padding: 6px 10px 8px;
+        .asset-actions {
+            color: #000;
+            display: flex;
+            margin: 0 -15px;
+            justify-content: center;
+            .btn {
+                margin: 0;
+                padding: 0 13px;
+                font-size: 14px;
+                min-width: 110px;
+                line-height: 28px;
+                border-radius: 2px;
+                white-space: nowrap;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: #000;    
+                    margin-left: 7px;
+                }
+                & + .btn {
+                    margin-left: 6px;
+                }
+            }
+        }
+        .current-bid {
+            width: 200px;
+            height: 28px;
+            color: #fff;
+            margin: 8px auto;
+            text-align: center;
+            border-radius: 16px;
+            background-color: #223d38;
+            span {
+                font-size: 14px;
+            }
+            strong {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+        .place-bid {
+            width: 120px;
+            position: relative;
+            margin: 12px auto 0;
+            .highest-bidder-indicator {
+                top: 0;
+                left: 100%;
+                width: 38px;
+                height: 28px;
+                margin-left: 6px;
+                position: absolute;
+                text-align: center;
+                border-radius: 3px;
+                background-color: #20b889;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+.related-assets{
+    margin-bottom: 10em;
+}
+
+.view-more-btn{
+    color: red;
+}

@@ -1,0 +1,125 @@
+@import "../../../scss/variable.scss";
+
+.asset-card-images {
+    position: relative;
+    border-radius: 18px;
+    img {
+        height: 186px;
+        cursor: pointer;
+        border-radius: 0;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        border-radius: 18px
+    }
+    .highestBidder {
+        color: #a3cf27;
+        position: absolute;
+        bottom: 35px;
+        right: 5px;
+        font-size: 25px;
+    }
+    .nav-button {
+        .btn-secondary {
+            box-shadow: none;
+            background: transparent;
+            background-color: $dark-green;
+            border: $dark-green;
+            border-bottom-left-radius: 3px;
+            opacity: 0.8;
+        }
+    }
+    .watch-list {
+        top: 5px;
+        left: 5px;
+        border: 0;
+        padding: 0;
+        width: 39px;
+        height: 31px;
+        color: $white-color;
+        text-align: center;
+        position: absolute;
+        background-color: $semi-tranparent-bg;
+        &.active {
+            background-color: #66b82b88;
+        }
+    }
+    .spin-car {
+        top: 5px;
+        right: 5px;
+        border: 0;
+        padding: 0;
+        width: 52px;
+        height: 36px;
+        position: absolute;
+        text-align: center;
+        color: #f17026;
+        background-color: $white-color;
+        &:active:not(:disabled), &:hover {
+            color: $white-color;
+            background-color: #f17026;
+        }
+        svg {
+            width: 43px;
+            height: auto;
+            margin-top: -10px;
+            fill: currentColor;
+        }
+        &:before {
+            content: '360';
+            font-size: 8px;
+            margin: 20px 22px;
+            position: absolute;
+        }
+        &:after {
+            content: 'o';
+            font-size: 8px;
+            margin: 15px -6px;
+            position: absolute;
+        }
+    }
+    .nav-images {
+        left: 0;
+        right: 0;
+        bottom: 70px;
+        position: absolute;
+
+        &:hover{
+            opacity: 1;
+        }
+        .btn {
+            opacity: 1;
+            padding: 0;
+            height: 30px;
+            border-radius: 0;
+            line-height: 30px;
+            border: none;
+            background-color: unset;
+            &:first-child:not(.btn-block), &:last-child:not(.btn-block) {
+                max-width: 32px;
+                min-width: 32px;
+
+                &:focus, &:active{
+                    border: none;
+                    background-color: unset;
+                    box-shadow: none;
+                }
+            }
+            &:hover{
+                opacity: 0.5;
+
+                svg{
+                    fill: #fff;
+                }
+            }
+        }
+
+        .btn-block{
+            visibility: hidden;
+        }
+        .btn-block:hover{
+            opacity: 1;
+        }
+
+    }
+}

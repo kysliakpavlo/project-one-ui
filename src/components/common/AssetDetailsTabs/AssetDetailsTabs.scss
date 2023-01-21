@@ -1,0 +1,88 @@
+@import "../../../scss/variable.scss";
+
+.asset-details-tabs {
+	.scrollable-tabs {
+		margin: 0;
+	}
+	.rendered-view {
+		
+		.accordion {
+			margin: 0;
+			width: 100%;
+			.card {
+				overflow: visible;
+				.card-header {
+					display: flex;
+					cursor: pointer;
+					
+					font-size: 28px;
+					font-family: var(--heading-font-family);
+
+					border-bottom: 0 none;
+					justify-content: space-between;
+					box-shadow: none;
+					background: #fff;
+					border-bottom: 1px solid #000;
+
+					padding-left: 0;
+					padding-right: 0;
+					padding-top: 19px;
+					padding-bottom: 19px;
+
+					margin-bottom: 20px;
+
+					svg {
+						fill: #000;
+					}
+
+					button {
+						color: #000;
+						&:active {
+							border: none;
+							box-shadow: none;
+						}
+						&:focus {
+							border: none;
+							box-shadow: none;
+						}
+					}
+				}
+				.card-body {
+					padding: 0
+				}
+				.document-viewer {
+					@media only screen and (max-width: 767px) {
+						display: block;
+					}
+				}
+				& + .card {
+					margin-top: 15px;
+				}
+			}
+			.condition-report {
+				.card-header {
+					.btn {
+						.title {
+							@media only screen and (max-width: 767px) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.description-detail,
+		.inspection-detail,
+		.delivery-detail {
+			.description-bp {
+				white-space: pre-wrap;
+			}
+		}
+	}
+}
+
+.desc-container a {
+	color: #000;
+	text-decoration: underline;
+}

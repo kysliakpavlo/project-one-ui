@@ -1,0 +1,39 @@
+@import "../../../scss/variable.scss";
+
+.notified-asset-layout {
+  padding: 20px;
+  .notified-header {
+    background-color: #000000;
+    color: #ffffff;
+    padding-left: 25px;
+    height: 27px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 27px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+  }
+  .notified-asset,
+  .notified-auction {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 50px;
+    .auction-card {
+      width: 48%;
+      max-width: 540px;
+      @media (min-width: 320px) and (max-width: 767px) {
+        width: 100%;
+      }
+      //   @media (min-width: 767px) and (max-width: 1024x) {
+      //     width: 100%;
+      //   }
+      .navigate-prev-btn,
+      .navigate-next-btn {
+        display: none;
+      }
+    }
+    .cmn-card {
+      margin-right: 25px;
+    }
+  }
+}

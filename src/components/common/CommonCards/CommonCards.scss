@@ -1,0 +1,1191 @@
+@import '../../../scss/variable.scss';
+.cmn-card {
+	.div-main-head {
+		margin-bottom: 10px;
+	}
+	.card-layout {
+		width: 529px;
+		// height: 285px;
+		padding: 0;
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
+		background: $white-color;
+		margin-bottom: 30px;
+		border-radius: 8px;
+		position: relative;
+		@media (min-width: 1025px) and (max-width: 1280px) {
+			margin: 0 10px;
+			margin-bottom: 10px;
+		}
+		.row:first-child {
+			.col-6:last-child {
+				display: flex;
+				.card-icons {
+					white-space: nowrap;
+				}
+				.card-icons:last-child {
+					margin: 0;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+			}
+		}
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			width: 366px;
+			height: 222px;
+			.row:first-child {
+				margin-left: 0;
+				margin-right: 0;
+				.col-6 {
+					padding: 0;
+				}
+				.col-6:last-child {
+					display: flex;
+					.card-icons {
+						white-space: nowrap;
+					}
+					.card-icons:last-child {
+						margin: 0;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+		@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+			width: 420px;
+			height: 240px;
+			padding: 10px 15px;
+			margin-bottom: 15px;
+			.row:first-child {
+				margin-left: 0;
+				margin-right: 0;
+				.col-6 {
+					padding: 0;
+				}
+				.col-6:last-child {
+					display: flex;
+					.card-icons {
+						white-space: nowrap;
+					}
+					.card-icons:last-child {
+						margin: 0;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+
+		.card-label,
+		.item-number-block {
+			padding: 4px 8px;
+			color: #000;
+			font-weight: 400;
+			font-size: 24px;
+			text-align: left;
+			font-family: var(--heading-font-family, ' Ubuntu ');
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding: 0;
+				line-height: 25px;
+				font-size: 14px;
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				padding: 0;
+				line-height: 25px;
+				font-size: 14px;
+			}
+			@media (min-width: 320px) and (max-width: 767px) {
+				font-size: 10px;
+			}
+		}
+		.item-number-block {
+			margin-top: 10px;
+		}
+		.card-icons {
+			margin: 0 8px;
+			display: inline-block;
+			.sub-header {
+				font-weight: 300;
+				color: #000;
+				font-size: 16px;
+				font-family: 'var(--paragraph-font-family, ' Roboto ')';
+				text-align: left;
+				svg {
+					height: 20px;
+					width: 20px;
+					fill: var(--cta-color-1);
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+					font-size: 14px;
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					font-size: 14px;
+				}
+				@media (min-width: 320px) and (max-width: 767px) {
+					font-size: 8px;
+				}
+			}
+		}
+		.left-block {
+			padding: 12px 8px;
+			position: relative;
+			.watch-list {
+				top: 17px;
+				left: 13px;
+				border: 0;
+				padding: 0;
+				width: 39px;
+				height: 31px;
+				color: $white-color;
+				text-align: center;
+				position: absolute;
+				background-color: $semi-tranparent-bg;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					left: 8px;
+					top: 12px;
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					left: 8px;
+					top: 12px;
+				}
+				&.active {
+					background-color: #fff;
+					svg {
+						fill: var(--primary--color);
+					}
+				}
+			}
+			.spin-car {
+				top: 17px;
+				right: -7px;
+				border: 0;
+				padding: 0;
+				width: 52px;
+				height: 36px;
+				position: absolute;
+				text-align: center;
+				color: #f17026;
+				background-color: $white-color;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					width: 44px;
+					height: 30px;
+					right: -26px;
+					top: 12px;
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					width: 44px;
+					height: 30px;
+					right: -26px;
+					top: 12px;
+				}
+				@media (min-width: 320px) and (max-width: 767px) {
+					width: 40px;
+					height: 30px;
+					right: -30px;
+				}
+				&:active:not(:disabled),
+				&:hover {
+					color: $white-color;
+					background-color: #f17026;
+				}
+				svg {
+					width: 43px;
+					height: auto;
+					margin-top: -10px;
+					fill: currentColor;
+				}
+				&:before {
+					content: '360';
+					font-size: 8px;
+					margin: 20px 22px;
+					position: absolute;
+				}
+				&:after {
+					content: 'o';
+					font-size: 8px;
+					margin: 15px -6px;
+					position: absolute;
+					@media (min-width: 320px) and (max-width: 767px) {
+						margin: 10px -9px;
+						font-size: 7px;
+					}
+				}
+			}
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding-left: 0;
+				padding-top: 4px;
+				padding-bottom: 11px;
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				padding-left: 0;
+				padding-top: 4px;
+				padding-bottom: 11px;
+			}
+			.image-container {
+				width: 100%;
+				height: 186px;
+				min-width: 246px;
+				cursor: pointer;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					width: 192px;
+					min-width: 192px;
+					height: 145px;
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					width: 210px;
+					min-width: 192px;
+					height: 155px;
+				}
+				@media (min-width: 320px) and (max-width: 767px) {
+					width: 148px;
+					min-width: 148px;
+					height: 112px;
+				}
+			}
+		}
+		.right-block {
+			padding: 12px 8px;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding: 2px 14px;
+				padding-right: 0;
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				padding: 2px 14px;
+				padding-right: 0;
+			}
+			@media (min-width: 320px) and (max-width: 767px) {
+				padding: 12px 20px;
+			}
+			.timing-label {
+				font-size: 14px;
+				text-align: left;
+				font-weight: 700;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					font-size: 14px;
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					font-size: 14px;
+				}
+				@media (min-width: 320px) and (max-width: 767px) {
+					font-size: 8px;
+				}
+				svg {
+					width: 18px;
+					height: 18px;
+					fill: var(--cta-color-1);
+					margin-left: 5px;
+					cursor: pointer;
+					@media (min-width: 768px) and (max-width: 1024px) {
+						width: 18px;
+						height: 18px;
+					}
+					@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+						width: 18px;
+						height: 18px;
+					}
+				}
+			}
+			.div-timecount,
+			.div-time-label {
+				justify-content: start;
+				margin-left: inherit;
+				margin-top: 12px;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					margin-top: 6px;
+					.time-div {
+						width: 32px;
+						height: 28px;
+						font-size: 8px;
+					}
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					margin-top: 6px;
+					.time-div {
+						width: 32px;
+						height: 28px;
+						font-size: 14px;
+					}
+				}
+			}
+			.div-time-label {
+				margin-top: inherit;
+
+				.time-label {
+					text-align: center;
+					color: #b9b9b9;
+					font-size: 12px;
+					font-weight: 400;
+					font-family: var(--paragraph-font-family, 'Roboto');
+					@media (min-width: 768px) and (max-width: 1024px) {
+						width: 32px;
+						margin-right: 12px;
+						margin-top: 8px;
+						font-size: 8px;
+					}
+					@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+					}
+				}
+			}
+			@media (min-width: 768px) and (max-width: 1024px) {
+				.block-renderer .div-timecount .time-div {
+					width: 31px;
+					height: 28px;
+					font-size: 14px;
+				}
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+			}
+			@media (min-width: 320px) and (max-width: 767px) {
+				.block-renderer .div-timecount .time-div {
+					width: 21px;
+					height: 17px;
+					font-size: 8px;
+					min-width: unset;
+				}
+			}
+			@media (min-width: 768px) and (max-width: 1024px) {
+				.div-time-label .time-label {
+					font-size: 12px;
+				}
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				.div-time-label .time-label {
+					font-size: 12px;
+				}
+			}
+			@media (min-width: 320px) and (max-width: 767px) {
+				.div-time-label .time-label {
+					font-size: 8px;
+				}
+			}
+
+			.div-timecount {
+				.time-div {
+					max-width: 37px;
+				}
+			}
+
+			.card-icons-wrap {
+				width: 100%;
+				display: flex;
+				align-content: space-evenly;
+				flex-flow: wrap;
+
+				.card-icons {
+					margin: 0;
+					display: inline-block;
+					width: 50%;
+				}
+			}
+		}
+		.current-bid-block {
+			margin-top: 12px;
+			color: #000;
+			// background-color: var(--primary--color);
+			border-radius: 16px;
+			max-width: 250px;
+			width: max-content;
+			padding-right: 10px;
+			height: 28px;
+			text-align: center;
+			margin: 12px 0 0 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			@media (min-width: 768px) and (max-width: 1024px) {
+				width: 150px;
+				margin-left: -8px;
+				margin-top: 8px;
+				height: auto;
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				width: 180px;
+				margin-left: -8px;
+				margin-top: 8px;
+				height: auto;
+			}
+			@media (min-width: 320px) and (max-width: 767px) {
+				width: 117px;
+			}
+			.bid-closed {
+				line-height: 28px;
+			}
+			.value {
+				font-size: 18px;
+				text-align: left;
+				@media (min-width: 320px) and (max-width: 767px) {
+					font-size: 10px;
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+					font-size: 14px;
+				}
+			}
+			.key,
+			.strong-font {
+				padding: 5px 0;
+				padding-right: 0px;
+				font-weight: 500;
+				font-size: 14.4px;
+				text-align: left;
+				vertical-align: text-bottom;
+				@media (min-width: 320px) and (max-width: 767px) {
+					font-size: 8px;
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+					font-size: 12px;
+					padding: 5px;
+				}
+			}
+			.strong-font {
+				font-weight: 400;
+				line-height: 28px;
+				svg {
+					width: 22px;
+					height: 22px;
+					fill: $white-color;
+					cursor: pointer;
+					margin-top: -2px;
+				}
+			}
+		}
+		.highest-bidder-big-number {
+			@media (min-width: 768px) and (max-width: 1024px) {
+				.countdown-timer {
+					.time-label {
+						margin-top: 4px;
+					}
+				}
+				.big-amount {
+					margin-top: 0;
+				}
+				.time-label {
+					margin-top: 4px;
+				}
+				.highest-bidder-block {
+					margin-top: 4px;
+				}
+			}
+		}
+		.highest-bidder-block {
+			margin-top: 14px;
+			max-width: 100%;
+			.key {
+				background-color: var(--primary--color);
+				color: $white-color;
+				border-radius: 16px;
+				text-align: center;
+				margin-bottom: 10px;
+				margin-left: -10px;
+				padding: 0px 15px;
+				width: max-content;
+			}
+			@media (min-width: 768px) and (max-width: 1024px) {
+				margin-top: 10px;
+				max-width: 110%;
+				width: 112%;
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				margin-top: 10px;
+				max-width: 110%;
+				width: 112%;
+			}
+			.gavel-icon {
+				background: var(--cta-color-1);
+				// width: 38px;
+				// height: 29px;
+				display: inline-block;
+				border-radius: 4px;
+				text-align: center;
+				margin-right: 11px;
+				float: right;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					width: 24px;
+					height: 22px;
+					vertical-align: middle;
+				}
+				svg {
+					height: 20px;
+					width: 20px;
+					@media (min-width: 768px) and (max-width: 1024px) {
+						width: 14px;
+						height: 14px;
+						vertical-align: text-top;
+					}
+				}
+			}
+			.winning-icon {
+				background: transparent;
+				svg {
+					fill: $golden-color;
+				}
+			}
+			.label {
+				color: #000;
+				font-size: 14px;
+				text-align: right;
+				float: right;
+				font-weight: 300;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					font-size: 12px;
+				}
+			}
+		}
+		.payment-info,
+		.paid-info {
+			width: 92px;
+			height: 48px;
+			padding: 8px 8px 8px 8px;
+			background: $white-color;
+			border-color: $border-red;
+			border-width: 1px;
+			border-style: solid;
+			display: inline-block;
+			.overdue-info {
+				color: #000;
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 1.2;
+				text-align: center;
+			}
+		}
+
+		.contact-info {
+			display: flex;
+			padding: 15px 0;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				.download-auction-documents {
+					margin-bottom: 10px;
+					.slt-dark {
+						margin-right: 0;
+					}
+				}
+				line-height: 18px;
+				display: block;
+			}
+			.invoice-link {
+				width: max-content;
+				height: 30px;
+				padding: 4px;
+				background: #000;
+				border-radius: 20px;
+				margin: 0 5px;
+				display: inline-block;
+				cursor: pointer;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					line-height: 18px;
+				}
+				span {
+					color: $white-color;
+					font-weight: bold;
+					font-size: 14px;
+					line-height: 1.4;
+					text-align: center;
+					padding: 6px;
+					@media (min-width: 768px) and (max-width: 1024px) {
+						font-size: 10px;
+						padding: 3px;
+					}
+					svg {
+						height: 24px;
+						width: 24px;
+						@media (min-width: 768px) and (max-width: 1024px) {
+							height: 18px;
+							width: 18px;
+						}
+					}
+				}
+			}
+		}
+		.button-block {
+			margin: 0;
+			display: flex;
+			padding: 0;
+			bottom: 8px;
+			display: flex;
+			justify-content: center;
+			@media (min-width: 1280px) {
+			}
+			.place-bid {
+				margin-left: 16px;
+				display: flex;
+			}
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding-left: 16px;
+				width: auto;
+				bottom: 4px;
+				padding-right: 4px;
+				.place-bid {
+					svg {
+						width: 20px;
+						height: 20px;
+					}
+					// .join-live-btn {
+					//     margin-top: -70px;
+					// }
+					// .absentee-bid {
+					//     margin-top: -51px;
+					//     margin-left: 0;
+					// }
+				}
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				padding-left: 16px;
+				width: auto;
+				bottom: 4px;
+				padding-right: 4px;
+				.place-bid {
+					svg {
+						width: 20px;
+						height: 20px;
+					}
+					// .join-live-btn {
+					//     margin-top: -70px;
+					// }
+					// .absentee-bid {
+					//     margin-top: -51px;
+					//     margin-left: 0;
+					// }
+				}
+			}
+			button {
+				// min-width: 115px;
+				font-size: 14px;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					height: 23px;
+					padding: 0px 8px;
+					min-width: 88px;
+					font-size: 12px;
+				}
+				@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				}
+				@media (min-width: 320px) and (max-width: 767px) {
+					height: 22px;
+					min-width: 77px;
+					font-size: 8px;
+				}
+			}
+			.btn-outline-warning {
+				background-color: var(--cta-color-1);
+				color: #fff;
+
+				&:hover {
+					background-color: var(--cta-color-1) !important;
+					color: #fff !important;
+					opacity: 0.8;
+				}
+			}
+			.btn-outline-warning:disabled {
+				background-color: $dark-orange;
+				opacity: 0.5;
+				color: $white-color;
+				pointer-events: none;
+				border: 1px solid $dark-orange;
+			}
+			.extra-height {
+				height: 42px;
+				// position: absolute;
+				right: 0;
+				border-bottom-right-radius: 0px;
+				border-bottom-left-radius: 0px;
+				@media (min-width: 1280px) {
+					margin-bottom: -12px;
+				}
+				@media (min-width: 768px) and (max-width: 1180px) {
+					height: 32px;
+					margin-bottom: -10px;
+				}
+			}
+			.extra-height-bidhistory {
+				height: 42px;
+				border: none;
+				border-bottom-right-radius: 0px;
+				border-bottom-left-radius: 0px;
+				margin-bottom: -12px;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					height: 28px;
+				}
+			}
+			.btn-wons {
+				width: 108px;
+				height: 28px;
+				padding: 8px 8px 8px 8px;
+				color: $white-color;
+				background-color: #000;
+				border: none;
+				font-size: 14px;
+				font-weight: 700;
+				border-radius: 50px;
+				svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
+
+			.download-auction-documents {
+				margin-right: 1em;
+			}
+
+			button {
+				width: 30%;
+			}
+		}
+		.div-item {
+			.col-bold {
+				font-weight: 700;
+				font-size: 14px;
+			}
+		}
+		.fees-premium-label {
+			width: 100%;
+			height: 27px;
+			border: 1px solid;
+			font-weight: bold;
+			line-height: 25px;
+			text-align: center;
+			border-radius: 3px;
+			margin-bottom: 19px;
+		}
+		.fees-details {
+			display: flex;
+			margin: 0 -3px;
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			+ .fees-details {
+				margin-top: 7px;
+			}
+			& > :first-child {
+				padding: 0;
+				min-width: 130px;
+			}
+		}
+		.total-fee {
+			display: flex;
+			margin-top: 20px;
+			line-height: 40px;
+			white-space: nowrap;
+			.amount {
+				font-size: 18px;
+				min-width: 165px;
+				margin-right: 5px;
+				text-align: center;
+				border-radius: 3px;
+				border: 2px solid var(--cta-color-1);
+				background-color: #ebffce;
+			}
+			.inc-gst {
+				font-weight: bold;
+			}
+		}
+		@media (min-width: 320px) and (max-width: 767px) {
+			width: 287px;
+			height: 210px;
+		}
+
+		> .row:last-of-type {
+			background-color: #f4f4f4;
+			margin: 0;
+			width: 100%;
+			border-radius: 0 0 8px 8px;
+
+			.col {
+				margin: 0;
+				padding: 0;
+
+				.button-block {
+					padding-top: 9px;
+					padding-bottom: 9px;
+
+					.place-bid {
+						width: 30%;
+
+						button {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.highestbidder-row-color {
+		background-color: $dark-orange;
+	}
+	.card-layout:hover {
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.17);
+	}
+	.highlight-card {
+		border: 2px solid var(--cta-color-1);
+	}
+	.bidHistory-expand-block {
+		position: relative;
+	}
+	.bidnow-expand-block,
+	.bidHistory-expand-block {
+		width: 529px;
+		max-width: 529px;
+		margin-top: -27px;
+		@media (min-width: 1025px) and (max-width: 1280px) {
+			margin: -10px 10px;
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			width: 366px;
+			// margin-top: -32px;
+		}
+		@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+			width: 420px;
+			margin: -15px 10px 10px 10px;
+		}
+		.place-bid.card {
+			z-index: 2;
+			.close-btn {
+				background-color: $dark-orange;
+			}
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding: 8px;
+				.close-btn {
+					width: 28px;
+					height: 24px;
+					border-radius: 0px;
+					line-height: 22px;
+					svg {
+						height: 16px;
+						width: 16px;
+					}
+				}
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				padding: 8px;
+				.close-btn {
+					width: 28px;
+					height: 24px;
+					border-radius: 0px;
+					line-height: 22px;
+					svg {
+						height: 16px;
+						width: 16px;
+					}
+				}
+			}
+		}
+		.place-bid.card .placebid-row {
+			flex-direction: row;
+			justify-content: space-between;
+			max-width: 100%;
+		}
+		.place-bid.card .fees-premium-section {
+			border-radius: 0;
+			border-right: none;
+			padding: 0px 26px;
+			margin: auto;
+			max-width: 330px;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding: 0px 8px;
+				min-width: 180px;
+				margin-top: 0px;
+				.fees-details {
+					line-height: 18px;
+					font-size: 12px;
+					white-space: pre-line;
+					.col {
+						min-width: 100px;
+					}
+				}
+				.total-fee {
+					margin-top: 10px;
+					min-height: 30px;
+					display: block;
+					white-space: pre-line;
+					.amount {
+						min-width: auto;
+						font-size: 14px;
+						padding: 0px 10px;
+						line-height: 26px;
+					}
+					.inc-gst {
+						display: block;
+						line-height: 22px;
+					}
+				}
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				padding: 0px 8px;
+				margin-left: 40px;
+				min-width: 180px;
+				margin-top: 0px;
+				.fees-details {
+					line-height: 18px;
+					font-size: 12px;
+					.col {
+						min-width: 100px;
+					}
+				}
+				.total-fee {
+					margin-top: 10px;
+					height: 30px;
+					display: block;
+					.amount {
+						min-width: auto;
+						font-size: 14px;
+						padding: 0px 10px;
+						line-height: 26px;
+					}
+					.inc-gst {
+						display: block;
+						line-height: 22px;
+					}
+				}
+			}
+			.fees-premium-label {
+				width: 90%;
+				@media (min-width: 768px) and (max-width: 1180px) {
+					margin-bottom: 8px;
+					font-weight: 400;
+				}
+			}
+		}
+		.place-bid.card .bid-amount-section {
+			border-right: none;
+			width: 100%;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				width: 150px !important;
+				margin-top: 0;
+				padding-top: 0;
+			}
+			.bid-input {
+				max-width: 330px;
+				margin: auto;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					width: 150px;
+					margin-top: 6px;
+					.current-bid-section {
+						.current-bid {
+							margin-bottom: 8px;
+							height: 22px;
+							font-size: 12px;
+							line-height: 22px;
+						}
+					}
+					.form-label {
+						height: 22px;
+						margin-top: 5px;
+					}
+					.bid-input-group {
+						height: 38px;
+						margin-bottom: 0px;
+						.input-group-append {
+							button {
+								font-size: 11px;
+								svg {
+									width: 18px;
+									height: 16px;
+								}
+							}
+						}
+					}
+					.btn-type {
+						margin: 0;
+						button {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+			.bid-input-group {
+				margin-bottom: 10px;
+				input {
+					@media (min-width: 768px) and (max-width: 1024px) {
+						margin: 0;
+					}
+				}
+				.form-control::placeholder {
+					@media (min-width: 768px) and (max-width: 1024px) {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+		.accountPage-placebid {
+			margin-top: 15px;
+			button {
+				height: 44px;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					height: 30px;
+				}
+			}
+		}
+		.close-btn {
+			top: 0;
+			right: 0;
+			padding: 0;
+			z-index: 1;
+			width: 39px;
+			height: 31px;
+			border-radius: 3px;
+			line-height: 28px;
+			position: absolute;
+			background-color: var(--cta-color-1);
+			border: none;
+			svg {
+				padding: 3px;
+				fill: var(--cta-color-1);
+				margin-top: -4px;
+				border-radius: 100%;
+				background-color: $white-color;
+				height: 22px;
+				width: 22px;
+			}
+			&:focus,
+			&:active {
+				box-shadow: none;
+				background-color: var(--cta-color-1);
+			}
+		}
+		.btn-warning:not(:disabled):not(.disabled):active:focus,
+		.btn-warning:not(:disabled):not(.disabled):active {
+			box-shadow: none;
+			background-color: var(--cta-color-1);
+		}
+		.bid-history-table {
+			width: 529px;
+			padding: 8px 8px 8px 8px;
+			box-shadow: 0px 1px 5px rgba(34, 61, 56, 0.15);
+			background: $white-color;
+			border-color: var(--cta-color-1);
+			border-width: 2px;
+			border-style: solid;
+			border-radius: 3px 3px 3px 3px;
+			margin-bottom: 30px;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				width: 366px;
+				height: 222px;
+			}
+			@media only screen and (min-width: 1025px) and (max-width: 1180px) {
+				width: 420px;
+			}
+			.table-headers {
+				width: 95%;
+				margin-left: 0;
+				margin-right: 0;
+				margin-top: 25px;
+				@media (min-width: 320px) and (max-width: 1024px) {
+					width: 92%;
+					margin-top: 10px;
+					font-size: 12px;
+					.col-4:first-child {
+						padding-left: 0;
+					}
+				}
+				.col {
+					display: inline-block;
+					max-width: 33%;
+				}
+				.col-4 {
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+			}
+			.table-body {
+				width: 97%;
+				.col {
+					.text-ellipsis {
+						span {
+							padding: 4px 4px 4px 15px;
+						}
+					}
+				}
+				.col:first-child {
+					.text-ellipsis {
+						span {
+							padding: 4px 4px 4px 15px;
+						}
+					}
+				}
+				.col:last-child {
+					.text-ellipsis {
+						text-align: center;
+					}
+				}
+				.text-ellipsis {
+					padding: 4px 4px 4px 4px;
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+					.text-ellipsis {
+						.indicator {
+							width: 16px;
+							height: 16px;
+							line-height: 10px;
+							margin-right: 2px;
+							svg {
+								width: 12px;
+								height: 12px;
+							}
+						}
+						svg {
+							width: 16px;
+							height: 16px;
+							margin-right: 2px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.height-auto {
+		// height: auto;
+		border: 2px solid var(--cta-color-1);
+	}
+	.btn-public-con {
+		background-color: #ff3823;
+		width: 145px;
+		height: 30px;
+		color: $white-color;
+		font-size: 14px;
+		font-weight: 700;
+		text-align: center;
+		border: none;
+		svg {
+			width: 10px;
+			height: 10px;
+			margin-right: 5px;
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			width: 116px;
+			height: 19px;
+			font-size: 10px;
+		}
+	}
+	.card-main-label {
+		padding: 4px 8px;
+		color: #000;
+		font-weight: bold;
+		font-size: 18px;
+		text-align: left;
+		text-decoration: underline;
+		font-family: 'var(--paragraph-font-family, ' Roboto ')';
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		@media (min-width: 768px) and (max-width: 1024px) {
+			font-size: 12px;
+		}
+	}
+}
+.card-overlay {
+	.card-layout:after {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		position: absolute;
+		border-radius: 4px;
+		background-color: #0008;
+	}
+}

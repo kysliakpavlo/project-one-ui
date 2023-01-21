@@ -1,0 +1,235 @@
+@import "../../../scss/variable.scss";
+
+.auction-won-block {
+  .cards-block-mobile {
+    display: none;
+    @media (min-width: 320px) and (max-width: 767px) {
+      display: block;
+      .pagination-container {
+        display: none;
+      }
+      .nav-images {
+        display: none;
+      }
+    }
+  }
+  .cards-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 88px;
+    @media (min-width: 320px) and (max-width: 767px) {
+      margin-top: 0px;
+      .list-view-mobile {
+        margin-top: 0;
+      }
+    }
+    .highest-bidder-block {
+      margin-top: 5px;
+      .gavel-icon {
+        margin-right: 0;
+      }
+    }
+    .card-layout {
+      .right-block {
+        .payment-info {
+          width: max-content;
+          height: auto;
+          padding: 5px;
+          margin-top: 5px;
+          line-height: 15px;
+          .overdue-info {
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 2px;
+          }
+        }
+        .paid-info {
+          border-color: $green-color;
+        }
+        .current-bid-block {
+          height: auto;
+        }
+      }
+    }
+    .table-responsive-sm,
+    .cmn-card {
+      @media (min-width: 320px) and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+  .large-cards-block {
+    margin-top: 88px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    .checkbox-custom-css {
+      margin-bottom: 12px;
+      height: 20px;
+      cursor: pointer;
+      text-align: right;
+      // display: inline-block;
+      .custom-checkbox .custom-control-label::before {
+        height: 18px;
+        width: 18px;
+        border-radius: 2px;
+        padding: 8px 8px 8px 8px;
+        border-color: $green-color;
+        box-shadow: none;
+        border-width: 2px;
+      }
+      .was-validated
+        .custom-control-input:valid:checked
+        ~ .custom-control-label::before,
+      .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+        background-color: $green-color;
+      }
+      .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $green-color;
+      }
+      .custom-checkbox
+        .custom-control-input:checked
+        ~ .custom-control-label::after {
+        /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e); */
+        width: 13px;
+        height: 7px;
+        transform: rotate(-45deg);
+        border-color: $white-color;
+        border-width: 2px;
+        border-style: solid;
+        border-top: none;
+        border-right: none;
+        top: 8px;
+        left: -21px;
+      }
+      .custom-control-input.is-valid ~ .custom-control-label {
+        color: $header-font;
+        font-weight: 400;
+        font-size: 12px;
+        text-decoration: underline;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 20px;
+        line-height: 12px;
+        padding-top: 6px;
+      }
+    }
+    .checkbox-custom-css::before {
+      content: "Select All";
+      margin-left: -20px;
+      position: absolute;
+      right: 59px;
+      font-weight: 900;
+    }
+    .container {
+      .item-won-layout {
+        width: 100%;
+      }
+      .checkbox-custom-css {
+        margin-bottom: 12px;
+        height: 20px;
+        cursor: pointer;
+        text-align: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // display: inline-block;
+        .custom-checkbox .custom-control-label::before {
+          height: 18px;
+          width: 18px;
+          border-radius: 2px;
+          padding: 8px 8px 8px 8px;
+          border-color: $green-color;
+          box-shadow: none;
+          border-width: 2px;
+        }
+        .was-validated
+          .custom-control-input:valid:checked
+          ~ .custom-control-label::before,
+        .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+          background-color: $green-color;
+        }
+        .custom-control-input:checked ~ .custom-control-label::before {
+          background-color: $green-color;
+        }
+        .custom-checkbox
+          .custom-control-input:checked
+          ~ .custom-control-label::after {
+          /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e); */
+          width: 13px;
+          height: 7px;
+          transform: rotate(-45deg);
+          border-color: $white-color;
+          border-width: 2px;
+          border-style: solid;
+          border-top: none;
+          border-right: none;
+          top: 8px;
+          left: -21px;
+        }
+        .custom-control-input.is-valid ~ .custom-control-label {
+          color: $header-font;
+          font-weight: 400;
+          font-size: 12px;
+          text-decoration: underline;
+          text-align: left;
+          margin-left: 0;
+          padding-left: 20px;
+          line-height: 12px;
+          padding-top: 6px;
+        }
+      }
+      .checkbox-custom-css::before {
+        content: "";
+      }
+    }
+  }
+
+  .img-with-caption {
+    display: table-caption;
+    cursor: pointer;
+  }
+  .pull-right-btn {
+    margin-top: 20px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 27px;
+    width: 100%;
+    vertical-align: middle;
+    @media (min-width: 320px) and (max-width: 1024px) {
+      margin-left: 0;
+    }
+    .pay-buttom {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.2;
+      text-align: center;
+      font-family: Univers-65-bold;
+    }
+    .invoice-link {
+      width: 108px;
+      height: 38px;
+      padding: 4px 14px;
+      background: $header-font;
+      border-radius: 20px;
+      margin: 10px 10px;
+      vertical-align: text-top;
+      span {
+        color: $white-color;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.2;
+        text-align: center;
+        font-family: Univers-65-bold;
+        svg {
+          height: 22px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+.grid-list-section {
+  top: 240px;
+}

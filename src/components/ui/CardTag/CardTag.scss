@@ -1,0 +1,41 @@
+.cardTag {
+	height: 20px;
+	width: fit-content;
+	font-size: 14px;
+	font-weight: bolder;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 13px;
+	margin-top: 13px;
+
+	margin-bottom: 0;
+	padding: 4px 18px 20px 18px;
+
+	&__label {
+		font-size: 12px;
+		font-weight: 500;
+		font-family: var(--heading-font-family, 'Ubuntu');
+	}
+
+	&--auction-now-open {
+		background-color: var(--auction-open-color);
+		color: #fff;
+	}
+	
+	&--auction-closed {
+		background-color: var(--closed-tag-color);
+	}
+
+	&--auction-open-soon {
+		background-color: var(--opening-soon-tag-color);
+	}
+
+	&--status-eoi {
+		background-color: #2e534c;
+		color: #fff;
+	}
+
+	@media (max-width: 1090px) {
+		margin-top: 18px;
+	}
+}

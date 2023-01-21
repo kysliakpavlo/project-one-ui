@@ -1,0 +1,48 @@
+.transport-calc{
+    min-height: 500px;
+    margin-top:20px;
+        .row{
+            .dropdown {
+                padding-left: 0;
+                padding-right: 0;
+                margin: 5px 9px;
+                .form-control{
+                    border-color: #a3cf27;
+                    border: 2px solid #a3cf27;
+                    border-top-color: transparent;
+                    color: #a3cf27;
+                }
+                .form-control:focus, .form-group > .dropdown:focus {
+                    border-color: #a3cf27;
+                    border-top-color: transparent;
+                    box-shadow: inset 1px 0 #a3cf27, inset -1px 0 #a3cf27, inset 0 -1px #a3cf27; 
+                    background-color: transparent;
+                }
+                select:focus > option:hover { 
+                    background: #000 !important;
+                }
+                .form-label{
+                    border-color: #a3cf27;
+                    color: #a3cf27; 
+                    &::before, 
+                    &::after {
+                        border-top: solid 2px #a3cf27;
+                    }
+                }
+            }
+            .overflow-auto{
+                overflow: auto;
+                .disclaimer{
+                    margin: 10px 0;
+                    line-height:1.2;
+                    font-size: 12px;
+                    .disclaimer-text{
+                        margin:5px 0 10px 0;
+                    }
+                }
+            }
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+        margin-top: 65px;
+    }
+}

@@ -1,0 +1,48 @@
+.form-group {
+    margin-bottom: 0;
+
+    &.floating-input {
+
+        // margin-top: -5px;
+        .form-control {
+            appearance: none;
+        }
+
+        .form-label {
+            font-size: 10px;
+        }
+
+        svg {
+            height: 20px;
+            width: 15px;
+            position: absolute;
+            right: 14px;
+            fill: #000;
+            top: 50%;
+			transform: translateY(-50%);
+
+            path {
+                fill: #000;
+            }
+        }
+    }
+}
+
+.select-icon {
+    pointer-events: none;
+}
+
+
+
+.custom-control-input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+}
+
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before{
+	border-color: grey;
+}

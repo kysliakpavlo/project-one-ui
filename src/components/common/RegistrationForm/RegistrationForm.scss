@@ -1,0 +1,42 @@
+@import "../../../scss/variable.scss";
+.pay-button {
+  background-color: $green-color;
+  color: $white-color;
+  border: 1px solid #66b82b;
+  box-shadow: 0 0 0 1px #66b82b;
+  float: right;
+  border-radius: 4px;
+}
+.pay-button:disabled {
+  opacity: 0.5;
+}
+.terms-checkBox {
+  .invalid-feedback {
+    display: block;
+  }
+}
+.form-check {
+  .is-invalid:before {
+    content: url("./error_outline_black_24dp.svg");
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+    fill: red;
+    position: absolute;
+    left: -28px;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    padding: 5px;
+    padding-top: 0px;
+    top: -2px;
+  }
+}
+
+.form-group.form-input .form-control:focus{
+	border-color: var(--cta-color-1);
+}
+
+.view-header{
+	display: none;
+}

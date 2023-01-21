@@ -1,0 +1,185 @@
+@import "./../../../scss/variable.scss";
+.search-box.form-group {
+  ::placeholder{
+    color: $white-color;
+  }
+  .white.search-box-field.floating-input {
+    margin-top: 26px;
+    height: 32px;
+    padding: 0;
+    z-index: 1;
+    cursor: pointer;
+    input {
+      padding-right: 40px;
+    }
+   
+    .form-control {
+      //border-color: $dark-orange;
+      border-top-color: transparent;
+      background-color: #66b82b;
+      border: none;
+      height: 32px;
+    }
+    .form-control + label {
+      line-height: 5px;
+      color: $white-color;
+    }
+    .form-control + label::before,
+    .form-control + label::after {
+      margin-top: 0;
+      border-top-color: $dark-orange;
+    }
+
+    .form-control:focus + label::before,
+    .form-control:focus + label::after {
+      box-shadow: none;
+    }
+    .form-control:not(:focus):placeholder-shown,
+    .form-control:focus:placeholder-shown {
+      border: 2px solid $dark-orange;
+    }
+    .form-control:focus {
+      box-shadow: none;
+    }
+    .form-control:focus:placeholder-shown {
+      border-top: transparent;
+    }
+    .form-control:not(:focus):placeholder-shown + label {
+      line-height: 32px;
+    }
+  }
+  .bg-color-btn {
+    background-color: var(--cta-color-1);
+    border: none;
+    border: none;
+    box-shadow: none;
+    top: 6px;
+    position: relative;
+    width: 94px;
+    height: 30px;
+    padding: 0px 10px 0px 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    span{
+      font-size: 14px;
+    }
+  }
+  .search_advanced {
+    
+    margin-top: 5px;
+    box-shadow: none !important;
+    background-color: var(--cta-color-1);
+    color: #fff;
+
+  }
+  .search_advanced:hover {
+    text-decoration: none;
+    // background-color: var(--secondary-color);
+  }
+  .search-box {
+    .floating-input.white.mb-0.form-group {
+      font-size: 14px;
+    }
+  }
+  .search-icon-link {
+    position: absolute;
+    right: -20px;
+    top: 28px;
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 1;
+  }
+  .app-header svg {
+    background: none !important;
+  }
+  .searchInput {
+    margin-top: 5px;
+    width: 524px;
+    height: 30px;
+    padding: 4px 8px 4px 8px;
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px 3px 3px 3px;
+    font-family: "Arial";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #000;
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #000;
+    }
+
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #000;
+    }
+  }
+  .searchInput:focus {
+    outline: none;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) /* STYLES GO HERE */ {
+  .search-box.form-group .search-box-field {
+    margin-top: 3px !important;
+  }
+  .search-box.form-group .search-icon-link {
+    top: 20px;
+    left: 140px;
+  }
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  /* STYLES GO HERE */
+  .sidebar-menu .search-box {
+    display: none;
+  }
+  .search-box.form-group .search-box-field {
+    margin-top: 0;
+    text-align: center;
+    width: 80%;
+    input {
+      width: 100%;
+    }
+    .form-control:not(:focus):placeholder-shown + label {
+      color: #000;
+    }
+  }
+  .search-box.form-group .search-box-field:hover input {
+    width: 100%;
+  }
+  .search-box.form-group .search-icon-link {
+    position: absolute;
+    top: 27px;
+    left: 68%;
+    z-index: 1;
+  }
+  .search-box.form-group .search-icon-link:active {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+.searchbox {
+  margin-left: 0px;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  //CSS
+  .search-bar .btn-warning span {
+    // display: none;
+  }
+}
+

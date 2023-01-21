@@ -1,0 +1,43 @@
+@import "../../../scss/variable.scss";
+
+.no-results-block {
+    width: 100%;
+    /* padding: 10px; */
+    margin: 15px 0;
+    /* max-width: 1170px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* text-align: center; */
+    .svg {
+        font-size: 36px;
+        margin-right: 40px;
+        margin-left: 40px;
+        fill: #000;
+    }
+    .results-text {
+        font-weight: 1200;
+        font-size: 24px;
+        color: #000;
+        margin-right: 5px;
+    }
+    .no-results-hr{
+        border-top-color: #000;
+        border-top-width: 2px;
+    }
+
+    a{
+        color: var(--cta-color-1)
+    }
+
+    @media (max-width: 768px) {
+        .exclaimation-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            margin-left: 20px;
+        }
+        .results-text {
+            font-weight: 1200;
+            font-size: 20px;
+        }
+    }
+}

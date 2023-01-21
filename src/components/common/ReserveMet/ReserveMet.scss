@@ -1,0 +1,14 @@
+@import '../../../scss/variable.scss';
+.reserve-met {
+    .progress{
+        width: 100%;
+        height: 11px;
+        margin-top: 5px;
+        .progrees-bar {
+            border-radius: 5px;
+        }
+        .bg-success{
+            background-color: $green-color!important;
+        }
+    }
+}

@@ -1,0 +1,1383 @@
+@import '../../../../scss/variable.scss';
+
+.live-notifications-panel {
+	.btn-public-con {
+		background-color: #ff3823;
+		width: 145px;
+		height: 30px;
+		color: $white-color;
+		font-size: 14px;
+		font-weight: 700;
+		text-align: center;
+		border: none;
+
+		svg {
+			width: 10px;
+			height: 10px;
+			margin-right: 5px;
+		}
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+			width: 116px;
+			height: 19px;
+			font-size: 10px;
+		}
+	}
+
+	.cards-block {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		margin-right: 20px;
+		margin-left: 20px;
+
+		@media (min-width: 481px) and (max-width: 767px) {
+			justify-content: space-around;
+		}
+
+		.card-layout {
+			.spin-car {
+				display: none;
+			}
+
+			.right-block {
+				.block-renderer {
+					flex-direction: column;
+				}
+			}
+
+			@media (min-width: 1281px) {
+				margin-right: 15px;
+			}
+
+			@media (min-width: 320px) and (max-width: 767px) {
+				width: 287px;
+				height: 170px;
+
+				.card-label {
+					padding: 0;
+					padding-bottom: 5px;
+				}
+
+				.flex-row {
+					line-height: 12px;
+					font-size: 10px;
+
+					.card-icons {
+						line-height: 12px;
+						font-size: 10px;
+
+						.sub-header {
+							font-size: 10px;
+
+							svg {
+								width: 10px;
+								height: 11px;
+							}
+						}
+					}
+				}
+
+				.left-block {
+					padding: 0;
+					width: 148px;
+					height: 112px;
+
+					.watch-list {
+						top: 5px;
+						left: 5px;
+						border: 0;
+						padding: 0;
+						width: 26px;
+						height: 23px;
+						line-height: 20px;
+
+						svg {
+							height: 20px;
+							width: 20px;
+						}
+					}
+
+					.spin-car {
+						width: 27px;
+						height: 25px;
+						right: 5px;
+						top: 5px;
+
+						svg {
+							width: 27px;
+						}
+					}
+
+					.spin-car:before {
+						content: '360';
+						font-size: 8px;
+						margin: 14px 7px;
+						position: absolute;
+					}
+				}
+
+				.right-block {
+					padding: 0px 12px;
+
+					.timing-label {
+						font-size: 10px;
+
+						@supports (-webkit-touch-callout: none) {
+							font-size: 8px;
+						}
+
+						svg {
+							width: 12px;
+							width: 12px;
+						}
+					}
+
+					.countdown-timer {
+						.div-timecount {
+							margin-top: 0px;
+						}
+
+						.countdown-labels {
+							.time-label {
+								margin-top: 4px;
+							}
+						}
+
+						.block-renderer {
+							flex-direction: column;
+						}
+					}
+
+					.current-bid-block {
+						height: 21px;
+						margin-top: 4px;
+						line-height: 17px;
+
+						.strong-font {
+							font-size: 12px;
+							line-height: 14px;
+
+							svg {
+								width: 14px;
+								height: 14px;
+							}
+						}
+
+						.key {
+							padding: 4px 0;
+							line-height: 13px;
+						}
+					}
+
+					.highest-bidder-block {
+						margin-top: 4px;
+						max-width: 100%;
+						margin-right: 0;
+
+						.gavel-icon {
+							width: 16px;
+							height: 16px;
+							line-height: 14px;
+							margin-right: 4px;
+
+							svg {
+								width: 12px;
+								height: 12px;
+							}
+						}
+
+						.label {
+							font-size: 8px;
+							font-weight: 900;
+							line-height: 16px;
+						}
+					}
+				}
+
+				.button-block {
+					bottom: 4px;
+					padding: 0 15px;
+
+					button {
+						font-size: 10px;
+						min-width: 70px;
+						padding: 2px 5px;
+						font-weight: 400;
+
+						@media (min-width: 380px) and (max-width: 767px) {
+							// min-width: 88px;
+							font-family: Univers-45;
+						}
+
+						svg {
+							width: 14px;
+							height: 14px;
+						}
+					}
+
+					.place-bid {
+						// margin-left: 8px;
+						.join-live {
+							svg {
+								width: 14px;
+								height: 14px;
+							}
+						}
+					}
+
+					.extra-height-bidhistory,
+					.extra-height {
+						height: 30px;
+						margin-bottom: -8px;
+						// margin-top: 10px;
+					}
+				}
+			}
+		}
+
+		.height-auto {
+			@media (min-width: 320px) and (max-width: 767px) {
+				height: 172px;
+			}
+		}
+
+		.bidHistory-expand-block {
+			@media (min-width: 320px) and (max-width: 767px) {
+				width: 287px;
+				height: 170px;
+				margin-top: -26px;
+
+				.close-btn {
+					width: 30px;
+					height: 25px;
+
+					svg {
+						height: 18px;
+						width: 18px;
+					}
+				}
+
+				.bid-history-table {
+					width: 287px;
+					height: 170px;
+
+					.table-headers {
+						margin-top: 0;
+						width: 80%;
+						margin-bottom: 4px;
+
+						span {
+							font-size: 10px;
+							line-height: 16px;
+							height: 20px;
+						}
+					}
+
+					.table-body {
+						min-height: 90px;
+						max-height: 90px;
+
+						.row {
+							height: 30px;
+
+							span {
+								font-size: 10px;
+							}
+
+							.text-ellipsis {
+								.indicator {
+									width: 14px;
+									height: 14px;
+									line-height: 12px;
+
+									svg {
+										width: 11px;
+										height: 10px;
+									}
+								}
+
+								svg {
+									width: 14px;
+									height: 14px;
+									margin-right: 2px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.bidnow-expand-block {
+			@media (min-width: 320px) and (max-width: 767px) {
+				width: 287px;
+				margin-top: -28px;
+
+				.place-bid {
+					.placebid-row {
+						font-size: 12px;
+
+						.bid-amount-section {
+							border-bottom: none;
+						}
+
+						.fees-premium-section {
+							margin-left: 0;
+							border-left: none;
+							padding: 10px 0;
+							border-bottom: none;
+						}
+					}
+				}
+
+				// .fees-premium-section {
+				//   margin-left: 0;
+				// }
+			}
+		}
+
+		@media (min-width: 768px) and (max-width: 1024px) {
+			margin: 5px 12px;
+
+			.card-block {
+				margin-right: 20px;
+
+				.card-layout {
+					width: 287px;
+					height: 170px;
+
+					.card-label {
+						line-height: 12px;
+						font-size: 10px;
+					}
+
+					.card-icons {
+						line-height: 12px;
+						margin: 0 4px;
+
+						.sub-header {
+							font-size: 10px;
+							font-weight: 100;
+
+							svg {
+								width: 10px;
+								height: 11px;
+							}
+						}
+					}
+
+					.left-block {
+						padding-bottom: 4px;
+
+						.watch-list,
+						.spin-car {
+							left: 4px;
+							top: 6px;
+							width: 20px;
+							height: 20px;
+							line-height: 15px;
+
+							svg {
+								width: 18px;
+								height: 18px;
+							}
+						}
+
+						.spin-car {
+							right: -23px;
+							left: auto;
+							width: 24px;
+						}
+
+						.spin-car:after {
+							margin: 4px -17px;
+						}
+
+						.spin-car:before {
+							margin: 6px 6px;
+							font-size: 6px;
+						}
+
+						.image-container {
+							width: 148px;
+							height: 112px;
+							min-width: 148px;
+						}
+					}
+
+					.right-block {
+						.timing-label {
+							font-size: 10px;
+
+							@supports (-webkit-touch-callout: none) {
+								font-size: 8px;
+							}
+
+							svg {
+								width: 12px;
+								height: 13px;
+							}
+						}
+
+						.countdown-timer {
+							.div-timecount {
+								margin-top: 3px;
+
+								.time-div {
+									width: 21px;
+									height: 17px;
+									font-size: 10px;
+									line-height: 12px;
+								}
+							}
+
+							.countdown-labels {
+								.div-time-label {
+									.time-label {
+										font-size: 8px;
+										width: 24px;
+										margin-top: 2px;
+									}
+								}
+							}
+
+							.block-renderer {
+								flex-direction: column;
+							}
+						}
+
+						.current-bid-block {
+							width: auto;
+							height: 21px;
+							line-height: 15px;
+							margin-top: 5px;
+
+							.key {
+								font-size: 8px;
+								padding-right: 0;
+								font-weight: 400;
+								padding: 0;
+								line-height: 12px;
+							}
+
+							.value {
+								font-size: 8px;
+							}
+						}
+
+						.highest-bidder-block {
+							margin-top: 5px;
+
+							.gavel-icon {
+								width: 16px;
+								height: 16px;
+								line-height: 14px;
+								margin-right: 4px;
+
+								svg {
+									width: 12px;
+									height: 12px;
+								}
+							}
+
+							.label {
+								font-size: 8px;
+							}
+						}
+					}
+
+					.button-block {
+						button {
+							font-size: 10px;
+							min-width: 70px;
+							padding: 0 5px;
+
+							svg {
+								width: 18px;
+								height: 18px;
+							}
+						}
+					}
+				}
+
+				.bidHistory-expand-block {
+					width: 287px;
+					height: 170px;
+
+					.close-btn {
+						width: 25px;
+						height: 25px;
+
+						svg {
+							width: 18px;
+							height: 18px;
+						}
+					}
+
+					.bid-history-table {
+						width: 287px;
+						height: 170px;
+						margin-top: -30px;
+
+						.table-headers {
+							margin-top: 0px;
+							margin-bottom: 0;
+
+							span {
+								font-size: 10px;
+								height: 20px;
+								line-height: 18px;
+							}
+						}
+
+						.table-body {
+							max-height: 90px;
+
+							.highest-bidder-row,
+							.row {
+								.col-4 {
+									padding-left: 5px;
+									padding-right: 5px;
+									line-height: 12px;
+
+									.text-ellipsis {
+										font-size: 10px;
+
+										svg {
+											width: 10px;
+											height: 10px;
+										}
+
+										.indicator {
+											width: 12px;
+											height: 12px;
+											line-height: 12px;
+											margin-right: 3px;
+											margin-left: 6px;
+
+											svg {
+												width: 10px;
+												height: 10px;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.bidnow-expand-block {
+					width: 287px;
+
+					.placebid-row {
+						.bid-amount-section {
+							padding-top: 0;
+							padding-left: 0;
+
+							.bid-input {
+								width: 115px;
+								margin-top: 0;
+
+								.current-bid-section {
+									.current-bid {
+										font-size: 10px;
+										margin-bottom: 3px;
+									}
+								}
+
+								.form-label {
+									font-size: 12px;
+									height: 20px;
+									margin-bottom: 4px;
+
+									svg {
+										width: 14px;
+										height: 14px;
+									}
+								}
+
+								.bid-input-group {
+									.form-control {
+										font-size: 12px;
+									}
+								}
+
+								.btn-group {
+									.btn-block {
+										font-size: 10px;
+										height: 24px;
+									}
+								}
+							}
+						}
+
+						.fees-premium-section {
+							min-width: 145px;
+							margin-left: 20px;
+
+							.fees-premium-label {
+								font-size: 10px;
+								width: 100px;
+								height: 20px;
+								line-height: 20px;
+								font-weight: 400;
+							}
+
+							.fees-details {
+								font-size: 10px;
+								line-height: 14px;
+
+								.col {
+									min-width: 80px;
+								}
+
+								.col:last-child {
+									text-align: right;
+									padding-right: 20px;
+								}
+							}
+
+							.total-fee {
+								.inc-gst {
+									font-size: 12px;
+								}
+							}
+						}
+					}
+
+					.account-page-terms {
+						font-size: 12px;
+
+						svg {
+							width: 14px;
+							height: 14px;
+						}
+					}
+
+					.form-group {
+						font-size: 12px;
+
+						.form-check {
+							input[type='checkbox'] {
+								width: 12px;
+								height: 12px;
+								margin-top: 2px;
+							}
+						}
+					}
+
+					.accountPage-placebid {
+						margin-top: 8px;
+					}
+				}
+			}
+		}
+
+		.table-responsive-sm {
+			@media (min-width: 320px) and (max-width: 767px) {
+				display: none;
+			}
+		}
+
+		@media (min-width: 320px) and (max-width: 767px) {
+			margin-left: 20px;
+		}
+	}
+
+	.saved-searches {
+		padding: 20px;
+
+		.search-cards {
+			justify-content: flex-start;
+		}
+
+		.card-block-css {
+			@media (min-width: 481px) and (max-width: 767px) {
+				margin: 15px;
+			}
+		}
+	}
+}
+
+.more-margin {
+	margin-top: 97px;
+
+	@media (min-width: 320px) and (max-width: 1024px) {
+		margin-top: 97px;
+	}
+}
+
+.less-margin {
+	margin-top: 97px;
+}
+
+.slide-pane {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	min-width: 375px;
+	height: 90%;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+	transition: transform 0.5s;
+	will-change: transform;
+	width: 90% !important;
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		width: 85% !important;
+		//CSS
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		min-width: 100%;
+	}
+}
+
+.slide-pane:focus {
+	outline-style: none;
+}
+
+.slide-pane_from_right {
+	margin-left: auto;
+	transform: translateX(100%);
+}
+
+.slide-pane_from_right.content-after-open {
+	transform: translateX(0%);
+}
+
+.slide-pane_from_right.content-before-close {
+	transform: translateX(100%);
+}
+
+.slide-pane_from_left {
+	margin-right: auto;
+	transform: translateX(-100%);
+}
+
+.slide-pane_from_left.content-after-open {
+	transform: translateX(0%);
+}
+
+.slide-pane_from_left.content-before-close {
+	transform: translateX(-100%);
+}
+
+.slide-pane_from_bottom {
+	height: 90vh;
+	margin-top: 10vh;
+	transform: translateY(100%);
+}
+
+.slide-pane_from_bottom.content-after-open {
+	transform: translateY(0%);
+}
+
+.slide-pane_from_bottom.content-before-close {
+	transform: translateY(100%);
+}
+
+.slide-pane__overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1070;
+}
+
+.slide-pane__overlay.overlay-after-open {
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: background-color 0.5s;
+}
+
+.slide-pane__overlay.overlay-before-close {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.slide-pane__header {
+	background: #000000;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	height: 69px;
+	padding: 8px 8px 8px 8px;
+}
+
+.slide-pane__title-wrapper {
+	text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.slide-pane .slide-pane__title {
+		font-size: 18px !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		line-height: 30px;
+	}
+}
+
+.slide-pane .slide-pane__title {
+	color: $white-color;
+	font-weight: 400;
+	font-size: 26px;
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0;
+	margin-top: 15px;
+	margin-bottom: 10px;
+
+	@media (min-width: 320x) and (max-width: 767px) {
+		font-size: 18px;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.live-btn {
+		background-color: #ff3823;
+		height: 30px;
+		width: 100px;
+		font-size: 18px;
+		color: $white-color;
+		font-weight: bold;
+		border-radius: 3px;
+		outline: none;
+		border: none;
+		position: absolute;
+		margin-left: 10px;
+		top: 23px;
+
+		.circle {
+			background: $white-color;
+			display: inline-block;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+
+		@media (min-width: 320x) and (max-width: 767px) {
+			width: 66px;
+			height: 21px;
+			font-size: 14px;
+		}
+	}
+}
+
+.slide-pane__close {
+	cursor: pointer;
+	width: 78px;
+	height: 69px;
+	padding: 8px 8px 8px 8px;
+	background: var(--primary--color);
+	position: absolute;
+	right: 0;
+	top: 0px;
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		top: 0px;
+		height: 30px;
+		padding: 0;
+		width: 35px;
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		top: 0px;
+		height: 30px;
+		width: 35px;
+		padding: 0px;
+	}
+}
+
+.slide-pane__close svg {
+	width: 40px;
+	height: 40px;
+	color: $white-color;
+	margin: 6px 11px 7px 11px;
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		width: 18px;
+		height: 18px;
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.slide-pane__content {
+	position: relative;
+	overflow-y: hidden;
+
+	.nav-tabs {
+		height: 59px;
+		padding: 8px 8px 10px 40px;
+		background-color: $white-color;
+		border-bottom: 10px solid var(--primary--color);
+
+		@media (min-width: 320px) and (max-width: 1024px) {
+			height: 26px;
+			padding: 0;
+			padding-left: 17px;
+			border-bottom: 3px solid var(--primary--color);
+		}
+
+		// @media (min-width: 320px) and (max-width: 767px) {
+		//   height: 26px;
+		//   padding: 4px 20px;
+		//   .nav-link.active {
+		//     height: 23px;
+		//     padding: 5px 15px;
+		//     .watchlist-tab-title {
+		//       font-size: 10px;
+		//       width: max-content;
+		//     }
+		//   }
+		// }
+		.count-circle {
+			// background: #f17026;
+			color: $white-color;
+			display: inline-block;
+			height: 15px;
+			width: 15px;
+			border-radius: 50%;
+			font-size: 9px;
+			text-align: center;
+			margin-left: 4px;
+		}
+
+		.active .watchlist-tab-title .count-circle {
+			display: none;
+		}
+
+		.active .watchlist-tab-title svg {
+			display: inline;
+			position: absolute;
+			top: 8px;
+			left: 100px;
+			right: 4px;
+			bottom: 11px;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				position: static;
+				width: 14px;
+				height: 14px;
+				margin-left: 5px;
+			}
+		}
+
+		.watchlist-tab-title {
+			display: flex;
+			width: 100px;
+			height: 42px;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				width: auto;
+			}
+
+			svg {
+				display: none;
+			}
+		}
+
+		.active .activeBids-tab-title .count-circle {
+			display: none;
+		}
+
+		.active .activeBids-tab-title svg {
+			display: inline;
+			position: absolute;
+			top: 8px;
+			left: 115px;
+			right: 4px;
+			bottom: 11px;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				position: static;
+				width: 14px;
+				height: 14px;
+				margin-left: 5px;
+			}
+		}
+
+		.activeBids-tab-title {
+			display: flex;
+			width: 125px;
+			height: 42px;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				width: auto;
+			}
+
+			svg {
+				display: none;
+			}
+		}
+
+		.saved-search-tab-title {
+			display: flex;
+			width: auto;
+			height: 42px;
+
+			svg {
+				position: absolute;
+				top: 8px;
+				left: 125px;
+				right: 4px;
+				bottom: 11px;
+			}
+		}
+
+		.notify-items {
+			display: flex;
+			width: auto;
+			height: 42px;
+
+			svg {
+				position: absolute;
+				top: 8px;
+				left: 140px;
+				right: 4px;
+				bottom: 11px;
+			}
+		}
+
+		.nav-link {
+			border: none;
+			height: 49px;
+			color: #000000;
+			font-weight: normal;
+			padding-bottom: 0;
+			position: relative;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				height: 23px;
+				font-size: 10px;
+				padding: 3px 10px;
+				margin-top: 2px;
+				padding-right: 5px;
+			}
+		}
+
+		.nav-link.active {
+			background-color: var(--cta-color-1);
+			color: $white-color;
+			font-size: 18px;
+			font-weight: bold;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			height: 41px;
+
+			@media (min-width: 320px) and (max-width: 1024px) {
+				height: 23px;
+				font-size: 10px;
+			}
+		}
+	}
+
+	.tab-content {
+		height: calc(100% - 100px);
+		margin-bottom: 40px;
+		overflow-y: auto;
+
+		@media (min-width: 320px) and (max-width: 767px) {
+			@supports (-webkit-touch-callout: none) {
+				height: 78vh;
+			}
+		}
+
+		.tab-pane {
+			.live-tab-content {
+				background-color: #f7f6f6;
+
+				.pre-text {
+					height: 40px;
+					background-color: #ebebeb;
+					font-size: 14px;
+					padding-left: 25px;
+					vertical-align: middle;
+					line-height: 40px;
+
+					@media (min-width: 320px) and (max-width: 767px) {
+						font-size: 10px;
+					}
+
+					@media (min-width: 320px) and (max-width: 1024px) {
+						padding-left: 20px;
+						height: 20px;
+						line-height: 20px;
+						font-size: 10px;
+					}
+
+					.navigation-link {
+						color: var(--cta-color-1);
+						cursor: pointer;
+						padding-right: 20px;
+						color: $header-font;
+						font-weight: 700;
+						text-decoration: underline;
+						float: right;
+					}
+
+					.navigation-link:hover {
+						text-decoration: underline;
+					}
+				}
+
+				.highest-bidder-header {
+					background-color: #000000;
+					color: $white-color;
+					padding-left: 25px;
+					height: 27px;
+					font-size: 14px;
+					font-weight: bold;
+					line-height: 27px;
+					vertical-align: middle;
+
+					@media (min-width: 320px) and (max-width: 767px) {
+						height: 16px;
+						font-size: 10px;
+						line-height: 16px;
+					}
+
+					.gavel-icon {
+						background: var(--cta-color-1);
+						width: 38px;
+						height: 27px;
+						display: inline-block;
+						border-radius: 3px;
+						text-align: center;
+						margin-right: 11px;
+
+						@media (min-width: 320px) and (max-width: 767px) {
+							width: 23px;
+							height: 18px;
+							line-height: 19px;
+							margin-top: -1px;
+						}
+
+						svg {
+							height: 20px;
+							width: 20px;
+
+							@media (min-width: 320px) and (max-width: 767px) {
+								width: 13px;
+								height: 13px;
+							}
+						}
+					}
+
+					.navigation-link {
+						color: var(--cta-color-1);
+						cursor: pointer;
+						float: right;
+						padding-right: 20px;
+					}
+
+					.navigation-link:hover {
+						text-decoration: underline;
+					}
+
+					.trending-down-icon {
+						width: 28px;
+						height: 28px;
+						display: inline-block;
+						text-align: center;
+						margin-right: 11px;
+
+						svg {
+							height: 28px;
+							width: 28px;
+							fill: #ff3823;
+
+							@media (min-width: 320px) and (max-width: 767px) {
+								width: 17px;
+								height: 17px;
+							}
+						}
+
+						.navigation-link {
+							color: var(--cta-color-1);
+							cursor: pointer;
+							float: right;
+							padding-right: 20px;
+							color: $header-font;
+							font-weight: 700;
+							text-decoration: underline;
+						}
+
+						.navigation-link:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+
+				.auction-title {
+					display: flex;
+
+					@media (min-width: 320px) and (max-width: 1024px) {
+						width: 287px;
+					}
+
+					.card-labels {
+						font-size: 18px;
+						font-weight: bold;
+						margin-bottom: 10px;
+						padding-left: 20px;
+						text-decoration: underline;
+						text-decoration-thickness: 2px;
+						width: 95%;
+						height: 34px;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						white-space: nowrap;
+
+						@media (min-width: 320px) and (max-width: 1024px) {
+							height: 21px;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							white-space: nowrap;
+							margin-left: -20px;
+							font-size: 12px;
+							line-height: 21px;
+							margin-bottom: 5px;
+							padding: 0 15px 0 25px;
+						}
+
+						@media (min-width: 320px) and (max-width: 767px) {
+							font-size: 12px;
+						}
+					}
+
+					.w-adjust {
+						width: 70%;
+
+						@media (min-width: 1080px) and (max-width: 1180px) {
+							width: 60%;
+						}
+					}
+
+					.live-btn {
+						background-color: #ff3823;
+						height: 30px;
+						width: auto;
+						font-size: 14px;
+						color: $white-color;
+						font-weight: bold;
+						border-radius: 3px;
+						outline: none;
+						border: none;
+						// position: absolute;
+						margin-left: 10px;
+						top: 24px;
+						padding: 2px 8px;
+
+						@media (min-width: 320px) and (max-width: 1024px) {
+							height: 21px;
+							font-size: 10px;
+							margin-left: 0;
+							padding: 0 5px;
+							font-weight: 400;
+						}
+
+						.circle {
+							background: $white-color;
+							display: inline-block;
+							height: 10px;
+							width: 10px;
+							border-radius: 50%;
+							margin-right: 5px;
+
+							@media (min-width: 320px) and (max-width: 1024px) {
+								width: 8px;
+								height: 8px;
+							}
+						}
+
+						@media (min-width: 320x) and (max-width: 767px) {
+							width: 66px;
+							height: 21px;
+							font-size: 14px;
+						}
+					}
+
+					@media (min-width: 320px) and (max-width: 1024px) {
+						font-size: 12px;
+					}
+				}
+
+				.recentlyWon {
+					svg {
+						fill: #ffb500;
+					}
+				}
+			}
+		}
+	}
+}
+
+.slide-pane__subtitle {
+	font-size: 12px;
+	margin-top: 2px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.slide-pane__header {
+		margin-top: 0px;
+		height: 30px;
+		padding: 0;
+	}
+
+	.slide-pane__title-wrapper {
+		margin-left: -35px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+	.slide-pane__header {
+		margin-top: 0px;
+		height: 30px;
+		padding: 0 10px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.slide-pane .slide-pane__title .live-btn {
+		width: 66px;
+		height: 21px;
+		font-size: 14px;
+		margin-left: 5px;
+		position: inherit;
+		padding-left: 10px;
+		margin-top: 5px;
+		line-height: 20px;
+	}
+
+	.slideHead-title {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+	.slide-pane .slide-pane__title .live-btn {
+		width: 66px;
+		height: 21px;
+		font-size: 14px;
+		margin-left: 8px;
+		position: inherit;
+		padding-left: 10px;
+	}
+
+	.slideHead-title {
+		font-size: 18px;
+		line-height: 18px;
+	}
+}

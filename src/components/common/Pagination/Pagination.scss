@@ -1,0 +1,175 @@
+@import '../../../scss/variable.scss';
+
+.pagination-container {
+	height: 50px;
+	display: flex;
+	font-size: 16px;
+	font-weight: bold;
+	align-items: center;
+	white-space: nowrap;
+	padding: 0 16px 0 8px;
+	justify-content: space-between;
+	background-color: transparent;
+	// box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.17);
+
+	p {
+		font-size: 14px;
+		margin-bottom: 0;
+		padding: 8px 10px;
+		margin-right: 29px;
+		font-weight: 300;
+		// font-family: INSERT ROBOTO ;
+	}
+
+	.pagination {
+		font-weight: normal;
+		margin: 0 10px 0 10px;
+		display: flex;
+		align-items: center;
+
+		.page-item {
+			&:first-child {
+				margin-right: 12px;
+			}
+			&:last-child {
+				margin-left: 12px;
+			}
+			&:first-child,
+			&:last-child {
+				&:hover {
+					opacity: 0.5;
+				}
+			}
+			.page-link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0;
+				padding: 0;
+				width: 33px;
+				height: 33px;
+
+				text-align: center;
+				background-color: transparent;
+				border-color: transparent;
+				color: #979797;
+
+				&:hover {
+					color: #000;
+				}
+
+				span {
+					display: block;
+					color: #000;
+				}
+
+				&:focus {
+					box-shadow: none;
+				}
+			}
+
+			&.active .page-link {
+				z-index: 0;
+				// border-color: #66b82b;
+				// background-color: #66b82b;
+				color: #000;
+			}
+		}
+	}
+
+	.input-wrap {
+		display: flex;
+		justify-content: center;
+
+		.floating-input:nth-of-type(2) {
+			margin-left: 1em;
+		}
+
+		@media (min-width: 757px) and (max-width: 1200px) {
+			justify-content: flex-end;
+		}
+	}
+
+	.form-group {
+		margin-bottom: 0;
+
+		&.floating-input {
+			> select {
+				padding: 5px 24px 5px 15px !important;
+			}
+
+			.form-control {
+				appearance: none;
+				border-color: #afb1b6;
+				background-color: #fff;
+				border-radius: 8px;
+				padding: 0 24px 0 15px !important;
+				cursor: pointer;
+			}
+
+			.form-label {
+				font-size: 12px;
+				top: -9px;
+				font-weight: 300;
+
+				&:after,
+				&:before {
+					content: none;
+				}
+			}
+
+			svg {
+				position: absolute;
+				height: 20px;
+				width: 15px;
+				right: 8px;
+			}
+
+			.form-control,
+			.dropdown {
+				// border-top-color: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+
+	.select-icon {
+		pointer-events: none;
+	}
+
+	.page-size-select {
+		min-width: 120px;
+		padding: 0;
+	}
+
+	@media screen and (max-device-width: 767px) {
+		height: auto;
+		flex-wrap: wrap;
+		padding: 0 10px 10px;
+		justify-content: space-evenly;
+
+		p {
+			width: 100%;
+			margin: 0 0 6px;
+			text-align: center;
+		}
+
+		.pagination {
+			width: 100%;
+			margin-bottom: 15px;
+			justify-content: center;
+		}
+	}
+}
+
+.viewToggle {
+	display: flex;
+	flex-direction: column;
+
+	&__buttons {
+		display: flex;
+
+		button {
+			padding: 0;
+		}
+	}
+}

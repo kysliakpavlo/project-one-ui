@@ -1,0 +1,52 @@
+@import '../../../scss/variable.scss';
+.content-page {
+    padding: 40px 0;
+    font-weight: 500;
+    .page-header {
+        font-family: Univers-65-bold;
+        padding-left: 15px;
+        font-size: 24px;
+    }
+    p {
+        font-size: 16px;
+    }
+    strong {
+        font-family: var(--paragraph-font-family, "Roboto");
+
+        font-weight: 900;
+    }
+    .div-static-header{
+        margin-left: 25px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .div-static-header .div-logo {
+            float: right;
+            margin-left: 0px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .div-static-header {
+            margin-left: 15px;
+            margin-right: 15px;
+            padding: 0px 8px 8px 8px;
+            margin-top: 70px;
+        }
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        .div-static-header {
+            margin-left: 8px;
+            padding: 0px 8px 8px 8px;
+            margin-top: 70px;
+            margin-right: 8px;
+        }
+        .search-bar .search__advanced {
+            margin-top: 5px;
+        }
+    }
+    @media (min-width: 320px) and (max-width: 667px){
+        .div-static-header .div-head .p-static-header {
+            font-size: 20px;
+            margin-top: 35px;
+        }
+    }
+}

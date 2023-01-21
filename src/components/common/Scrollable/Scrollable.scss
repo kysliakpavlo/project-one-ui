@@ -1,0 +1,78 @@
+@import '../../../scss/variable.scss';
+.scrollable {
+	width: 100%;
+	display: flex;
+
+	.scrollable-parent {
+		width: calc(100% - 100px);
+		display: flex;
+		justify-content: center;
+
+		@media (min-width: 768px) and (max-width: 1024px) {
+			width: calc(100% - 75px);
+		}
+		@media (min-width: 320px) and (max-width: 767px) {
+			width: calc(100% - 80px);
+			padding: 0 15px;
+		}
+		.scrollable-view {
+			overflow-x: hidden;
+			white-space: nowrap;
+			.scrollable-content {
+				display: flex;
+			}
+		}
+	}
+	// .prev {
+	//     svg {
+	//         margin-left: -5px;
+	//         margin-right: 5px;
+	//     }
+	// }
+
+	// .next {
+	//     svg {
+	//         margin-left: -10px;
+	//     }
+	// }
+	.prev,
+	.next {
+		border: 0;
+		padding: 0;
+		color: $white-color;
+		visibility: hidden;
+		background-color: transparent;
+		@media (min-width: 320px) and (max-width: 767px) {
+			visibility: visible;
+		}
+		&.show {
+			visibility: visible;
+		}
+		@media (min-width: 320px) and (max-width: 767px) {
+			color: $white-color;
+		}
+	}
+}
+
+.my-account {
+	.scrollable {
+		width: 100%;
+		display: block;
+
+		.scrollable-parent {
+			.scrollable-view {
+				overflow-x: hidden;
+				white-space: nowrap;
+				.scrollable-content {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+				}
+			}
+		}
+		.prev,
+		.next {
+			// display: none;
+		}
+	}
+}

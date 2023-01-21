@@ -1,0 +1,41 @@
+.form-group.form-input {
+    position: relative;
+    & .form-label {
+        margin: 0;
+        font-size: 14px;
+    }
+    & .form-control {
+        padding: 0;
+        border-width: 0;
+        border-radius: 0;
+        border-style: solid;
+        padding-bottom: 1px;
+        border-bottom-width: 1px;
+        transition: all ease 0.1s;
+        &.dropdown-toggle {
+            padding-right: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        &::placeholder {
+            font-size: 12px;
+        }
+        &:focus {
+            box-shadow: none;
+            padding-bottom: 0px;
+            border-bottom-width: 2px;
+        }
+    }
+    &.password-field {
+        input {
+            padding-right: 40px !important;
+            background-position: right 40px center;
+        }
+        .password-eye {
+            right: 0;
+            top: 25px;
+            cursor: pointer;
+            padding: 5px 10px;
+            position: absolute;
+        }
+    }
+}

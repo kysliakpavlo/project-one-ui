@@ -1,0 +1,75 @@
+@import '../../../scss/variable.scss';
+.my-activities{
+    padding-top: 5px;
+    @media only screen and (max-width: 1023px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .title{
+        background-color: $white-color;
+        height: 30px;
+        font-weight: bold;
+        font-size: 12px;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+            margin: 0px 5px;
+        }
+    }
+    .activities{
+        max-height: 240px;
+        min-height: 240px;
+        overflow-y: auto;
+        margin-top: 10px;
+        @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+            max-height: 256px;
+            min-height: 256px;
+        }
+        @media only screen and (max-width: 1023px) {
+            margin: 10px;
+        }
+        .logWrapper{
+            background-color: #EBEBEB;
+            text-align: left;
+            margin: 10px;
+            font-size: 14px;
+            border-radius: 3px;
+            padding: 5px 10px;
+            min-height: 50px;
+            position: relative;
+            opacity: 0.5;
+            @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+                margin: 10px 5px;
+            }
+            .log-content {
+                display: flex;
+                font-weight: bold;
+                word-break: break-all;
+                svg{
+                    position: absolute;
+                }
+                .msg{
+                    margin-left: 29px;
+                }
+            }
+            .alias-container{
+                margin-left: 9px;
+                .alias-name{
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                .log-posting-time{
+                    margin-left: 10px;
+                }
+            }
+        }
+        > div:first-child{
+            background-color: $light-green-background;
+            opacity: 1;
+        }
+    }
+    
+}

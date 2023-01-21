@@ -1,0 +1,1194 @@
+@import './bootstrap-override';
+@import '~bootstrap/scss/bootstrap';
+@import '~react-multi-carousel/lib/styles.css';
+@import './floating-input.scss';
+@import './form-input.scss';
+@import './variable.scss';
+@import './button.scss';
+@import './custom-scroll.scss';
+@import './modal.scss';
+@import './custom-checkbox.scss';
+
+body {
+	//   background-color: $light-grey;
+	font-family: var(--paragraph-font-family, 'Ubuntu');
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// font-family: var(--heading-font-family, "Lato");
+	font-family: var(--heading-font-family, 'Ubuntu');
+}
+
+p,
+a,
+input,
+textarea {
+	font-family: var(--paragraph-font-family, 'Roboto');
+}
+
+.root {
+	@media (min-width: 767px) {
+		position: relative;
+		// padding-bottom: 318px;
+		min-height: 100vh;
+	}
+	@media (min-device-width: 768px) and (max-device-width: 1024px) {
+		// padding-bottom: 500px;
+	}
+}
+.modal {
+	z-index: 1070;
+}
+
+.container-fluid {
+	max-width: 1170px;
+}
+
+@media (min-width: 576px) and (max-width: 712px) {
+	.container,
+	.container-sm {
+		max-width: 100%;
+	}
+}
+
+.clickable-text {
+	text-decoration: underline;
+}
+
+.btn,
+button {
+	font-family: var(--heading-font-family) !important;
+	font-weight: 400 !important;
+}
+
+button.btn-primary {
+	font-family: var(--heading-font-family) !important;
+	font-weight: 400 !important;
+}
+button.btn-secondary {
+	font-family: var(--heading-font-family) !important;
+	font-weight: 400 !important;
+	background-color: var(--cta-color-1);
+}
+button.btn-warning {
+	font-family: var(--heading-font-family) !important;
+	font-weight: 400 !important;
+	background-color: var(--cta-color-1) !important;
+	border: none !important;
+
+	&:disabled {
+		border: none !important;
+	}
+}
+
+.btn-xs {
+	padding: 0.125rem 0.5rem;
+	font-size: 0.725rem;
+	border-radius: 0.2rem;
+}
+
+.btn + .btn {
+	margin-left: 15px;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
+	background-color: var(--primary--color);
+	border: none !important;
+	box-shadow: none !important;
+}
+.custom-btn-svg:active,
+.custom-btn-svg:focus,
+.custom-btn-svg:not(:disabled):not(.disabled):active {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+.dark-grey-button:active,
+.dark-grey-button:focus,
+.dark-grey-button:not(:disabled):not(.disabled):active {
+	background-color: $header-font;
+	border: 1px solid $header-font;
+	box-shadow: 0 0 0 1px $header-font;
+}
+.card {
+	border-radius: 4px;
+	border: 0 none;
+}
+
+.search-view {
+	.search-bar {
+		background-color: $green-background;
+		.search-home {
+			border: none;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+	.search-header-result {
+		min-height: 100px;
+		background-color: $white-color;
+
+		h1::first-letter {
+			text-transform: capitalize;
+		}
+		.breadcrums {
+			padding: 10px 0;
+			a::after {
+				content: '>';
+				color: $green-background;
+				padding: 0 5px 0 10px;
+				font-size: 12px;
+			}
+			.path-name {
+				text-transform: capitalize;
+			}
+		}
+		.content-header {
+			padding: 0;
+			text-transform: capitalize;
+			font-family: Univers-65-bold;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.popover-body {
+	border: 1px solid $light-green;
+	color: $description-color;
+	font-family: Univers-45;
+	.description-detail {
+		border-bottom: 1px solid $light-green;
+		h5 {
+			color: $dark-color;
+			font-weight: 900;
+			font-family: var(--paragraph-font-family, 'Roboto');
+		}
+		p:first-child {
+			font-family: var(--paragraph-font-family, 'Roboto');
+			font-weight: 900;
+			font-size: 18px;
+		}
+	}
+	.inspection-detail,
+	.contact-detail,
+	.delivery-detail {
+		h5 {
+			color: $dark-color;
+			font-weight: 900;
+			font-family: var(--paragraph-font-family, 'Roboto');
+		}
+		padding-top: 15px;
+		border-bottom: 1px solid $light-green;
+	}
+	.contact-detail {
+		border-bottom: 0px solid $light-green;
+	}
+}
+.no-pointer {
+	pointer-events: none;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.search-view {
+		.search-header-result {
+			padding: 0 15px;
+		}
+		.sort-block {
+			display: none;
+		}
+	}
+	.view-header {
+		height: auto;
+	}
+	.content-header {
+		font-size: 1.8rem;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		white-space: normal !important;
+	}
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+	color: #fff;
+	border-color: var(--cta-color-1);
+	background-color: #fff;
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+	background-color: var(--cta-color-1);
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	/* STYLES GO HERE */
+	.auctions-view {
+		margin-top: 44px;
+	}
+	.content-header {
+		font-size: 2.3rem;
+	}
+}
+
+.hilight {
+	animation: hilight 3s;
+}
+
+@keyframes hilight {
+	from {
+		background-color: $dark-orange;
+	}
+	to {
+		background-color: $white-color;
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.btn.social-btn {
+	color: #223d38;
+	padding: 7px 8px;
+	background-color: #fff;
+	border: 1px solid #223d38;
+	&:hover,
+	&:not(:disabled):not(.disabled):active {
+		color: #223d38;
+		border-color: #223d38;
+		background-color: #fff;
+	}
+	& > .social-btn-content {
+		width: 160px;
+		margin: auto;
+		display: flex;
+		font-size: 10px;
+		font-weight: normal;
+		align-items: center;
+		svg {
+			width: 12px;
+			height: 12px;
+		}
+		span {
+			font-weight: bold;
+			font-size: 12px;
+			margin-left: 15px;
+		}
+	}
+	&.social-btn-facebook {
+		svg {
+			fill: #337ab7;
+			height: 16px;
+			width: 16px;
+		}
+	}
+}
+
+.page-content {
+	position: relative;
+	min-height: calc(100vh - 155px);
+	@media only screen and (min-device-width: 767px) and (max-device-width: 1024px) {
+		min-height: max-content;
+	}
+}
+.backdrop-content {
+	opacity: 0.5;
+	pointer-events: none;
+	// background-color: black;
+}
+.tooltip {
+	z-index: 2;
+}
+
+.search-result-cards-wrapper {
+	width: 100%;
+	max-width: 1188px;
+}
+
+// cards
+// asset and auction
+// shared by
+// AssetItemGridCard.jsx
+// AuctionCard.jsx
+.assetAttributes {
+	display: flex;
+	border-bottom: 1.02857px solid #ededed;
+	padding-left: 13px;
+	padding-bottom: 10px;
+	flex-wrap: wrap;
+
+	&__item {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		flex-basis: 50%;
+
+		svg {
+			fill: var(--cta-color-1);
+			margin-right: 5px;
+		}
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1164px) {
+	.assetAttributes {
+		padding-top: 15px;
+	}
+}
+
+.auctionAttributes {
+	&__actions {
+		button {
+			padding: 0;
+			font-size: 10px;
+			height: initial;
+			font-family: var(--paragraph-font-family);
+			text-decoration: underline;
+		}
+	}
+
+	&__timer {
+		display: flex;
+		justify-content: space-between;
+
+		padding: 13px;
+		margin-bottom: 10px;
+
+		border-bottom: 1.02857px solid #ededed;
+
+		&-label {
+			p {
+				font-size: 12px;
+				margin-bottom: 0;
+			}
+		}
+
+		&-clock {
+			width: 100%;
+
+			.block-renderer {
+				display: flex;
+				justify-content: space-between;
+
+				@media (min-width: 1024px) and (max-width: 1600px) {
+					flex-direction: column;
+
+					.div-timecount {
+						margin: 10px 0;
+					}
+				}
+
+				.div-time-label {
+					align-items: center;
+					font-size: 12px;
+
+					.time-label {
+						font-size: inherit;
+					}
+				}
+
+				.div-time-heading {
+					font-size: 14px;
+					font-family: var(--paragraph-font-family);
+					font-weight: 600;
+				}
+			}
+			.div-timecount,
+			.countdown-labels {
+				flex-basis: 50%;
+			}
+			.div-timecount {
+				margin: 0;
+				justify-content: flex-start;
+				align-items: center;
+			}
+		}
+	}
+
+	&__currentBid {
+		display: flex;
+		align-items: center;
+
+		width: 100%;
+		padding: 13px;
+		margin: 8px 0;
+
+		color: #1d1d1d;
+		text-align: left;
+
+		border-radius: 16px;
+
+		&-label {
+			font-weight: 600;
+			font-family: var(--paragraph-font-family);
+			font-size: 14px;
+		}
+
+		&-amount {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			font-weight: 600;
+			font-size: 20px;
+			font-family: var(--paragraph-font-family);
+		}
+
+		> div {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.cardCurrentBid {
+	width: 100%;
+	height: 28px;
+	color: #1d1d1d;
+	margin: 8px 0;
+	text-align: left;
+	border-radius: 16px;
+}
+
+.assetGridCard {
+	.placeBid {
+		&__bidNow {
+			padding: 10px 20px;
+			width: initial;
+			height: initial;
+			font-size: 20px;
+			font-weight: 500;
+			font-family: var(--heading-font-family);
+			background-color: var(--cta-color-1);
+			border: none;
+		}
+		&__viewDetails {
+			padding: 0;
+			margin: 0;
+			height: initial;
+
+			font-size: 14px;
+			font-family: var(--paragraph-font-family);
+			color: black;
+			text-decoration: underline;
+
+			background-color: transparent;
+		}
+	}
+}
+
+// FORMS - START
+html,
+body {
+	.enquireForm {
+		max-width: 967px;
+		height: auto;
+
+		box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.07);
+		border-radius: 10px;
+		background-color: #fff;
+
+		&__wrapper {
+			padding: 45px 85px;
+		}
+
+		.row {
+			margin-bottom: 23px;
+		}
+	}
+
+	// we use the select class as a wrapper for the select element
+	// wrapper controls the caret down svg
+	.select {
+		position: relative;
+
+		select {
+			appearance: none;
+			padding: 12px 24px 12px 15px !important;
+			border: 1px solid #000000;
+			border-radius: 4px;
+		}
+		svg {
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	form {
+		.form-group {
+			width: 100%;
+
+			&.floating-input > .dropdown {
+				border-top: none;
+				padding: 10px 0;
+
+				button {
+					padding: 10px 15px;
+				}
+			}
+			.form-control {
+				border: 1.05px solid #000000;
+				border-radius: 4.2px;
+				outline: none;
+				appearance: none;
+				transition: all 0.3s;
+				border-radius: 4px;
+				padding: 5px 10px;
+
+				&.is-invalid {
+					border: 1px solid;
+					border-color: #ff0000;
+
+					&:focus {
+						border-color: #ff0000;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+}
+// FORMS - END
+
+// GRID - START
+.gx-1 {
+	margin-right: -10px;
+	margin-left: -10px;
+
+	> .col,
+	> [class*='col-'] {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+// GRID - END
+
+.align-items {
+	&--center {
+		align-items: center;
+	}
+}
+
+// catalog view
+// austions + assets
+// use this to setup sidebar
+// and the main content area
+// dont use bootstrap cols
+// we need custom widths for this
+.search-result-view-content {
+	display: flex;
+	margin-left: -25px;
+	margin-right: -25px;
+}
+.search-filter-available {
+	max-width: 258px;
+	width: 100%;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+.search-result-cards-wrapper {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+// .form-group.floating-input > .dropdown {
+//     border-top: 1px solid rgba(0, 0, 0, 0.6);
+// }
+
+// .form-group input::placeholder,
+// .form-group .dropdown-toggle,
+// .form-group .dropdown-toggle span,
+// .form-group .form-label
+// {
+//     font-size: 13px;
+//     color: rgba(0, 0, 0, 0.6);
+// }
+
+// .dropdown-item.active, .dropdown-item:active{
+//     background-color: var(--primary--color);
+// }
+
+.btn-primary:focus,
+.btn-primary.focus {
+	color: #fff;
+	background-color: var(--primary--color);
+	border-color: none;
+	box-shadow: none;
+	opacity: 0.5;
+}
+
+.btn.btn-warning .btn-warning.focus,
+.btn-warning:focus,
+.btn-warning:hover {
+	background-color: var(--cta-color-1) !important;
+	border: none !important;
+}
+
+.btn,
+.nav-item a {
+	text-decoration: none;
+}
+
+.assetDetails {
+	.col-7 {
+		max-width: 800px;
+		flex-basis: 800px;
+
+		@media (min-width: 1200px) and (max-width: 1480px) {
+			max-width: unset;
+			flex-basis: unset;
+			max-width: 50%;
+		}
+		@media (max-width: 1200px) {
+			margin: auto;
+		}
+	}
+	.col-5 {
+		max-width: 680px;
+		flex-basis: 680px;
+
+		@media (min-width: 1200px) and (max-width: 1480px) {
+			max-width: unset;
+			flex-basis: unset;
+			max-width: 50%;
+		}
+
+		@media (max-width: 1200px) {
+			margin: auto;
+		}
+
+		@media (max-width: 767px) {
+			padding: 7em 7em;
+		}
+	}
+	&__image {
+		position: relative;
+		height: 475px;
+
+		color: $dark-color;
+
+		.image-gallery-image {
+			border-radius: 7px;
+		}
+
+		@media (min-width: 1201px) and (max-width: 1479px) {
+			height: unset;
+			margin-bottom: 2em;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1199px) {
+			width: 100%;
+			height: auto;
+		}
+
+		@media only screen and (max-width: 767px) {
+			width: 100%;
+			height: unset;
+			margin-top: 35px;
+		}
+	}
+	&__infoPanel {
+		border-radius: 7px;
+		background-color: #f8f8f8;
+
+		.countdownTimer {
+			.countdown-labels {
+				flex-basis: 45%;
+			}
+
+			.div-timecount {
+				flex-basis: 55%;
+			}
+		}
+
+		&-row {
+			border-bottom: 1px solid #d4d4d4;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+
+			.online-bidding-block {
+				.online-svg {
+					@media (max-width: 767px) {
+						display: none;
+						width: 100%;
+						svg {
+							width: fit-content;
+							margin: auto;
+							margin-top: 1em;
+						}
+					}
+					svg {
+						margin-left: 5px;
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+
+		&-wrapper {
+			padding: 40px 50px;
+
+			.product-specs {
+				font-size: 16px;
+				font-weight: 300;
+				margin-bottom: 15px;
+				margin-top: 14px;
+
+				border-bottom: 1px solid #d4d4d4;
+
+				table {
+					margin-bottom: 20px;
+				}
+
+				@media only screen and (min-width: 320px) and (max-width: 767px) {
+					margin-left: 10px;
+				}
+
+				@media only screen and (min-width: 768px) and (max-width: 1199px) {
+					margin-left: 25px;
+				}
+
+				svg {
+					fill: #272e43;
+					width: 24px;
+					height: 24px;
+					margin-right: 5px;
+				}
+
+				table {
+					tr {
+						line-height: 2;
+
+						td {
+							padding: 5px 0;
+						}
+					}
+				}
+			}
+			.bid-amnt {
+				font-size: 12px;
+				background-color: #f8f8f8;
+				color: #000;
+				border: none;
+				width: 170px;
+
+				p {
+					margin: 0;
+
+					letter-spacing: 0.6px;
+					font-size: 12px;
+					font-weight: 700;
+					font-family: var(--heading-font-family);
+				}
+
+				span {
+					font-size: 36px;
+					font-family: var(--heading-font-family);
+				}
+			}
+			.bidAmnt {
+				> div {
+					width: 45%;
+
+					& + div {
+						width: 55%;
+					}
+				}
+
+				&__info {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+				}
+
+				&__options {
+					.finance-options {
+						display: flex;
+						align-items: center;
+						margin-top: 0;
+
+						font-size: 12px;
+						font-family: var(--heading-font-family);
+
+						a {
+							font-size: inherit;
+							font-family: inherit;
+							color: #000;
+							text-decoration: underline;
+						}
+
+						svg {
+							margin-right: 1em;
+						}
+					}
+				}
+
+				&__buttons {
+					display: flex;
+					flex-direction: column;
+
+					button {
+						margin-bottom: 15px;
+						margin-left: 0;
+						height: 49px;
+
+						&:last-of-type {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				@media (max-width: 767px) {
+					width: 75%;
+					margin: auto;
+
+					&__info {
+						text-align: center;
+						width: 100% !important;
+
+						.bid-amnt {
+							width: 100%;
+						}
+					}
+
+					&__options {
+						margin: 1em auto;
+					}
+
+					&__buttons {
+						width: 100% !important;
+					}
+				}
+
+				@media (min-width: 450px) and (max-width: 767px) {
+					width: 100%;
+				}
+			}
+		}
+
+		&-prodSpecs {
+			@media (max-width: 767px) {
+				width: 95%;
+				margin: auto;
+			}
+		}
+
+		&-title {
+			font-size: 36px;
+			font-family: var(--heading-font-family);
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+
+		&-conno {
+			font-size: 14px;
+			font-weight: 300;
+			font-family: var(--paragraph-font-family);
+			margin-bottom: 30px;
+		}
+
+		&-extras {
+			display: flex;
+
+			> a,
+			button {
+				margin-right: 10px !important;
+				font-size: 12px;
+				font-weight: 700;
+				font-family: var(--heading-font-family);
+				letter-spacing: 0.6px;
+			}
+
+			@media (max-width: 767px) {
+				.download-auction-documents,
+				.download-auction-documents .btn,
+				a.btn-call-to-action,
+				button.btn-call-to-action {
+					height: 80px;
+				}
+			}
+		}
+
+		&-timeLeft {
+			.countdown-labels {
+				flex-basis: 45%;
+			}
+			.div-timecount {
+				flex-basis: 55%;
+			}
+
+			> button.btn-call-to-action {
+				@media (max-width: 767px) {
+					margin: auto;
+				}
+			}
+		}
+
+		&-notify {
+			border-bottom: 1px solid #d4d4d4;
+			padding-bottom: 1em;
+			margin-bottom: 1em;
+
+			.notify__wrapper {
+				width: 55%;
+				margin-left: auto;
+			}
+
+			button {
+				width: 100%;
+			}
+
+			@media (max-width: 767px) {
+				width: 38%;
+				margin-top: 1em;
+
+				.notify__wrapper {
+					width: unset;
+				}
+			}
+		}
+
+		&-enquire {
+			button {
+				width: 100%;
+			}
+			.enquire-left {
+				width: 45%;
+			}
+			.enquire-right {
+				width: 55%;
+			}
+		}
+
+		&-location {
+			font-size: 16px;
+			font-weight: 300;
+			font-family: var(--paragraph-font-family);
+		}
+
+		&-auctionData {
+			.row {
+				margin-bottom: 20px;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+			.label {
+				font-weight: 700;
+				font-size: 17px;
+				font-family: var(--heading-font-family);
+			}
+			.val {
+				font-weight: 300;
+				font-size: 16px;
+				font-family: var(--paragraph-font-family);
+			}
+		}
+
+		&--vertical {
+			.assetDetails__infoPanel {
+				&-wrapper {
+					display: flex;
+					padding-left: 30px;
+					padding-right: 30px;
+					min-height: 330px;
+
+					@media (max-width: 1200px) {
+						display: block;
+					}
+				}
+				&-title {
+					font-size: 28px;
+				}
+				&-row {
+					border-bottom: none;
+					border-right: 1px solid #000;
+					flex-basis: 100%;
+					margin-bottom: 0;
+					padding-bottom: 0;
+
+					@media (max-width: 1200px) {
+						border-right: none;
+						margin-bottom: 20px;
+					}
+
+					> div {
+						.row {
+							margin-left: 0;
+							margin-right: 0;
+							background-color: #f8f8f8;
+						}
+					}
+
+					div:not(.assetDetails__infoPanel-auctionData) {
+						.row {
+							margin-left: 0;
+							margin-right: 0;
+
+							[class^='col-'] {
+								max-width: 100%;
+								flex: 0 0 100%;
+							}
+
+							.bonus-btn {
+								margin-top: 20px;
+								background-color: var(--primary--color);
+								width: 161px;
+								color: #fff;
+								display: block;
+							}
+						}
+					}
+
+					.auctionSchedule {
+						height: 100%;
+
+						.row {
+							height: 100%;
+						}
+					}
+				}
+
+				&-header {
+					height: 100%;
+					.row {
+						height: 100%;
+					}
+				}
+				&-meta {
+					.view-count,
+					.bids-count {
+						margin: auto;
+						width: 150px;
+
+						span {
+							margin-left: 25px;
+						}
+					}
+				}
+			}
+		}
+
+		// NOT Vertical - bonus button hidden from this section
+		.assetDetails {
+			&__infoPanel {
+				&-row {
+					.bonus-btn {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	//Asset Detail Description Section (shares assetDetail classname)
+
+	&.desc-col {
+		.col-5 {
+			@media (max-width: 767px) {
+				padding: 0;
+			}
+		}
+	}
+}
+
+.auctionSchedule {
+	label {
+		margin-bottom: 10px;
+
+		font-size: 19px;
+		font-weight: 500;
+		font-family: var(--heading-font-family);
+	}
+	&__time {
+		background-color: var(--primary--color);
+		border: none;
+		font-size: 16px;
+		font-weight: 500;
+		font-family: var(--heading-font-family);
+
+		color: #fff;
+		padding: 5px 10px;
+		border-radius: 7px;
+		text-align: center;
+	}
+}
+
+// Bootstrap Overwrites*****************************
+
+.dropdown-item {
+	&.active,
+	&:active {
+		background-color: var(--primary--color);
+	}
+}
+
+.form-control {
+	&:focus {
+		box-shadow: none;
+		border-color: #000;
+	}
+}
+
+.btn-outline-primary {
+	border: 1px solid var(--primary--color);
+	color: var(--primary--color);
+
+	&:hover {
+		border: 1px solid var(--primary--color);
+		color: var(--primary--color);
+		opacity: 0.8;
+		background-color: #fff;
+	}
+
+	&:not(:disabled):not(.disabled):active:focus,
+	&:not(:disabled):not(.disabled).active:focus,
+	&:focus,
+	&.focus {
+		box-shadow: none;
+	}
+
+	&:not(:disabled):not(.disabled):active,
+	&:not(:disabled):not(.disabled).active {
+		background-color: #00000099;
+		border-color: var(--primary--color);
+
+		svg {
+			fill: #fff;
+		}
+	}
+}
+
+.show > .btn-outline-primary.dropdown-toggle:focus {
+	box-shadow: none;
+}
+
+.show > .btn-outline-primary.dropdown-toggle {
+	background-color: #00000099;
+	border-color: var(--primary--color);
+
+	svg {
+		fill: #fff;
+	}
+}

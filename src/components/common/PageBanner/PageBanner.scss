@@ -1,0 +1,87 @@
+@import '../../../scss/variable.scss';
+
+.container {
+	&-xxl {
+		max-width: 1524px;
+		margin: 0 auto;
+	}
+}
+
+.PageBanner {
+	background-color: #424f50;
+	padding: 100px;
+
+	img {
+		width: 100%;
+		max-width: 800px;
+	}
+
+	&__container {
+		display: flex;
+
+		@media (max-width: 1000px) {
+			flex-direction: column;
+		}
+	}
+
+	&__image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-grow: 1;
+		margin: 0 20px;
+
+		@media (max-width: 1000px) {
+			order: 1;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__content {
+		display: inline-block;
+		min-width: 482px;
+		background-color: #fff;
+		border-radius: 12px;
+
+		&-wrapper {
+			padding: 6px 30px;
+
+			h2 {
+				font-style: normal;
+				font-size: 44px;
+				line-height: 57px;
+				/* identical to box height */
+				color: #283c38;
+				margin-top: 24px;
+				margin-bottom: 20px;
+				font-family: 'Ubuntu';
+			}
+
+			p {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 28px;
+			}
+
+			.btn {
+				min-width: 240px;
+				height: 52px;
+				line-height: 44px;
+				margin-top: 20px;
+				margin-bottom: 24px;
+				text-decoration: none;
+			}
+		}
+
+		@media (max-width: 1000px) {
+			min-width: unset;
+			text-align: center;
+			order: 2;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		padding: 100px 20px;
+	}
+}

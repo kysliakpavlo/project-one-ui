@@ -1,0 +1,61 @@
+@import "../../../scss/variable.scss";
+.payment-history {
+  .cards-block-mobile {
+    display: none;
+    @media (min-width: 320px) and (max-width: 767px) {
+      display: block;
+      .pagination-container {
+        display: none;
+      }
+      .nav-images {
+        display: none;
+      }
+    }
+  }
+  .large-cards-block {
+    margin-top: 88px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    .large-card-layout {
+      .paid-info {
+        border-color: $green-color;
+        margin-top: 10px;
+        line-height: 2.2;
+        padding: 15px;
+        height: 35px;
+        .overdue-info {
+          line-height: 0;
+        }
+      }
+    }
+  }
+  .cards-block {
+    margin-top: 88px;
+    .current-bid-block {
+      margin-left: 0;
+    }
+    .receipt-button {
+      margin: 0px 10px;
+      button {
+        border-radius: 4px;
+      }
+    }
+    .paid-info {
+      border-color: $green-color;
+      margin-top: 10px;
+      line-height: 2.2;
+      padding: 15px;
+      height: 35px;
+      .overdue-info {
+        line-height: 0;
+      }
+    }
+    .table-responsive-sm,
+    .cmn-card {
+      @media (min-width: 320px) and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+}

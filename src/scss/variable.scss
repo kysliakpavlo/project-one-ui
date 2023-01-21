@@ -1,0 +1,228 @@
+$dark-green: #1c211b;
+$green-background: #223c38;
+$required: #790000;
+$white-color: #ffffff;
+$green-color: #66b82b;
+$light-green: #a3cf27;
+$hover-green: #6a8619;
+$watchlist-background: #79b530;
+$light-green-background: #ebffce;
+$light-grey: #fafbf8;
+$dark-orange: #f17026;
+$darker-orange: #d5560e;
+$transparent: transparent;
+$dark-color: #000000;
+$semi-tranparent-bg: #00000099;
+$shaded-carousal-bg: #f6faea;
+$grey-border: #dfe2e5;
+$light-grey-background: #fbfbfb;
+$grey-background: #f3f3f3;
+$description-color: #233c38;
+$grey-background-color: #f4f4f4;
+$disable-color: #d3d3d3;
+$gavel-color: #20b889;
+$red: red;
+$border-red: #ff3823;
+$header-background: #f7f6f6;
+$header-font: #223d38;
+$blur-backgound: #0008;
+$timer-font-color: #232323;
+$facebook-blue: #4267b2;
+$grey-border-color: #929292;
+$golden-color: rgb(255, 181, 0);
+
+// CSS VARIABLES **************************
+:root {
+	--primary--color: #272e43 !important;
+	//  --primary--color: #FFF; *** Andrey to change the file
+	--secondary-color: #e7e7e7;
+	//  --secondary-color: #BFC0C0;
+	--primary-bg-font-color: #fff;
+
+	--cta-color-1: #ff8048;
+	//  --cta-color-1 #EF8354;.category-item
+	--cta-color-2: #365894;
+	//  --cta-color-2: #4F5D75;
+	--cta-color-1-RGB: rgb(255, 128, 72);
+
+	--auction-open-color: #2d3142;
+	--opening-soon-tag-color: #bfc0c0;
+	//  --opening-soon-tag-color: blue;
+	--closed-tag-color: #e7e7e7;
+	//  --closed-tag-color: gray;
+
+	// --expression-of-interest-primary-color: green;
+	//  --featured-tag-color: red;
+	// --heading-font-family: Lato;
+	--heading-font-family: Karbon;
+
+	// --heading-font-size: 18;
+	// --paragraph-font-color: #000000;
+	// --paragraph-font-family: Lato;
+	// --icon-color: #EF8354;
+	// --heading-font-color: #2D3142;
+
+	--white-color: #ffffff;
+	--black-color: #000000;
+
+	--default-primary-bg-color: #272e43;
+	--default-CTA-1: #ff8048;
+	--default-CTA-2: #365894;
+	---default-CTA-1-RGB: rgb(255, 128, 72);
+
+	--default-auction-open-color: #2d3142;
+	--default-opening-soon-color: #bfc0c0;
+	--default-closed-color: #e7e7e7;
+}
+
+.primary-bg-color {
+	background-color: #272e43 !important;
+	color: #fff !important;
+}
+.cta1 {
+	background-color: #ff8048;
+}
+// CSS VARIABLES END **************************
+
+[class*='btn'] {
+	transition: opacity 0.2s ease-in-out;
+}
+
+[class*='btn']:hover {
+	opacity: 0.9;
+	// background: inherit;
+}
+
+button,
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	height: 45px;
+	font-family: var(--paragraph-font-family, 'Ubuntu');
+	font-size: 16px;
+	border-radius: 8px;
+}
+.btn-lg {
+	height: auto;
+	padding: 0.5rem 1rem;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+}
+.btn-sm {
+	height: 45px;
+	min-width: 170px;
+	font-family: var(--heading-font-family);
+	font-size: 18px;
+	font-weight: 500;
+}
+.btn-primary {
+	background-color: var(--primary--color, var(--default-primary-bg-color));
+	color: var(--white-color);
+	border: none;
+	transition: opacity 0.2s ease-in-out;
+	line-height: 1;
+
+	&:hover,
+	&:active,
+	&:target,
+	&:visited {
+		background-color: var(
+			--primary--color,
+			var(--default-primary-bg-color)
+		) !important;
+		opacity: 0.9;
+		color: #fff;
+		font-weight: 500;
+		border: none;
+	}
+}
+
+.btn-primary:disabled {
+	background-color: var(--cta-color-1);
+}
+
+.btn-secondary {
+	border: none;
+	box-shadow: none;
+	background-color: var(--cta-color-1) !important;
+	// color: #fff;
+	color: #000;
+	width: 100%;
+	font-weight: 500;
+	transition: opacity 0.2s ease-in-out;
+	line-height: 1;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border: none !important;
+		box-shadow: none !important;
+		background-color: var(--cta-color-1) !important;
+		// color: #fff;
+		color: #000;
+	}
+}
+
+.ordinary-button {
+	background-color: transparent;
+	color: var(--black-color);
+	border-color: none;
+}
+.btn-outline-warning {
+	background-color: var(--white-color);
+	color: var(--black-color);
+	border: none;
+	transition: opacity 0.2s ease-in-out;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: var(--white-color) !important;
+		color: var(--black-color) !important;
+		border: none !important;
+		box-shadow: none !important;
+		opacity: 0.9;
+	}
+}
+
+.btn-outline-danger {
+	background-color: $red;
+	color: $white-color;
+}
+.btn-outline-danger:hover,
+.btn-outline-danger:focus {
+	background-color: $red;
+	border: 1px solid $red;
+}
+.dark-grey-button {
+	min-width: 120px;
+	height: 30px;
+	padding: 0px 10px 0px 10px;
+	background: $header-font;
+	color: $white-color;
+	border-color: $white-color;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 3px 3px 3px 3px;
+	font-family: Univers-65-bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+@media (min-width: 1090px) {
+	.container,
+	.container-xxl {
+		max-width: 1480px;
+	}
+}
+
+// @media(max-width: 1600px){
+// 	.container, .container-xxl{
+// 		max-width: 1090px;
+// 	}
+// }

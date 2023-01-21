@@ -1,0 +1,223 @@
+@import "../../../../scss/variable.scss";
+.div-PlaceBids {
+  .accordion {
+    .card {
+      .card-header {
+        height: 20px;
+        border-bottom: 20px solid $header-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0;
+        .close-div {
+          right: 0px;
+          cursor: pointer;
+          width: 39px;
+          height: 33px;
+          background-color: $dark-orange;
+          text-align: center;
+          position: absolute;
+          top: 20px;
+          border-bottom-left-radius: 4px;
+          svg {
+            fill: $white-color;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+          }
+        }
+        .btn {
+          background-color: $dark-orange;
+          width: 300px;
+          height: 40px;
+          color: $white-color;
+          margin-top: 0px;
+          font-size: 18px;
+          text-align: center;
+          @media screen and (max-width: 767px) {
+            width: max-content;
+          }
+        }
+        .place-bid-btn {
+          position: absolute;
+          margin-left: auto;
+          margin-right: auto;
+          left: 12px;
+          right: 0;
+        }
+        .btn-link:focus {
+          text-decoration: none;
+        }
+        .btn:focus {
+          box-shadow: none;
+        }
+        .btn-link:hover {
+          text-decoration: none;
+        }
+        .join-live-btn {
+          border-radius: 26px;
+          position: fixed;
+          // margin-right: 350px;
+          svg {
+            margin-right: 5px;
+          }
+          @media (min-device-width: 320px) and (max-device-width: 767px) {
+            margin-right: 10px;
+            width: auto;
+            // left: 10px;
+          }
+          @media (min-device-width: 800px) and (max-device-width: 810px) {
+            left: 80px;
+          }
+        }
+        .position-center {
+          margin-left: auto;
+          margin-right: auto;
+          @media (min-device-width: 320px) and (max-device-width: 767px) {
+            left: unset;
+          }
+          @media (min-device-width: 800px) and (max-device-width: 810px) {
+            left: unset;
+          }
+        }
+        .two-btn {
+          margin-left: 350px;
+          left: auto;
+          right: auto;
+          @media (min-device-width: 320px) and (max-device-width: 767px) {
+            margin-left: 10px;
+            width: auto;
+            right: 10px;
+          }
+          @media (min-device-width: 800px) and (max-device-width: 810px) {
+            margin-left: 180px;
+          }
+        }
+        .place-bid-btn {
+          position: fixed;
+          max-width: 300px;
+		  bottom: 0;
+          @media only screen and (max-width: 767px) {
+            width: 200px;
+          }
+          @media only screen and (min-width: 767px) and (max-width: 1024px) {
+            width: 320px;
+          }
+        }
+        .div-gavel-svg {
+
+			display: none;
+
+          width: 28px;
+          height: 28px;
+          background-color: var(--primary--color);
+          margin-left: 250px;
+          margin-top: -25px;
+          align-items: center;
+          border-radius: 5px;
+          padding: 2px;
+          svg {
+            fill: $white-color;
+            margin-top: -6px;
+            margin-right: -2px;
+            padding: 2px;
+          }
+          @media only screen and (max-width: 767px) {
+            margin-left: 150px;
+          }
+        }
+        .collapse {
+          display: none !important;
+        }
+
+        .show {
+          display: block !important;
+        }
+      }
+      .collapse {
+        height: fit-content;
+        border: 1px solid var(--cta-color-1);
+		padding: 10px;
+      }
+      .card-body {
+        .place-bid.card {
+          border: none;
+          box-shadow: none;
+        }
+        .place-bid.card .close-btn {
+          display: none;
+        }
+      }
+
+	  .card-body{
+		padding: 0;
+		.container{
+			padding: 0;
+			.place-bid{
+				display: block;
+				padding: 0;
+				
+			}
+
+		}
+	  }
+    }
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-enter-bid {
+    margin-left: 15px;
+  }
+
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-enter-bid,
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-bid-prem,
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-place-bids {
+    width: 227px !important;
+  }
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-bid-prem .div-fee {
+    width: 215px;
+  }
+}
+@media (min-device-width: 320px) and (max-device-width: 767px) {
+  .div-PlaceBids .accordion .card .card-body .div-bids {
+    display: block;
+  }
+  .div-PlaceBids
+    .accordion
+    .card
+    .card-body
+    .div-bids
+    .div-enter-bid
+    .div-crnt-bid {
+    margin-left: -25px;
+  }
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-enter-bid {
+    border-bottom: 1px solid $dark-color;
+    border-right: none;
+    .row {
+      margin-top: -10px;
+      margin-left: -15px;
+    }
+  }
+  .div-PlaceBids .accordion .card .card-body .div-bids .div-bid-prem {
+    border-bottom: 1px solid $dark-color;
+    border-right: none;
+    margin-left: -20px;
+  }
+  .div-PlaceBids .accordion .card .collapse {
+    height: fit-content;
+    margin-left: 5px;
+    // border-bottom: 1px solid $dark-color;
+    // border-right: 2px solid $dark-orange;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .div-PlaceBids .accordion .card .card-body .close-div {
+    svg {
+      width: 27px;
+      height: 30px;
+    }
+    // margin-top: -725px;
+  }
+}

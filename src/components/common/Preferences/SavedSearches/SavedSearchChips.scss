@@ -1,0 +1,20 @@
+.saved-search-chips {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	.saved-search-chip {
+		color: #000;
+		font-size: 12px;
+		max-width: 100%;
+		padding: 4px 8px;
+		overflow: hidden;
+		font-weight: 400;
+		line-height: 20px;
+		margin-right: 10px;
+		margin-bottom: 5px;
+		border-radius: 20px;
+		white-space: nowrap;
+		background: #f8f8f8;
+		text-overflow: ellipsis;
+	}
+}

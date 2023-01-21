@@ -1,0 +1,427 @@
+@import '../../../../scss/variable.scss';
+
+.assetGridCard {
+	&__images {
+		padding: 8px;
+
+		.arrowLeft,
+		.arrowRight {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 2;
+			margin-left: 0;
+			background-color: transparent;
+
+			svg {
+				fill: none;
+
+				path {
+					stroke: #fff;
+				}
+			}
+
+			&:hover {
+				background-color: transparent !important;
+			}
+		}
+
+		.arrowLeft {
+			left: 15px;
+		}
+		.arrowRight {
+			right: 15px;
+		}
+
+		img {
+			border-radius: 12px;
+		}
+	}
+
+	.auctionAttributes .download-auction-documents {
+		background-color: #f4f4f4;
+		border-radius: 0 0 18px 18px;
+		padding: 13px 5px;
+	}
+}
+
+.asset-item-grid-card {
+	// height: 100%;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 5px 0px;
+	border-radius: 18px;
+
+	.card-header {
+		height: 30px;
+		color: #000;
+		font-size: 18px;
+		overflow: hidden;
+		padding: 15px 3px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		background-color: #fff;
+		height: 3em;
+		border-bottom: none;
+		padding-left: 5px;
+	}
+
+	.card-body.asset-basic-details {
+		white-space: nowrap;
+
+		.row + .row {
+			margin-top: 6px;
+		}
+
+		.detail {
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: var(--cta-color-1);
+				margin-right: 7px;
+			}
+		}
+	}
+
+	.card-body.asset-action-section {
+		.asset-actions {
+			.btn-bidHistory {
+				display: none;
+			}
+
+			.btn {
+				margin: 0;
+				padding: 0 13px;
+				font-size: 14px;
+				min-width: 110px;
+				line-height: 28px;
+				border-radius: 2px;
+				white-space: nowrap;
+
+				@media screen and (max-width: 1024px) {
+					padding: 0 4px;
+					min-width: 102px;
+				}
+
+				svg {
+					width: 20px;
+					height: 20px;
+					fill: $white-color;
+					margin-left: 7px;
+				}
+
+				& + .btn {
+					margin-left: 6px;
+				}
+			}
+		}
+
+		.current-bid {
+			strong {
+				font-size: 18px;
+				font-weight: bold;
+
+				&::first-letter {
+					font-size: 13px;
+					margin-right: 4px;
+				}
+
+				svg {
+					fill: #000;
+					width: 22px;
+					height: 22px;
+					margin-top: -2px;
+					margin-left: 10px;
+				}
+			}
+
+			.small-bold {
+				font-size: 12px;
+
+				svg {
+					fill: #000;
+					width: 20px;
+					height: 20px;
+					margin-top: -1px;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		.overdiv-info {
+			text-align: center;
+
+			.item-won-cup {
+				font-size: 18px;
+				font-weight: 900;
+				padding: 5px;
+
+				svg {
+					fill: $golden-color;
+				}
+			}
+
+			.payment-info,
+			.paid-info {
+				@media (min-width: 320px) and (max-width: 767px) {
+					width: 100px;
+					height: 35px;
+					padding: 8px 8px 8px 8px;
+					background: $white-color;
+					border-color: $border-red;
+					border-width: 1px;
+					border-style: solid;
+					display: inline-block;
+
+					.overdue-info {
+						color: $header-font;
+						font-weight: bold;
+						font-size: 14px;
+						line-height: 1.2;
+						text-align: center;
+						font-family: Univers-65-bold;
+					}
+				}
+			}
+
+			.paid-status {
+				@media (min-width: 320px) and (max-width: 767px) {
+					border-color: $green-color;
+				}
+			}
+
+			.invoice-link {
+				@media (min-width: 320px) and (max-width: 767px) {
+					width: max-content;
+					height: 30px;
+					padding: 4px;
+					background: $header-font;
+					border-radius: 20px;
+					margin: 10px 10px;
+					display: inline-block;
+
+					span {
+						color: $white-color;
+						font-weight: bold;
+						font-size: 14px;
+						line-height: 1.2;
+						text-align: center;
+						font-family: Univers-65-bold;
+
+						svg {
+							margin-top: -5px;
+						}
+					}
+				}
+			}
+		}
+
+		.download-auction-documents {
+			margin-top: 12px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+		}
+
+		.receipt-block {
+			.download-auction-documents {
+				margin-top: 0;
+				margin-left: 10px;
+
+				button {
+					border-radius: 4px;
+				}
+			}
+		}
+
+		.buy-now {
+			text-align: center;
+			margin-top: 19px;
+
+			.item-status {
+				font-size: 14px;
+				color: $border-red;
+				text-align: center;
+			}
+
+			.current-bid {
+				width: 120px;
+				margin: 4px auto;
+			}
+
+			.btn-buy-now {
+				margin-top: 9px;
+				font-size: 14px;
+				border-radius: 16px;
+
+				svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
+
+	&.bonus-time-card {
+		.card-header {
+			background-color: #fff;
+		}
+
+		.card-body.asset-basic-details {
+			background-color: #fff;
+
+			.detail {
+				svg {
+					fill: var(--cta-color-1);
+				}
+			}
+		}
+	}
+
+	&.opening-soon-asset {
+		.card-header {
+			color: #27272e;
+			background-color: #fff;
+		}
+
+		.card-body.asset-basic-details {
+			background-color: #fff;
+
+			.detail {
+				color: #27272e;
+
+				svg {
+					fill: var(--cta-color-1);
+				}
+			}
+		}
+
+		.block-renderer .div-timecount .time-div {
+			color: inherit;
+			background-color: var(--cta-color-1);
+		}
+	}
+
+	&.closed-asset {
+		.card-header {
+			color: inherit;
+			background-color: #fff;
+		}
+
+		.card-body.asset-basic-details {
+			background-color: #fff;
+
+			.detail {
+				color: #27272e;
+
+				svg {
+					fill: var(--cta-color-1);
+				}
+			}
+		}
+
+		.block-renderer .div-timecount .time-div {
+			color: inherit;
+			background-color: var(--cta-color-1);
+		}
+	}
+
+	.place-bid {
+		min-width: 120px;
+		position: relative;
+		text-align: center;
+		padding: 13px 5px;
+		display: flex;
+		justify-content: space-between;
+		background-color: #f4f4f4;
+		border-radius: 0 0 18px 18px;
+
+		button {
+			@media (min-width: 768px) and (max-width: 1024px) {
+				font-size: 14px;
+
+				svg {
+					width: 18px;
+					height: 18px;
+					fill: $white-color;
+				}
+			}
+		}
+
+		button.btn-notifyme {
+			background-color: #fff;
+			border-radius: 28px;
+			width: 28px;
+			margin: 0;
+			padding: 0;
+			height: 28px;
+			margin-bottom: auto;
+			margin-top: auto;
+			margin-right: 5px;
+
+			&:hover {
+				background-color: transparent !important;
+				opacity: 0.8;
+			}
+
+			svg {
+				fill: #000;
+			}
+		}
+
+		button.placeBid__viewDetails:hover {
+			background-color: transparent !important;
+			color: inherit;
+			opacity: 0.9;
+			font-family: inherit;
+			font-weight: inherit;
+		}
+
+		.join-live-btn {
+			padding: 2px 0px;
+			width: 120px;
+		}
+
+		.absentee-bid {
+			padding: 2px 0px;
+			width: 130px;
+		}
+
+		.highest-bidder-indicator {
+			width: 38px;
+			height: 28px;
+			text-align: center;
+			border-radius: 3px;
+			background-color: var(--primary--color);
+			align-self: center;
+
+			@media only screen and (min-width: 768px) and (max-width: 1199px) {
+				right: 4px;
+				top: 1px;
+			}
+
+			@media (min-width: 320px) and (max-width: 767px) {
+				top: 1px;
+				right: 66px;
+			}
+
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: $white-color;
+
+				path {
+					fill: $white-color;
+				}
+			}
+		}
+	}
+
+	.buy-now {
+		display: flex;
+		justify-content: space-around;
+		padding-bottom: 15px;
+		align-items: baseline;
+		background-color: #f4f4f4;
+		border-radius: 0 0 18px 18px;
+		padding-top: 1em;
+	}
+}

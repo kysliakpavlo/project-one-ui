@@ -1,0 +1,45 @@
+.form-title {
+	font-size: 46px;
+	font-weight: 400;
+}
+
+.enquiry-form {
+	.form-control {
+		background-color: #ffffff;
+	}
+
+	.form-label {
+		font-size: 10px;
+		font-weight: 400;
+	}
+
+	.custom-control-label {
+		font-size: 16px;
+		// font-weight: bold;
+	}
+
+	.desc {
+		color: #000;
+		font-weight: 800;
+		font-size: 20px;
+		line-height: 1.3;
+		text-align: left;
+	}
+
+	.submit-btn {
+		text-align: center;
+	}
+
+	.txt-news {
+		margin-top: 15px;
+	}
+
+	.submit-btn {
+		text-align: center;
+
+		.btn {
+			min-width: 120px;
+			margin: auto;
+		}
+	}
+}

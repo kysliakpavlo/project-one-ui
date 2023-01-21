@@ -1,0 +1,197 @@
+@import "../../../scss/variable.scss";
+.current-asset-details{
+    background-color: $header-font;
+    min-height: 389px;
+    // max-height: 386px;
+    padding: 8px;
+    color: $white-color;
+    border-radius: 16px 0 0 0;
+    position: relative;
+    @media only screen and (max-width: 1023px) {
+        border-radius: 0;
+        margin-top: 35px;
+        padding-bottom: 50px;
+        // max-height: ;
+    }
+    @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+        height: 420px;
+    } 
+    .current-btn-top{
+        text-align: center;
+        margin-top: -20px;
+        .current-btn{
+            border-radius: 16px;
+            cursor: auto;
+        }
+    }
+    .asset-details{
+        margin: 7px 25px 7px;
+        @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+            margin: 7px 10px 7px;
+        }
+        .title{
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            .text{
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-bottom: 5px;
+                @media only screen and (min-width: 767px) and (max-width: 1023px) {
+                    font-size: 38px;
+                }
+            }
+        }
+        .mobile-visible {
+            display: none;
+            @media only screen and (max-width: 1024px)  {
+                display: block;
+                border-radius: 3px;
+                width: 140px;
+                height: 30px;
+                font-weight: bold;
+                background-color: $green-color;
+                color: $white-color;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                 appearance: none;
+                 padding: 4px 10px;
+                 margin-left: auto;
+                 margin-right: auto;
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 10px;
+                }
+            }
+        }
+        .asset-images{
+            margin-top: 7px;
+            height: 156px;
+            position: relative;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.23);
+            border-radius: 0;
+            .full-details-btn {
+                border-radius: 3px;
+                width: 140px;
+                height: 30px;
+                font-weight: bold;
+                background-color: $green-color;
+                color: $white-color;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                 appearance: none;
+                 padding: 4px 10px;
+                 display: none;
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 10px;
+                }
+            }
+            @media only screen and (min-width: 767px) and (max-width: 1023px) {
+                height: 350px;
+                width: 100%;
+            }
+            img{
+                height: 100%;
+            }
+            .btn-block{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 28px;
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.23);
+                .nav-btn{
+                    width: 30px;
+                }
+                .btn{
+                    opacity: 0.9;
+                    border-radius: 0;
+                    background-color: $header-font;
+                }
+                .btn-secondary:hover {
+                    border-color: $white-color;
+                }
+            }
+        }
+        .asset-images:hover {
+            .full-details-btn {
+                display: block;
+                position: absolute;
+                z-index: 2;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+            @media screen and (max-width: 1280px) {
+                display: none;
+            }
+            }
+        }
+        .details{
+            text-align: left;
+            margin-top: 8px;
+            padding: 8px 0;
+            font-size: 12px;
+            @media screen and (min-width: 767px) and (max-width: 1023px) {
+                font-size: 26px;
+            }
+            .label{
+                font-weight: 400;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                @media screen and (max-width: 1023px) {
+                    text-align: left;
+                }
+            }
+            .val{
+                font-weight: 400;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                text-align: right;
+                @media screen and (max-width: 1023px) {
+                    text-align: right;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            svg{
+                fill: $green-color;
+                @media screen and (min-width: 767px) and (max-width: 1023px) {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+        .bid{
+            color: $white-color;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            justify-content: space-evenly;
+            .label{
+                font-size: 20px;
+                @media screen and (min-width: 767px) and (max-width: 1023px) {
+                    font-size: 32px;
+                }
+            }
+            .val{
+                font-size: 28px;
+                @media screen and (min-width: 767px) and (max-width: 1023px) {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}

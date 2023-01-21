@@ -1,0 +1,85 @@
+.btn {
+	cursor: pointer;
+	
+	&.focus {
+		box-shadow: none !important;
+	}
+	&.slt-orange {
+		color: #fff;
+		background-color: #f17026;
+		&:active,
+		&:focus,
+		&:not(:disabled):not(.disabled):active {
+			background-color: #e06f15;
+			border: 1px solid #f29137;
+			box-shadow: 0 0 0 1px #f2913780;
+		}
+		&:disabled {
+			color: #e0e0e0;
+			background-color: #f17026aa;
+		}
+	}
+	&.slt-green {
+		color: #fff;
+		background-color: #66b82b;
+		&:active,
+		&:focus,
+		&:not(:disabled):not(.disabled):active {
+			background-color: #55a71a;
+			border: 1px solid #f29137;
+			box-shadow: 0 0 0 1px #f2913780;
+		}
+		&:disabled {
+			color: #e0e0e0;
+			background-color: #66b82baa;
+		}
+	}
+	&.slt-dark {
+		color: #fff;
+		background-color: var(--primary--color);
+		&:active,
+		&:focus,
+		&:not(:disabled):not(.disabled):active {
+			background-color: #112c27;
+			border: 1px solid #334e39;
+			box-shadow: 0 0 0 1px #334e3980;
+		}
+		&:disabled {
+			color: #e0e0e0;
+			background-color: #223d38aa;
+		}
+	}
+	&.slt-white {
+		color: #000;
+		background-color: #ffffff;
+		&:active,
+		&:focus,
+		&:not(:disabled):not(.disabled):active {
+			background-color: #efefef;
+			border: 1px solid #efefef;
+			box-shadow: 0 0 0 1px #ffffff80;
+		}
+		&:disabled {
+			background-color: #ffffffaa;
+		}
+	}
+	&:disabled {
+		cursor: not-allowed;
+	}
+	svg {
+		fill: currentColor;
+	}
+	&.btn-warning.disabled,
+	&.btn-warning:disabled {
+		color: #e0e0e0;
+	}
+
+	.btn-warning{
+		background-color: var(--cta-color-1);
+	}
+
+	.btn-bid {
+		width: 100%;
+		padding: 16px 0;
+	}
+}

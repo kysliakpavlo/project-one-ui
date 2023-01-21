@@ -1,0 +1,60 @@
+.modal {
+    &-backdrop {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    .modal-dialog {
+        .modal-content {
+            border: 0;
+         
+            .modal-header {
+                color: #FFFFFF;
+                padding: 5px 8px;
+                position: relative;
+                background-color: var(--primary--color);
+                .modal-title {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                .close{
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                    opacity: 1;
+                    background-color: #ffffff;
+                    color:#000;
+                    margin:0;
+                    span{
+                        margin: 0;
+                        position: absolute;
+                        right: 16.5px;
+                        top: 7px;
+                    }
+                }
+            }
+            .modal-body {
+                max-height: calc(100vh - 100px);
+                overflow:auto;
+                // any common styles to modal will be added in this file
+            }
+        }
+    }
+    &.bottom-right {
+        top: unset;
+        left: unset;
+        width: auto;
+        right:  1rem;
+        bottom: 1rem;
+        height: auto;
+        display: block;
+    }
+}
+.show{
+    display: block;
+}
+
+.payway-card-block{
+	button{
+		background-color: var(--cta-color-1);
+	}
+}

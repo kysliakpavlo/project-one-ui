@@ -1,0 +1,125 @@
+@import '../../../scss/variable.scss';
+
+.live-notifications {
+	left: 0px;
+	position: fixed;
+	top: 70%;
+	transform: translateY(-50%);
+	z-index: 5;
+	box-sizing: border-box !important;
+	display: block;
+	direction: ltr !important;
+	@media (min-width: 768px) and (max-width: 1024px) {
+		top: 35%;
+	}
+	@media (min-width: 320px) and (max-width: 767px) {
+		top: 52%;
+	}
+	@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+		top: 72%;
+	}
+	@media (min-width: 1080px) and (max-width: 1180px) {
+		top: 50%;
+	}
+	.span-notify {
+		position: absolute;
+		bottom: -15px;
+		right: -18px;
+		padding: 2px;
+		border-radius: 50%;
+		color: $white-color;
+		width: 39px;
+		height: 39px;
+		background: var(--cta-color-1);
+		font-size: 15px;
+		font-weight: 200;
+		text-align: center;
+		line-height: 35px;
+		@media (min-width: 320px) and (max-width: 1024px) {
+			width: 18px;
+			height: 18px;
+			bottom: -10px;
+			right: -8px;
+			line-height: 12px;
+			font-size: 12px;
+		}
+	}
+	.btn-LiveNotify {
+		width: 60px;
+		height: 189px;
+		padding: 8px 8px 8px 8px;
+		background-color: var(--cta-color-1);
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
+		font-size: 13px;
+		position: relative;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		white-space: nowrap;
+		transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+		@media (min-width: 768px) and (max-width: 1024px) {
+			width: 34px;
+			height: 127px;
+		}
+		@media (min-width: 320px) and(max-width: 767px) {
+			height: 153px;
+			width: 34px;
+
+			.divLive {
+				height: unset;
+			}
+		}
+		.divLive {
+			color: $white-color;
+			font-weight: 400;
+			font-size: 26px;
+			text-align: left;
+			word-break: normal !important;
+			word-wrap: normal !important;
+			white-space: nowrap !important;
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+			cursor: pointer;
+			-ms-writing-mode: tb-rl;
+			-webkit-writing-mode: vertical-lr;
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+			height: 142px;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				font-size: 14px;
+				height: 100px;
+				text-align: center;
+				font-weight: 400;
+				letter-spacing: 1px;
+			}
+			@media (min-width: 320px) and (max-width: 767px) {
+				height: 50px;
+				font-size: 15px;
+				text-align: center;
+				font-weight: 400;
+				letter-spacing: 1px;
+			}
+		}
+		.divLiveIcon {
+			height: 18px;
+			margin: 0px 0px 0px -10px;
+			font-size: 20px;
+			.divLiveLabel {
+				font-style: normal !important;
+				font-weight: normal !important;
+				font-variant: normal !important;
+				text-transform: none !important;
+				overflow-wrap: normal !important;
+				word-break: normal !important;
+				word-wrap: normal !important;
+				white-space: nowrap !important;
+				line-height: normal !important;
+				-webkit-font-smoothing: antialiased !important;
+				-moz-osx-font-smoothing: grayscale !important;
+				vertical-align: middle !important;
+				display: inline-block !important;
+				direction: ltr !important;
+			}
+		}
+	}
+}

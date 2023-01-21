@@ -1,0 +1,51 @@
+@import "../../../scss/variable.scss";
+nav.breadcrumb-container {
+    padding: 20px 0;
+    border-radius: 0;
+    background-color: transparent;
+    // border-bottom: 1px solid #d6d6d6;
+
+    .breadcrumb {
+        margin: 10px 0;
+        padding: 0;
+        background-color: transparent;
+
+        .breadcrumb-item {
+            color: #000;
+            font-weight: 300;
+            font-size: 14px;
+
+            a {
+                color: inherit;
+            }
+            &.active {
+                font-weight: 500;
+                text-decoration: none;
+            }
+        }
+        .breadcrumb-item + .breadcrumb-item {
+			display: flex;
+			align-items: center;
+			padding-left: 12px;
+
+            &:before {
+                position: relative;
+                content: "";
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                transform: rotate(45deg);
+                margin-right: 12px;
+				padding: 0;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .breadcrumb-item {
+                font-weight: bold;
+                text-decoration: none;
+            }
+        }
+    }
+}

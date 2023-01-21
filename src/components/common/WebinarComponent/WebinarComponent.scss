@@ -1,0 +1,53 @@
+.volume-up {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    cursor: pointer;
+    @media (min-width: 320px) and (max-width: 767px) {
+        right: 10px;
+        top: 40px;
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        top: 40px;
+        right: 40px;
+      }
+    svg {
+        width: 100px;
+        height: 100px;
+    }
+}
+.iframe-block {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    text-align: left;
+    height: 100%;
+    svg, .svg-inline--fa.fa-w-11 {
+        width: 30px;
+        height: 30px;
+        background: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+.webinar-frame {
+    border:none;
+    min-width: 320px;
+    min-height: 300px;
+}
+.show-webinar {
+    visibility: visible;
+}
+
+.hide-webinar {
+    visibility: hidden;
+}
+.modal-dialog {
+    // top: 20%;
+    .modal-title {
+        line-height: 28px;
+    }
+    .modal-body {
+        min-height: 500px;
+    }
+}

@@ -1,0 +1,72 @@
+@import "../../../scss/variable.scss";
+.bidder-history {
+  .table {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    thead {
+      position: sticky;
+      top: -1px;
+      background-color: $grey-background;
+      border: 1px solid;
+      font-size: 20px;
+      z-index: 1;
+    }
+    td {
+      padding: 10px 8px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: Univers-45;
+      .info {
+        svg {
+          fill: $dark-green;
+        }
+      }
+      .delete {
+        cursor: pointer;
+        svg {
+          fill: $red;
+        }
+      }
+      .icons {
+        float: right;
+      }
+    }
+  }
+  .bg-highest {
+    background-color: #66b82b;
+  }
+  .bg-retracted {
+    background-color: $red;
+    opacity: 0.8;
+  }
+  .bg-reset {
+    background-color: #eb9894;
+  }
+  .bg-automatic {
+    background-color: #eddd0a;
+  }
+  .bg-maximum {
+    background-color: #ff9838;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    max-width: 100px;
+  }
+  .latest-row td {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: var(--paragraph-font-family, "Roboto");
+  }
+}
+.short-search,
+.footer-subscribe,
+.app-footer,
+.app-header {
+  display: none;
+}
+svg {
+  width: 20px;
+  height: 20px;
+}

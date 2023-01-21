@@ -1,0 +1,62 @@
+@import "../../../scss/variable.scss";
+
+.breadcrumb-container{
+	padding-bottom: 54px;
+}
+
+.contact-locations-wrap{
+    // background-color: #FAFBF8;
+    width: 100%;
+
+    .contact-locations{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3em;
+
+        .contact-location{
+            width: 30%;
+			padding-bottom: 50px;
+
+            h3{
+                font-size: 24px;
+                font-weight: bolder;
+				margin-bottom: 31px;
+            }
+
+            p,a{
+                color: #2E2E2E;
+                font-size: 18px;
+				margin: 0;
+				font-weight: 300;
+				padding-bottom: 12px;
+			}
+
+			a{
+				text-decoration: underline;
+			}
+
+			p:last-of-type{
+				padding-bottom: 34px;
+			}
+
+
+            a.map-link{
+                text-decoration: underline;
+				font-weight: 500;
+				font-size: 14.4px;
+				// font-family: var(--paragraph-font-family);
+
+				svg{
+					margin-left: 1em;
+					fill: #000;
+					width: 10px;
+					path{
+						fill: #000;
+					}
+				}
+            }
+
+     
+        }
+    }
+}

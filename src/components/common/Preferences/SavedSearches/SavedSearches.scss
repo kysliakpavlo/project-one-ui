@@ -1,0 +1,330 @@
+@import '../../../../scss/variable.scss';
+.saved-searches {
+	.pagination-container {
+		justify-content: space-between;
+	}
+	.card {
+		background-color: transparent;
+		.search-cards {
+			@media screen and (min-width: 768px) {
+				justify-content: space-between;
+			}
+		}
+		.notify-cards-row {
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				justify-content: center;
+			}
+		}
+	}
+	.card-header {
+		padding: 0 0 0 18px;
+	}
+	.header-bg-color {
+		background: $white-color;
+		color: #000;
+		font-weight: bold;
+		font-size: 18px;
+		display: flex;
+		justify-content: space-between;
+		p {
+			cursor: default;
+		}
+		svg {
+			fill: #000;
+			cursor: pointer;
+			margin: 0 10px;
+		}
+		svg:last-child {
+			fill: $border-red;
+		}
+		.saved-search-badge {
+			background-color: $dark-orange;
+			color: $white-color;
+			border-radius: 16px;
+			font-size: 12px;
+			padding: 4px 10px;
+			text-decoration: none;
+			text-align: center;
+			cursor: pointer;
+			position: absolute;
+			right: 0;
+			top: -20px;
+		}
+	}
+	.card-block-css {
+		min-width: 520px;
+		max-width: 520px;
+		min-height: 153px;
+		padding: 8px 8px 8px 8px;
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+		background: $white-color;
+		margin: 12px 15px;
+		height: auto;
+		@media only screen and (max-width: 767px) {
+			max-width: 400px;
+			min-width: 280px;
+			margin: 10px auto;
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			max-width: 48%;
+			min-width: 47%;
+			margin: 12px 0;
+		}
+	}
+	@media (min-width: 1025px) {
+	}
+	@media (min-width: 1025px) and (max-width: 1080px) {
+		.card-block-css:nth-child(even) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+	.notify-card {
+		@media (min-width: 768px) and (max-width: 1024px) {
+			width: 600px;
+			max-width: max-content;
+			min-width: 600px;
+		}
+		@media screen and (max-width: 767px) {
+			margin: 0 auto 20px !important;
+		}
+	}
+	.search-card {
+		.card-actions {
+			left: 15px;
+			right: 15px;
+			bottom: 15px;
+			text-align: right;
+			position: absolute;
+		}
+		.content-block {
+			width: auto;
+			max-width: 100%;
+			height: 100%;
+			color: #000;
+			font-weight: bold;
+			font-size: 14px;
+			padding-left: 8px;
+			@media only screen and (max-width: 767px) {
+				padding-left: 0;
+			}
+			.desc {
+				width: auto;
+				max-width: 100%;
+				min-height: 36px;
+				height: 100%;
+				color: #000;
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 1.3;
+				text-align: left;
+				margin-bottom: 19px;
+				margin-top: 11px;
+				display: flex;
+				position: relative;
+				overflow: hidden;
+				flex-wrap: wrap;
+				.filtered-list {
+					padding: 4px 8px 4px 8px;
+					clear: both;
+					position: relative;
+					background: #000;
+					min-height: 24px;
+					height: auto;
+					border-radius: 20px;
+					color: $white-color;
+					line-height: 20px;
+					font-weight: bold;
+					font-size: 12px;
+					text-align: center;
+					vertical-align: middle;
+					margin-left: 10px;
+					margin-bottom: 5px;
+					width: auto;
+					white-space: nowrap;
+				}
+			}
+			p {
+				padding: 0px 14px;
+				border: 1px solid $dark-color;
+				min-width: 192px !important;
+				text-align: center;
+				border-radius: 4px;
+				display: inline-block;
+			}
+			.toggle-btn-row {
+				display: flex;
+				justify-content: space-between;
+				width: 446px;
+				@media only screen and (max-width: 767px) {
+					width: 100%;
+					display: block;
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+					width: 100%;
+					display: block;
+				}
+				.toggles-section {
+					display: flex;
+					label {
+						margin-right: 20px;
+					}
+					.switch-toggles {
+						display: flex;
+						margin-right: 10px;
+					}
+				}
+				.view-btn-saved {
+					position: relative;
+					top: -7px;
+					@media only screen and (max-width: 767px) {
+						top: 0;
+					}
+					@media (min-width: 768px) and (max-width: 1024px) {
+						top: 0;
+					}
+					button {
+						width: 170px;
+						@media only screen and (max-width: 767px) {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.active-view {
+		height: 32px;
+		pointer-events: none;
+		cursor: pointer;
+		border: 0px;
+		background-color: var(--primary--color);
+		color: $white-color !important;
+
+		svg {
+			fill: $white-color !important;
+			// margin-top: -2px;
+		}
+	}
+	.switch-toggle-btn {
+		border: 1px solid var(--primary--color);
+		border-radius: 4px;
+		opacity: 1;
+		background-color: $white-color;
+		.btn {
+			height: 32px;
+			margin-left: 0;
+			border: none;
+			color: var(--primary--color);
+			padding: 5px;
+			font-size: 14px;
+			font-weight: bold;
+			border-radius: 0;
+			svg {
+				fill: var(--primary--color);
+				// margin-top: -2px;
+			}
+		}
+	}
+	.switch-list-section {
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.notify-content {
+		padding: 10px;
+		border: 1px solid #000;
+		.notify-content-block {
+			color: #000;
+			font-weight: bold;
+			font-size: 14px;
+			display: flex;
+			// border: 1px solid #000;
+			margin: 0px 7px 0px 0px;
+			padding: 0 !important;
+			width: 100%;
+			justify-content: space-between;
+			@media only screen and (max-width: 767px) {
+				display: block;
+				max-width: 280px;
+			}
+			.toggle-btn-row {
+				justify-content: space-between;
+				// border-right: 1px solid #000;
+				@media only screen and (max-width: 767px) {
+					border: none;
+				}
+				.toggles-section {
+					display: flex;
+					flex-wrap: wrap;
+					label {
+						/* margin-right: 15px; */
+						min-width: 95px;
+						max-width: 95px;
+					}
+					.switch-toggles {
+						display: flex;
+						width: 110px;
+						.custom-control.custom-switch {
+							padding: 0;
+							width: 25px;
+						}
+					}
+				}
+			}
+			.notify-method-block {
+				border-right: 0;
+				p {
+					padding: 0px 14px;
+					border: 1px solid $dark-color;
+					min-width: 192px !important;
+					text-align: center;
+					border-radius: 4px;
+				}
+			}
+		}
+	}
+	.apply-btn {
+		margin-top: 10px;
+		text-align: center;
+		.btn {
+			width: 40%;
+		}
+	}
+	.notify-frequency {
+		max-width: 260px;
+		@media screen and (min-width: 768px) {
+			border-right: 1px solid;
+		}
+		@media screen and (max-width: 767px) {
+			margin-left: 25px;
+		}
+		&.freq-time {
+			padding-right: 10px;
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				max-width: 290px;
+			}
+		}
+		&.notify {
+			padding-left: 10px;
+		}
+		.toggle-btn-row {
+			p {
+				border: 1px solid $dark-color;
+				min-width: 226px;
+				border-radius: 4px;
+				text-align: center;
+			}
+		}
+		&:last-child {
+			border-right: 0px solid;
+			@media screen and (max-width: 767px) {
+				padding: 0 10px 0 0;
+			}
+		}
+	}
+	.text-danger {
+		font-weight: 400;
+		font-size: 13px;
+	}
+}

@@ -1,0 +1,104 @@
+@import './../../../scss/variable.scss';
+.active-bids {
+	.no-results-block {
+		background-color: $light-grey;
+		margin: 0;
+	}
+	.cards-block-mobile {
+		display: none;
+		@media (min-width: 320px) and (max-width: 767px) {
+			display: block;
+			margin-top: -70px;
+			.nav-images {
+				display: none;
+			}
+		}
+		.pagination-container {
+			display: none;
+		}
+		.card-row {
+			.asset-item-card {
+				.asset-item-grid-card {
+					background-color: $white-color;
+					box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+					.asset-actions {
+						.btn-bidHistory {
+							display: block;
+							border-radius: 3px;
+							background-color: $header-font;
+							border-color: $header-font;
+							color: $white-color;
+						}
+						.btn-notifyme {
+							display: none;
+						}
+					}
+					.bidHistory-expand-block {
+						margin-top: 20px;
+						width: auto;
+						max-width: max-content;
+						.bid-history-table {
+							width: max-content;
+						}
+					}
+				}
+			}
+			.placebid-col {
+				margin-top: -25px;
+				.mobile-place-bid {
+					background-color: $white-color;
+					align-items: center;
+					max-width: 246px;
+					margin-left: auto;
+					margin-right: auto;
+					@media (min-width: 320px) and (max-width: 767px) {
+						max-width: max-content;
+						.current-bid-section {
+							width: 90%;
+						}
+					}
+					.view-tabs {
+						display: none;
+					}
+					.placebid-row {
+						padding: 0;
+						max-width: max-content;
+						.bid-amount-section,
+						.fees-premium-section,
+						.terms-conditions-section {
+							padding: 17px 0 22px;
+							.current-bid {
+								background-color: transparent;
+								color: $dark-color;
+								font-size: 18px;
+								text-align: left;
+							}
+						}
+						.bid-amount-section {
+							padding-top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.cards-block {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		.table-responsive-sm,
+		.cmn-card {
+			@media (min-width: 320px) and (max-width: 767px) {
+				display: none;
+			}
+		}
+	}
+	.large-cards-block {
+		margin-top: 88px;
+		max-width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

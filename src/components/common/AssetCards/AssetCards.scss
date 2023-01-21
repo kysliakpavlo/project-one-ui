@@ -1,0 +1,513 @@
+@import "../../../scss/variable.scss";
+
+.asset-cards {
+	padding-bottom: 20px;
+	.sort-block {
+		width: 100%;
+		.sort-content {
+			max-width: 1170px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@media (min-width: 768px) and (max-width: 1024px) {
+				display: block;
+			}
+			@media (max-width: 767px) {
+				display: block;
+			}
+			.sort-options {
+				display: flex;
+				justify-content: space-evenly;
+				@media (max-width: 767px) {
+					display: block;
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+					width: 100%;
+					display: block;
+				}
+				.button-select {
+					display: flex;
+					margin-right: 20px;
+					@media (max-width: 767px) {
+						width: 100%;
+						display: block;
+						margin: 5px 0;
+					}
+				}
+			}
+			.pagination-container {
+				margin: 10px 0;
+				@media (min-width: 768px) and (max-width: 1024px) {
+					display: inline-flex;
+				}
+				@media (max-width: 767px) {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+	.filter-block {
+		width: 100%;
+		margin-top: 15px;
+		.filter-content {
+			width: 100%;
+			padding: 0 30px;
+		}
+
+		.card {
+			width: 100%;
+		}
+	}
+	.card-row {
+		.placebid-col {
+			margin-bottom: 20px;
+			@media screen and (min-width: 768px) and (max-width: 1023px) {
+				padding: 0;
+				margin: 0 -10px 20px;
+				width: calc(100% + 20px);
+			}
+		}
+		.asset-item-card {
+			position: relative;
+			margin-bottom: 20px;
+			margin-bottom: 1em;
+			&.card-overlay {
+				.asset-item-grid-card:after {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					content: "";
+					position: absolute;
+					border-radius: 4px;
+					background-color: #0008;
+				}
+			}
+		}
+		.list-view {
+			cursor: pointer;
+			margin-bottom: 10px;
+			height: 290px;
+			width: 100%;
+			.card-title {
+				height: 40px;
+				padding: 10px 15px;
+				background-color: $light-green;
+				font-family: var(--paragraph-font-family, "Roboto");
+				font-size: 16px;
+				margin-bottom: 0;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+				.bid-block {
+					position: absolute;
+					right: 100px;
+					top: 5px;
+					.bid-icon {
+						padding-right: 15px;
+						float: left;
+						svg {
+							height: 22px;
+							width: 21px;
+							margin-top: 3px;
+						}
+					}
+					.bid-label {
+						font-size: 16px;
+					}
+					.bid-value {
+						font-size: 20px;
+					}
+				}
+			}
+			.card-body {
+				padding: 0;
+				display: flex;
+				.asset-image {
+					min-width: 30%;
+					width: 30%;
+					position: relative;
+					display: inline-block;
+					border-top-left-radius: 0px;
+					border-top-right-radius: 0px;
+					border-bottom-left-radius: 8px;
+					border-bottom-right-radius: 0px;
+					overflow: hidden;
+					transition: all 0.5s ease-in;
+					img {
+						height: 100%;
+						padding-bottom: 30px;
+						transition: transform 0.2s;
+						object-fit: cover;
+					}
+				}
+				.asset-image:hover {
+					img {
+						display: block;
+						transform: scale(1.1);
+					}
+				}
+				.carousel-item {
+					display: inline-block;
+					width: 300px;
+					height: 225px;
+				}
+				.nav-button {
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+					.btn-secondary {
+						border-radius: 0px;
+					}
+				}
+				.content-block {
+					border-right: 1px solid $grey-background;
+					display: inline-block;
+					margin-left: 20px;
+					padding: 10px 15px;
+					width: 40%;
+					.ellipsis {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+					.time-block {
+						font-size: 24px;
+						margin: 0;
+						border-bottom: 1px solid $grey-background;
+						.time-notify {
+							display: flex;
+							align-items: center;
+							margin-bottom: 10px;
+							word-spacing: 0.4rem;
+							.countdown-timer {
+								width: 50%;
+								font-size: 16px;
+								strong {
+									margin: 0 !important;
+								}
+								.time-tag {
+									word-spacing: 0.4rem;
+									padding: 0;
+									font-size: 14px;
+								}
+							}
+							.notify {
+								width: 50%;
+								.card-notify-button {
+									background-color: $white-color;
+									border: 1px solid $light-green;
+									color: $light-green;
+									font-size: 14px;
+									padding: 3px 15px;
+									font-family: var(--paragraph-font-family, "Roboto");
+									margin: 10px 0;
+								}
+								.card-notify-button:hover {
+									background-color: $light-green;
+									color: $white-color;
+								}
+							}
+						}
+					}
+					.address-block {
+						font-size: 18px;
+						font-family: var(--paragraph-font-family, "Roboto");
+						.address-block-row {
+							border-bottom: 1px solid $grey-background;
+							padding: 5px 0;
+							width: 350px;
+						}
+						.consigment-row {
+							border-bottom: 1px solid $grey-background;
+							padding-left: 1px;
+							margin-left: 0px;
+							margin-right: 0px;
+							.col-6 {
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+							.lot {
+								float: right;
+								margin-right: 10px;
+							}
+							.gauge {
+								.reserve-gauge {
+									padding-top: 10px;
+								}
+								.gauge-label {
+									text-align: center;
+									display: block;
+									font-size: 14px;
+								}
+							}
+						}
+						svg {
+							color: $hover-green;
+							font-size: 20px;
+							height: 15px;
+						}
+						.text-muted {
+							padding-left: 10px;
+							line-height: 32px;
+						}
+					}
+					.details-block {
+						.left-block {
+							width: 50%;
+							float: left;
+							line-height: 30px;
+						}
+						.right-block {
+							width: 50%;
+							float: right;
+							line-height: 30px;
+						}
+					}
+				}
+				.bid-block {
+					display: flex;
+					margin: 0 10px;
+					div {
+						margin: 5px;
+					}
+				}
+			}
+			.card-body::after {
+				content: "";
+				position: absolute;
+				bottom: 0px;
+				left: 334px;
+				display: block;
+				margin: auto;
+				height: 3px;
+				width: 0px;
+				background: transparent;
+				transition: width 0.5s ease, background-color 0.5s ease;
+			}
+			.card-body:hover::after {
+				width: calc(100% - 334px);
+				background: $light-green;
+			}
+		}
+		.loc-icon {
+			width: 8%;
+			float: left;
+		}
+		.icon {
+			width: 16%;
+			float: left;
+		}
+	}
+	.pagination-container {
+		background-color: $white-color;
+	}
+
+	.list-grid-btn {
+		display: flex;
+		margin: 15px 0;
+		justify-content: flex-end;
+		@media (max-width: 767px) {
+			display: none;
+		}
+		.btn {
+			width: 80px;
+			height: 33px;
+			color: #66b82b;
+			padding: 4px 7px;
+			background-color: #fff;
+			svg {
+				height: 20px;
+				width: 20px;
+				margin-top: -5px;
+			}
+		}
+		.active {
+			cursor: pointer;
+			color: $white-color;
+			pointer-events: none;
+			background-color: #66b82b !important;
+		}
+	}
+
+	.select-items {
+		display: flex;
+	}
+
+	.detail-view {
+		margin-top: -8px;
+		.bid-details-card,
+		.bid-history-card,
+		.bid-transport-calc-card {
+			border: 2px solid #223d38;
+		}
+		.bid-history-card {
+			.bid-history-table {
+				.table-body {
+					text-align: center;
+					.row {
+						.col-4:first-child {
+							padding-left: 60px;
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+		.bid-transport-calc-card {
+			padding: 16px 63px 9px 36px;
+		}
+		.close-btn {
+			top: 0;
+			border: 0;
+			padding: 0;
+			z-index: 1;
+			right: -1px;
+			width: 39px;
+			height: 31px;
+			border-radius: 0;
+			position: absolute;
+			svg {
+				padding: 3px;
+				fill: #223123;
+				margin-top: -4px;
+				border-radius: 100%;
+				background-color: #fff;
+			}
+		}
+		.bid-details-card {
+			padding: 12px 30px 12px 12px;
+			.card-title {
+				height: 27px;
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 27px;
+				text-align: center;
+				border-radius: 3px;
+				border: 1px solid #223d38;
+			}
+			.card-body .details-content {
+				height: 240px;
+				font-size: 14px;
+				overflow-y: auto;
+				white-space: break-spaces;
+			}
+			.asset-detail-slider {
+				padding: 0;
+				.details {
+					min-height: 210px;
+					max-height: 210px;
+					.details-row {
+						padding: 0 15px;
+					}
+				}
+			}
+		}
+		.notify-me-popover {
+			width: 100%;
+			max-width: unset;
+			top: unset !important;
+			left: unset !important;
+			transform: none !important;
+			position: relative !important;
+			.popover-header {
+				.close-btn {
+					svg {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.button-select label {
+			width: 60px;
+		}
+		.card-row {
+			@media (max-width: 991px) {
+				justify-content: center !important;
+
+				.AssetCard {
+					max-width: 100%;
+				}
+			}
+			.col-lg-3,
+			.col-md-4 {
+				.card {
+					.asset-image {
+						position: relative;
+						.nav-button {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							margin-left: auto;
+							margin-right: auto;
+							top: auto;
+						}
+					}
+				}
+			}
+		}
+		.react-multiple-carousel__arrow {
+			z-index: 2;
+		}
+	}
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+		.card-row {
+			.list-view {
+				.card-body {
+					.content-block {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 767px) {
+		.card-row {
+			.asset-item-card {
+				.asset-item-grid-card {
+					margin: auto;
+					max-width: 346x;
+					width: 340px;
+				}
+			}
+		}
+	}
+}
+
+
+//Modal Styling
+
+.place-bid-modal{
+
+	.modal-dialog{
+		position: absolute;
+		top: 30vh;
+		left: calc(50vw - 250px);
+
+		.modal-footer{
+			justify-content: space-between;
+
+			button{
+				width: 45%;
+			}
+
+			button:nth-of-type(1){
+				background-color: #fff !important;
+				color: #000;
+				border: 1px solid #000;
+				order: 1;
+
+
+				&:hover{
+					opacity: 0.8;
+					border: 1px solid #000!important;
+				}
+			}
+		}
+	}
+
+}

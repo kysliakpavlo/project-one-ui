@@ -1,0 +1,74 @@
+.custom-Checkbox {
+    margin-bottom: 12px;
+    min-height: 20px;
+    .custom-control-input {
+        & ~ .custom-control-label {
+            color: #28a745;
+            &:before {
+                width: 18px;
+                height: 18px;
+                box-shadow: none;
+                border-width: 2px;
+                border-radius: 2px;
+                border-color: #34ce57;
+                padding: 8px 8px 8px 8px;
+            }
+        }
+        &:checked ~ .custom-control-label {
+            &:before {
+                background-color: #34ce57;
+            }
+            &:after {
+                width: 13px;
+                height: 7px;
+                transform: rotate(-45deg);
+                background-color: #34ce57;
+                border-color: #ffffff;
+                border-width: 2px;
+                border-style: solid;
+                border-top: none;
+                border-right: none;
+                top: 8px;
+                left: -21px;
+            }
+        }
+    }
+}
+
+// .custom-checkbox .custom-control-label::before {
+//     height: 18px;
+//     width: 18px;
+//     border-radius: 2px;
+//     padding: 8px 8px 8px 8px;
+//     border-color: #66b82b;
+//     box-shadow: none;
+//     border-width: 2px;
+// }
+// .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before,
+// .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+//     background-color: #66b82b;
+// }
+// .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+//     /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e); */
+//     width: 13px;
+//     height: 7px;
+//     transform: rotate(-45deg);
+//     border-color: #ffffff;
+//     border-width: 2px;
+//     border-style: solid;
+//     border-top: none;
+//     border-right: none;
+//     top: 8px;
+//     left: -21px;
+// }
+// .custom-control-input.is-valid ~ .custom-control-label {
+//     color: #223d38;
+//     font-weight: 400;
+//     font-size: 12px;
+//     text-decoration: underline;
+//     text-align: left;
+//     margin-left: 0;
+//     padding-left: 20px;
+//     line-height: 12px;
+//     padding-top: 6px;
+// }

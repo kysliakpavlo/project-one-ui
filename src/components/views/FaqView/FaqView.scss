@@ -1,0 +1,352 @@
+@import '../../../scss/variable.scss';
+
+.search-bar {
+	margin-left: -5px;
+	top: 0;
+}
+
+.faq-content {
+	padding-top: 40px;
+
+	.card-deck {
+		@media (min-width: 576px) and (max-width: 712px) {
+			display: block;
+			margin-right: 0;
+			margin-left: 0;
+			flex-flow: unset;
+		}
+
+		.card {
+			border: 1px solid $light-green;
+			background-color: $header-font;
+			box-shadow: 5px $light-green;
+			color: $white-color;
+			text-align: center;
+			height: 125px;
+
+			@media (min-width: 481px) and (max-width: 767px) {
+				height: 200px;
+			}
+
+			@media (min-width: 576px) and (max-width: 712px) {
+				height: 125px;
+				margin-bottom: 15px;
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.card-title {
+				padding-top: 45px;
+				font-size: 24px;
+				font-weight: 700;
+
+				svg {
+					fill: $white-color;
+					margin-top: -4px;
+				}
+
+				svg:hover {
+					fill: $light-green;
+					margin-top: -4px;
+				}
+			}
+
+			.titles {
+				padding-top: 25px;
+			}
+
+			.card-title:hover {
+				color: $light-green;
+				text-decoration: underline;
+			}
+		}
+
+		.card-overlay {
+			height: 140px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: 4px;
+			color: $light-green;
+			border: 1px solid $light-green;
+			-webkit-box-shadow: 0 0 10px $light-green;
+			box-shadow: 0 0 15px $light-green;
+
+			.svg_color {
+				svg {
+					fill: $light-green;
+				}
+			}
+		}
+	}
+
+	.qstn {
+		margin-top: -26px;
+	}
+
+	.view-qstns {
+		border: 2px solid $dark-orange;
+		background-color: $light-grey;
+		margin-bottom: 10px;
+
+		.close-btn {
+			float: right;
+			border-radius: 0px 0px 0px 5px;
+		}
+
+		.accordion {
+			.card-header {
+				cursor: pointer;
+				font-weight: 700;
+				font-size: 18px;
+				padding: 5px 15px;
+				background-color: $light-grey;
+			}
+
+			.card-header:hover {
+				text-decoration: underline;
+			}
+
+			.collapse {
+				border-top: 1px solid green;
+			}
+
+			.main-header {
+				color: $light-green;
+				border-bottom: 1px solid $light-green;
+
+				svg {
+					float: right;
+					fill: $light-green;
+				}
+			}
+
+			.main-header:hover {
+				color: $green-color;
+			}
+
+			.card-body {
+				padding-left: 0;
+				padding-right: 0;
+				padding-bottom: 0;
+				margin-top: 2px;
+				background-color: $light-grey;
+
+				p {
+					margin-bottom: 0;
+					padding: 10px 45px;
+					font-size: 14px;
+				}
+
+				li {
+					padding: 5px 15px;
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+
+	.view-qstn {
+		display: none;
+		border: 2px solid $dark-orange;
+		background-color: $light-grey;
+		margin-bottom: 10px;
+
+		.close-btn {
+			float: right;
+			border-radius: 0px 0px 0px 5px;
+		}
+
+		.accordion {
+			.card-header {
+				cursor: pointer;
+				font-weight: 700;
+				font-size: 18px;
+				padding: 5px 15px;
+				background-color: $light-grey;
+			}
+
+			.card-header:hover {
+				text-decoration: underline;
+			}
+
+			.main-header {
+				color: $light-green;
+				border-bottom: 1px solid $light-green;
+
+				svg {
+					float: right;
+					fill: $light-green;
+				}
+			}
+
+			.main-header:hover {
+				color: $green-color;
+			}
+
+			.card-body {
+				padding-left: 0;
+				padding-right: 0;
+				padding-bottom: 0;
+				margin-top: 2px;
+				background-color: $light-grey;
+
+				p {
+					margin-bottom: 0;
+					padding: 10px 15px;
+				}
+
+				li {
+					padding: 5px 15px;
+					margin-left: 15px;
+				}
+			}
+		}
+
+		.card {
+			border: none;
+			box-shadow: 5px $light-green;
+			color: $dark-color;
+			background-color: $white-color;
+			height: auto;
+			margin-top: 30px;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.qston {
+			margin-top: -15px;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.view-qstn {
+			display: block;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.view-qstns {
+			display: none;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.view-qstn .accordion .card {
+			text-align: left;
+		}
+	}
+
+	.faq-qstn1 {
+		margin-top: 22px;
+		background-color: $white-color;
+	}
+
+	.faq-qstn2 {
+		margin-top: 25px;
+		margin-bottom: 25px;
+		background-color: $white-color;
+	}
+
+	.div-static-header {
+		margin-left: 5px;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+		.div-static-header .div-logo {
+			float: right;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		.div-static-header {
+			width: auto;
+			display: flow-root;
+			margin-top: 100px;
+		}
+
+		.search-bar .search__advanced {
+			margin-top: 5px;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1180px) {
+		.div-static-header {
+			margin-top: 100px;
+		}
+	}
+}
+
+.nav-pills {
+	.nav-item {
+		background-color: #f7f7f7;
+		height: fit-content;
+
+		.nav-wrap {
+			background-color: #f7f7f7;
+			border-bottom: 1px solid #d4d4d4;
+			width: 80%;
+			margin: auto;
+			padding-top: 20px;
+			padding-bottom: 10px;
+			height: 60px;
+
+			a {
+				padding: 0;
+				// color: #000;
+			}
+			.nav-link {
+				background-color: #f7f7f7;
+				color: #9e9e9e;
+			}
+
+			.nav-link.active {
+				background-color: #f7f7f7 !important;
+				color: #000 !important;
+			}
+		}
+	}
+
+	.nav-item:nth-last-of-type(1) {
+		.nav-wrap {
+			height: 60px;
+			margin-bottom: 3em;
+		}
+	}
+}
+
+.bg-grey {
+	background-color: #f7f7f7 !important;
+	color: #000;
+}
+
+.accordion {
+	.acc-card {
+		border-bottom: 1px solid #c4c4c4 !important;
+		cursor: pointer;
+
+		.acc-card-header {
+			color: #110000;
+			font-weight: 400;
+			background-color: #fff;
+			border-bottom: none !important;
+			padding: 1em 0;
+
+			svg {
+				fill: #000;
+				float: right;
+				path {
+					fill: #000;
+				}
+			}
+		}
+
+		.card-body {
+			color: #2e2e2e;
+			padding-left: 0;
+			padding-top: 0.5em;
+			padding-bottom: 2em;
+		}
+	}
+}

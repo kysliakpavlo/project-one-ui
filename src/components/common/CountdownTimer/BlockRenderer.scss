@@ -1,0 +1,104 @@
+@import '../../../scss/variable.scss';
+.block-renderer {
+	.div-timecount {
+		display: flex;
+
+		@media (min-width: 481px) and (max-width: 767px) {
+			justify-content: left;
+		}
+		.time-div {
+			display: flex;
+			flex-direction: column;
+
+			padding: 11px 12px;
+			min-width: 42px;
+
+			align-items: center;
+			justify-content: center;
+
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 8px;
+			font-family: var(--heading-font-family, 'Ubuntu');
+			// color: var(--primary-bg-font-color);
+			color: #000;
+
+			background-color: var(--cta-color-1);
+			border-radius: 5px;
+
+			@media (min-width: 768px) and (max-width: 991px) {
+				min-width: unset;
+				width: 28px;
+			}
+
+			&.bonus-time-indicator {
+				width: 37px;
+				height: 37px;
+				border-radius: 100%;
+				box-shadow: 0 0 3px 3px #0002;
+			}
+			& + .time-div {
+				margin-left: 10px;
+			}
+			svg {
+				fill: currentColor;
+			}
+
+			@media (max-width: 1200px) {
+				padding: 10px 12px;
+				// width: 32px;
+			}
+		}
+	}
+	.div-time-label {
+		display: flex;
+		justify-content: left;
+		color: #b9b9b9;
+		@media (min-width: 481px) and (max-width: 767px) {
+			justify-content: left;
+		}
+		.time-label {
+			// width: 39px;
+			font-size: 13px;
+			text-align: center;
+			// margin: 9px 10px 0 0;
+			color: #b9b9b9;
+			font-weight: 600;
+		}
+	}
+	&.bonus-time {
+		.time-div {
+			background-color: #66b82b;
+		}
+	}
+}
+
+.countdownTimer {
+	.block-renderer {
+		display: flex;
+		justify-content: space-between;
+		@media (min-width: 768px) and (max-width: 1342px) {
+			flex-direction: column;
+		}
+		@media (max-width: 420px) {
+			flex-direction: column;
+		}
+	}
+	.countdown-labels {
+		flex-basis: 50%;
+	}
+	.div-timecount {
+		margin: 0;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.div-time-heading {
+		font-size: 14px;
+		font-family: var(--paragraph-font-family);
+		font-weight: 600;
+	}
+	.div-time-label {
+		align-items: center;
+		font-size: 12px;
+	}
+}

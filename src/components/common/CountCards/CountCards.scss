@@ -1,0 +1,24 @@
+.count-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .card{
+        width: 32%;
+        .card-body{
+            padding: 0;
+            .card-content{
+                padding-left: 15px;
+            }
+            .card-title {
+                padding-right: 15px;
+            }
+        }
+        .view-details{
+            font-size: 10px;
+            cursor: pointer;
+        }
+        @media screen and (max-width:767px) {
+            width: 80%;
+        }
+    }
+}
