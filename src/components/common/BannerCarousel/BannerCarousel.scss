@@ -53,10 +53,6 @@
 			height: inherit;
 			overflow: hidden;
 
-			@media (max-width: 767px) {
-				height: 100%;
-			}
-
 			& > img,
 			& > video {
 				height: inherit;
@@ -192,7 +188,7 @@
 
 		.carousel-inner {
 			.carousel-item {
-				// height: 175px;
+				height: 175px;
 
 				.carousel-caption {
 					.container {
@@ -206,7 +202,6 @@
 
 						@media screen and (max-width: 767px) {
 							padding: 0 52px 54px;
-							margin-left: 5px;
 						}
 
 						h2 {
@@ -255,7 +250,7 @@
 
 						.container {
 							padding: 0;
-							top: 0;
+							top: 60%;
 							padding: 1em;
 
 							h2 {
@@ -266,11 +261,6 @@
 								margin-bottom: 0;
 								font-size: 20px;
 							}
-						}
-					}
-					@media (max-width: 767px) {
-						.container {
-							top: 30%;
 						}
 					}
 				}

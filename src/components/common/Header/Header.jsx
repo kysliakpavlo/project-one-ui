@@ -41,7 +41,6 @@ const Header = ({
 	isLoading,
 	liveNotificationOpen,
 	hidePublicHeader,
-	vendorLogo,
 }) => {
 	const history = useHistory();
 	const [renderMenu, setRenderMenu] = useState(true);
@@ -53,21 +52,11 @@ const Header = ({
 		history.location.pathname.split('/').includes('bidder-history') ||
 		history.location.pathname.split('/').includes('buyer-card') ||
 		history.location.pathname.split('/').includes('watchers');
-	const isPublicConsole = history.location.pathname
-		.split('/')
-		.includes('simulcast-auction')
-		? true
-		: false;
+	const isPublicConsole = history.location.pathname.split('/').includes('simulcast-auction') ? true : false;
 	const [width] = useWindowSize();
 
 	useEffect(() => {
-		if (
-			socket &&
-			loggedInUser &&
-			loggedInUser.accountId &&
-			loggedInUser.role !== 'Admin' &&
-			!history.location.pathname.split('/').includes('admin-console')
-		) {
+		if (socket && loggedInUser && loggedInUser.accountId && loggedInUser.role !== 'Admin' && !history.location.pathname.split('/').includes('admin-console')) {
 			connectOutBidNotifications(loggedInUser);
 		}
 		return () => {
@@ -89,25 +78,16 @@ const Header = ({
 				buyingMethod: 'All',
 			});
 			history.push(`/redirect/search-results?${obj}`);
-		} else if (
-			subMenuName === 'Asset' &&
-			title === 'Browse by Asset Types'
-		) {
+		} else if (subMenuName === 'Asset' && title === 'Browse by Asset Types') {
 			const obj = stringify({ buyingMethod: 'All' });
 			history.push(`/redirect/search-results?${obj}`);
 		} else if (subMenuName === 'Asset') {
-			const obj = stringify({
-				category: category,
-				buyingMethod: 'All',
-				title,
-			});
+			const obj = stringify({ category: category, buyingMethod: 'All', title });
 			history.push(`/redirect/search-results?${obj}`);
 		} else if (subMenuName === 'Auctions') {
 			event.preventDefault();
 			const obj = toUrlString({ categoryId: category });
-			history.push(
-				category ? `/redirect/auctions?${obj}` : `/redirect/auctions`
-			);
+			history.push(category ? `/redirect/auctions?${obj}` : `/redirect/auctions`);
 		} else if (title === 'Buy now') {
 			event.preventDefault();
 			const obj = stringify({
@@ -140,20 +120,13 @@ const Header = ({
 	};
 	const handleLogout = () => {
 		doLogout();
-		if (
-			history.location.pathname
-				.split('/')
-				.includes('simulcast-auction') ||
-			history.location.pathname.split('/').includes('admin-console')
-		) {
+		if (history.location.pathname.split('/').includes('simulcast-auction') || history.location.pathname.split('/').includes('admin-console')) {
 			history.push(`/`);
 		}
 	};
 	const showOutBidNotificaton = (param) => {
 		const assetLink = `/asset?${stringify({
-			auctionNum:
-				param.asset.associatedAssets?.associatedAssetAuction
-					?.auctionNum,
+			auctionNum: param.asset.associatedAssets?.associatedAssetAuction?.auctionNum,
 			consignmentNo: param.asset.consignmentNo,
 		})}`;
 		showMessage({
@@ -178,21 +151,11 @@ const Header = ({
 
 	const connectOutBidNotifications = (userObj) => {
 		let encodeUserstr = `${userObj.accountId}`;
-		socket.on(
-			`${SOCKET.OUTBID_FUNCTIONALITY}${encodeUserstr}`,
-			(outBidResponse) => {
-				if (
-					loggedInUser &&
-					loggedInUser.accountId &&
-					loggedInUser.role !== 'Admin' &&
-					!history.location.pathname
-						.split('/')
-						.includes('admin-console')
-				) {
-					showOutBidNotificaton(outBidResponse);
-				}
+		socket.on(`${SOCKET.OUTBID_FUNCTIONALITY}${encodeUserstr}`, (outBidResponse) => {
+			if (loggedInUser && loggedInUser.accountId && loggedInUser.role !== 'Admin' && !history.location.pathname.split('/').includes('admin-console')) {
+				showOutBidNotificaton(outBidResponse);
 			}
-		);
+		});
 	};
 
 	const disConnectOutBidNotifications = (userObj) => {
@@ -200,23 +163,15 @@ const Header = ({
 		socket.off(`${SOCKET.OUTBID_FUNCTIONALITY}${encodeUserstr}`);
 	};
 
-	const menuIndex = NavLinks.findIndex(
-		(NavLink) => NavLink.groupName === 'Buy'
-	);
-	const browseMenuIndex = NavLinks[menuIndex].subMenu.findIndex(
-		(NavLink) => NavLink.groupIdentifier === 'Asset'
-	);
+	const menuIndex = NavLinks.findIndex((NavLink) => NavLink.groupName === 'Buy');
+	const browseMenuIndex = NavLinks[menuIndex].subMenu.findIndex((NavLink) => NavLink.groupIdentifier === 'Asset');
 
 	// Main nav subMenu, asset categories
 	// ASSET CATEGORIES
 	NavLinks[menuIndex].subMenu[browseMenuIndex].subSubMenu = headerAssetTypes;
 
-	const auctionMenuIndex = NavLinks[menuIndex].subMenu.findIndex(
-		(NavLink) => NavLink.groupIdentifier === 'Auctions'
-	);
-	const found = categories.find(
-		(element) => element.groupName === 'All Categories'
-	);
+	const auctionMenuIndex = NavLinks[menuIndex].subMenu.findIndex((NavLink) => NavLink.groupIdentifier === 'Auctions');
+	const found = categories.find((element) => element.groupName === 'All Categories');
 
 	if (!found) {
 		categories.push({
@@ -230,10 +185,7 @@ const Header = ({
 
 	// AUCTION CATEGORIES
 	NavLinks[menuIndex].subMenu[auctionMenuIndex].subSubMenu = categories;
-	const assetTypesCategories = _map(
-		headerAssetTypes,
-		'headerAssetTypeId'
-	).join();
+	const assetTypesCategories = _map(headerAssetTypes, 'headerAssetTypeId').join();
 
 	const myAccountClick = () => {
 		liveNotificationOpen(false);
@@ -249,19 +201,7 @@ const Header = ({
 
 	return (
 		<Suspense fallback={<AppSpinner variant="overlay" />}>
-			<div
-				className={`app-header ${
-					isPublicConsole && width <= 1024
-						? 'position-relative'
-						: `${
-								isPublicConsole &&
-								width > 1024 &&
-								hidePublicHeader
-									? 'd-none'
-									: ''
-						  }`
-				}`}
-			>
+			<div className={`app-header ${isPublicConsole && width <= 1024 ? 'position-relative' : `${isPublicConsole && width > 1024 && hidePublicHeader ? 'd-none' : ''}`}`}>
 				<div className="container-fluid">
 					<Navbar
 						collapseOnSelect
@@ -276,22 +216,10 @@ const Header = ({
 							className="div-desk-img"
 							alt="header-logo"
 						>
-							{/* <img
-								alt="header"
-								//Change to be dynamic
-								src={
-									window.location.origin +
-									'/ev-green-logo.svg'
-								}
-								width="196"
-								height="36"
-								className="d-inline-block align-top"
-								id="header-logo"
-							/>{' '} */}
 							<img
 								alt="header"
 								//Change to be dynamic
-								src={vendorLogo ? vendorLogo : 'Auctions'}
+								src={window.location.origin + '/ev-green-logo.svg'}
 								width="196"
 								height="36"
 								className="d-inline-block align-top"
@@ -305,234 +233,105 @@ const Header = ({
 						{!pathName ? (
 							<Navbar.Collapse
 								id="responsive-navbar-nav"
-								className={
-									isVisible
-										? 'show-header-search justify-content-between'
-										: 'hide-header-search justify-content-between'
-								}
+								className={isVisible ? 'show-header-search justify-content-between' : 'hide-header-search justify-content-between'}
 							>
 								{/* Main nav - START */}
 								<Nav className="mr-auto">
-									{NavLinks.map(
-										(
-											{ url, groupName, subMenu },
-											index
-										) => (
-											<div
-												className={
-													subMenu &&
-													subMenu.length > 0
-														? 'nav-dropdown'
-														: 'menu-header'
-												}
-												key={`navLink_${index}`}
-											>
-												{subMenu &&
-												subMenu.length > 0 ? (
-													<NavDropdown
-														renderMenuOnMount={
-															renderMenu
-														}
-														className={`main-menu ${
-															!renderMenu
-																? 'dropdown-panel'
-																: ''
-														}`}
-														title={groupName}
-													>
-														{subMenu.map(
-															(
-																{
-																	url,
-																	groupName,
-																	subSubMenu,
-																	groupIdentifier,
-																},
-																index
-															) => (
-																// <div
-																// 	className="card"
-																// 	key={`navLink_${index + groupName}`}
-																// >
-																<>
-																	<MenuItemWrapper
-																		itemName={
-																			subMenu[
-																				index
-																			]
-																				.groupIdentifier
-																		}
-																	>
-																		<NavDropdown.Item
-																			as={
-																				Link
-																			}
-																			className={
-																				subMenu[
-																					index
-																				]
-																					.groupIdentifier ===
-																				'aboutUs'
-																					? 'subMenuTypes'
-																					: 'subMenuTypes1'
-																			}
-																			onClick={(
-																				event
-																			) =>
-																				navigationClick(
-																					groupName,
-																					groupIdentifier,
-																					subMenu[
-																						index
-																					]
-																						.groupName ===
-																						'Browse by Asset Types'
-																						? assetTypesCategories
-																						: '',
-																					event
-																				)
-																			}
-																			to={
-																				subMenu[
-																					index
-																				]
-																					.groupName ===
-																				'Browse by Asset Types'
-																					? `/search-results?${stringify(
-																							{
-																								buyingMethod:
-																									'All',
-																							}
-																					  )}`
-																					: url
-																			}
-																		>
-																			{
-																				groupName
-																			}
-																		</NavDropdown.Item>
+									{NavLinks.map(({ url, groupName, subMenu }, index) => (
+										<div
+											className={subMenu && subMenu.length > 0 ? 'nav-dropdown' : 'menu-header'}
+											key={`navLink_${index}`}
+										>
+											{subMenu && subMenu.length > 0 ? (
+												<NavDropdown
+													renderMenuOnMount={renderMenu}
+													className={`main-menu ${!renderMenu ? 'dropdown-panel' : ''}`}
+													title={groupName}
+												>
+													{subMenu.map(({ url, groupName, subSubMenu, groupIdentifier }, index) => (
+														// <div
+														// 	className="card"
+														// 	key={`navLink_${index + groupName}`}
+														// >
+														<>
+															<MenuItemWrapper itemName={subMenu[index].groupIdentifier}>
+																<NavDropdown.Item
+																	as={Link}
+																	className={subMenu[index].groupIdentifier === 'aboutUs' ? 'subMenuTypes' : 'subMenuTypes1'}
+																	onClick={(event) =>
+																		navigationClick(
+																			groupName,
+																			groupIdentifier,
+																			subMenu[index].groupName === 'Browse by Asset Types' ? assetTypesCategories : '',
+																			event
+																		)
+																	}
+																	to={
+																		subMenu[index].groupName === 'Browse by Asset Types'
+																			? `/search-results?${stringify({
+																					buyingMethod: 'All',
+																			  })}`
+																			: url
+																	}
+																>
+																	{groupName}
+																</NavDropdown.Item>
 
-																		{subSubMenu &&
-																			subSubMenu.map(
-																				(
-																					item,
-																					idx
-																				) => (
-																					<>
-																						{subMenu[
-																							index
-																						]
-																							.groupIdentifier ===
-																							'Asset' && (
-																							<NavDropdown.Item
-																								className="nav-item"
-																								onClick={(
-																									event
-																								) =>
-																									navigationClick(
-																										item.groupName,
-																										'Asset',
-																										item.headerAssetTypeId,
-																										event
-																									)
-																								}
-																								key={
-																									item.headerAssetTypeId
-																								}
-																								to="/search-results"
-																							>
-																								{
-																									item.groupName
-																								}
-																							</NavDropdown.Item>
-																						)}
-																						{subMenu[
-																							index
-																						]
-																							.groupIdentifier ===
-																							'Auctions' && (
-																							<NavDropdown.Item
-																								className={
-																									item.groupName ===
-																									'All'
-																										? 'nav-item auctions-list'
-																										: 'nav-item'
-																								}
-																								onClick={(
-																									event
-																								) =>
-																									navigationClick(
-																										item.groupName,
-																										'Auctions',
-																										item.categoryIdString,
-																										event
-																									)
-																								}
-																								key={
-																									item.categoryIdString
-																								}
-																								to="/auctions"
-																							>
-																								{
-																									item.groupName
-																								}{' '}
-																								Auctions
-																							</NavDropdown.Item>
-																						)}
-																						{subMenu[
-																							index
-																						]
-																							.groupIdentifier ===
-																							'others' && (
-																							<NavDropdown.Item
-																								className="nav-item"
-																								onClick={(
-																									event
-																								) =>
-																									navigationClick(
-																										item.groupName,
-																										'',
-																										item.categoryIdString,
-																										event
-																									)
-																								}
-																								key={
-																									item.categoryIdString
-																								}
-																								to={
-																									item.url
-																								}
-																							>
-																								{
-																									item.groupName
-																								}
-																							</NavDropdown.Item>
-																						)}
-																					</>
-																				)
+																{subSubMenu &&
+																	subSubMenu.map((item, idx) => (
+																		<>
+																			{subMenu[index].groupIdentifier === 'Asset' && (
+																				<NavDropdown.Item
+																					className="nav-item"
+																					onClick={(event) => navigationClick(item.groupName, 'Asset', item.headerAssetTypeId, event)}
+																					key={item.headerAssetTypeId}
+																					to="/search-results"
+																				>
+																					{item.groupName}
+																				</NavDropdown.Item>
 																			)}
-																	</MenuItemWrapper>
-																</>
-																// </div>
-															)
-														)}
-													</NavDropdown>
-												) : (
-													// <Nav.Item>
+																			{subMenu[index].groupIdentifier === 'Auctions' && (
+																				<NavDropdown.Item
+																					className={item.groupName === 'All' ? 'nav-item auctions-list' : 'nav-item'}
+																					onClick={(event) => navigationClick(item.groupName, 'Auctions', item.categoryIdString, event)}
+																					key={item.categoryIdString}
+																					to="/auctions"
+																				>
+																					{item.groupName} Auctions
+																				</NavDropdown.Item>
+																			)}
+																			{subMenu[index].groupIdentifier === 'others' && (
+																				<NavDropdown.Item
+																					className="nav-item"
+																					onClick={(event) => navigationClick(item.groupName, '', item.categoryIdString, event)}
+																					key={item.categoryIdString}
+																					to={item.url}
+																				>
+																					{item.groupName}
+																				</NavDropdown.Item>
+																			)}
+																		</>
+																	))}
+															</MenuItemWrapper>
+														</>
+														// </div>
+													))}
+												</NavDropdown>
+											) : (
+												// <Nav.Item>
 
-													// 	<Link
-													// 		to="/sell-with-us"
-													// 		className="val-link"
-													// 	>
-													// 		Sell with Us
-													// 	</Link>
+												// 	<Link
+												// 		to="/sell-with-us"
+												// 		className="val-link"
+												// 	>
+												// 		Sell with Us
+												// 	</Link>
 
-													// </Nav.Item>
-													''
-												)}
-											</div>
-										)
-									)}
+												// </Nav.Item>
+												''
+											)}
+										</div>
+									))}
 								</Nav>
 								{/* Main nav - END */}
 
@@ -555,42 +354,22 @@ const Header = ({
 									{/* Loggedin User Actions - START */}
 									<Visible when={isLoggedIn && loggedInUser}>
 										<Nav.Item className="header-buttons d-flex user-actions">
-											{loggedInUser &&
-											loggedInUser.profilePicURL ? (
+											{loggedInUser && loggedInUser.profilePicURL ? (
 												<img
 													className="img img-fluid profile-pic"
-													src={
-														loggedInUser.profilePicURL
-													}
+													src={loggedInUser.profilePicURL}
 												/>
 											) : (
-												<SvgComponent
-													path="account_circle"
-													className="fill-cta-1"
-												/>
+												<SvgComponent path="account_circle" />
 											)}
-
 											<NavDropdown
 												renderMenuOnMount={renderMenu}
-												onClick={(e) =>
-													myAccountClick(e)
-												}
+												onClick={(e) => myAccountClick(e)}
 												className="dropdown-panel"
 												title={
-													loggedInUser &&
-													loggedInUser?.role.includes(
-														'Vendor;Buyer'
-													)
+													loggedInUser && loggedInUser?.role.includes('Vendor;Buyer')
 														? `${loggedInUser.name}`
-														: `${
-																loggedInUser &&
-																loggedInUser.firstName
-														  } ${
-																loggedInUser &&
-																loggedInUser.lastName
-																	? loggedInUser.lastName
-																	: ''
-														  }`
+														: `${loggedInUser && loggedInUser.firstName} ${loggedInUser && loggedInUser.lastName ? loggedInUser.lastName : ''}`
 												}
 												id="basic-nav-dropdown-account"
 											>
@@ -650,11 +429,7 @@ const Header = ({
 												>
 													Preferences
 												</NavDropdown.Item>
-												<NavDropdown.Item
-													onClick={handleLogout}
-												>
-													Logout
-												</NavDropdown.Item>
+												<NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
 											</NavDropdown>
 										</Nav.Item>
 									</Visible>
@@ -731,16 +506,9 @@ const Header = ({
 						</Modal.Header>
 						<Modal.Body>
 							<p>
-								User {loggedInUser.firstName}{' '}
-								{loggedInUser.lastName} is already logged in.
-								Would you like to continue ?
-								<div>
-									Click continue if you would like to continue
-									with same user id.
-								</div>
-								<div>
-									Click close to logout from this user id
-								</div>
+								User {loggedInUser.firstName} {loggedInUser.lastName} is already logged in. Would you like to continue ?
+								<div>Click continue if you would like to continue with same user id.</div>
+								<div>Click close to logout from this user id</div>
 							</p>
 						</Modal.Body>
 						<Modal.Footer>

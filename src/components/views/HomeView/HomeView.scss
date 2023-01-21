@@ -213,11 +213,6 @@
 			margin-bottom: 22px;
 			align-items: center;
 
-			@media (max-width: 767px) {
-				flex-direction: column;
-				gap: 1em;
-			}
-
 			.auction-left {
 				display: flex;
 				align-items: center;
@@ -255,7 +250,7 @@
 					margin-bottom: 0 !important;
 
 					@media (min-width: 320px) and (max-width: 1024px) {
-						// height: 32px;
+						height: 32px;
 						width: 116px;
 					}
 				}
@@ -316,15 +311,9 @@
 }
 
 @media (max-width: 767px) {
-	.home-view {
-		.search-bar-visible {
-			height: unset;
-			.search-bar {
-				width: 100%;
-				left: 0;
-				top: 0;
-			}
-		}
+	.home-view .search-bar {
+		width: 100%;
+		left: 0;
 	}
 }
 
@@ -411,9 +400,6 @@
 
 	.auction-filter {
 		min-width: 247px;
-		@media (max-width: 767px) {
-			min-width: 170px;
-		}
 
 		select {
 			width: 100%;

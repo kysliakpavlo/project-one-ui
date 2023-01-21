@@ -10,14 +10,13 @@
 	padding: 0 16px 0 8px;
 	justify-content: space-between;
 	background-color: transparent;
-	// box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.17);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.17);
 
 	p {
 		font-size: 14px;
 		margin-bottom: 0;
 		padding: 8px 10px;
 		margin-right: 29px;
-		font-weight: 300;
 		// font-family: INSERT ROBOTO ;
 	}
 
@@ -81,11 +80,11 @@
 		display: flex;
 		justify-content: center;
 
-		.floating-input:nth-of-type(2) {
+		.floating-input:nth-of-type(2){
 			margin-left: 1em;
 		}
 
-		@media (min-width: 757px) and (max-width: 1200px) {
+		@media (min-width: 757px ) and (max-width: 1200px){
 			justify-content: flex-end;
 		}
 	}
@@ -94,13 +93,14 @@
 		margin-bottom: 0;
 
 		&.floating-input {
+
 			> select {
 				padding: 5px 24px 5px 15px !important;
 			}
 
 			.form-control {
 				appearance: none;
-				border-color: #afb1b6;
+				border-color: #AFB1B6;
 				background-color: #fff;
 				border-radius: 8px;
 				padding: 0 24px 0 15px !important;
@@ -157,6 +157,7 @@
 			width: 100%;
 			margin-bottom: 15px;
 			justify-content: center;
+
 		}
 	}
 }

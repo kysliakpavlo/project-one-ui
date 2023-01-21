@@ -37,13 +37,9 @@
 			}
 		}
 		.alert-message {
-			// top: 240px;
+			top: 240px;
 			@media (min-width: 320px) and (max-width: 767px) {
 				top: 155px;
-			}
-			@media (max-width: 992px) {
-				top: unset;
-				bottom: 0;
 			}
 		}
 		.rendered-view {
@@ -211,8 +207,6 @@
 				background-color: var(--primary--color);
 				color: $white-color;
 				border: 0px;
-				overflow: hidden;
-
 				svg {
 					fill: $white-color;
 				}
@@ -254,7 +248,6 @@
 							&.active {
 								text-decoration: none !important;
 								opacity: 1;
-								overflow: hidden;
 							}
 
 							&:hover {
@@ -270,63 +263,6 @@
 			font-weight: 400;
 			font-size: 36px;
 			margin-bottom: 50px;
-		}
-	}
-}
-
-.sort-block {
-	// display: flex;
-	// align-items: center;
-
-	padding: 13px 0 22px 0;
-	background-color: #f6f6f6 !important;
-
-	@media (max-width: 1200px) {
-		padding-bottom: 25px;
-	}
-
-	.pagination-container {
-		// display: flex;
-		// align-items: center;
-		// flex: 1;
-		// max-width: 1480px;
-		// margin: 0 auto;
-
-		@media (min-width: 1600px) {
-			padding-left: 20px;
-		}
-		@media (max-width: 1600px) {
-			max-width: 1460px;
-			padding-left: 20px;
-			padding-right: 20px;
-		}
-		@media (max-width: 1200px) {
-			display: block;
-		}
-
-		.pagination {
-			.page-item {
-				a {
-					font-size: 16px;
-					font-weight: 300;
-				}
-
-				.page-link {
-					svg {
-						stroke: #000;
-					}
-				}
-			}
-		}
-	}
-}
-
-.cmn-card .card-layout .highest-bidder-block {
-	.gavel-icon {
-		background: transparent !important;
-
-		svg {
-			fill: var(--cta-color-1);
 		}
 	}
 }

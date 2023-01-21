@@ -728,15 +728,6 @@ body {
 
 			.online-bidding-block {
 				.online-svg {
-					@media (max-width: 767px) {
-						display: none;
-						width: 100%;
-						svg {
-							width: fit-content;
-							margin: auto;
-							margin-top: 1em;
-						}
-					}
 					svg {
 						margin-left: 5px;
 						margin-bottom: 5px;

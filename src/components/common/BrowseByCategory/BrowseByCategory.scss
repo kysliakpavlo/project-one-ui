@@ -1,7 +1,7 @@
 @import '../../../scss/variable.scss';
 .browse-by-category {
 	padding: 15px;
-	color: var(--cta-color-1);
+	color: $green-color;
 	text-align: center;
 	background-color: #fff;
 	height: 170px;
@@ -46,13 +46,13 @@
 				height: auto;
 				padding: 15px;
 				display: block;
-				fill: var(--cta-color-1);
+				fill: $green-color;
 				font-size: 2em;
 				margin: 0 auto 8px;
 				border-radius: 100%;
 				transition: all 0.3s;
 				background-color: $white-color;
-				border: 1px solid var(--cta-color-1);
+				border: 1px solid $green-color;
 			}
 
 			&:hover,
@@ -61,7 +61,7 @@
 				svg {
 					fill: $white-color;
 					cursor: pointer;
-					background-color: var(--cta-color-1);
+					background-color: $green-color;
 					box-shadow: 0 2px 5px #0009;
 				}
 			}
@@ -75,7 +75,7 @@
 			&__arrow--left,
 			&__arrow--right {
 				&:before {
-					color: var(--cta-color-1);
+					color: $green-color;
 					font-weight: bold;
 					@media only screen and (min-device-width: 767px) and (max-device-width: 1024px) {
 						font-size: 30px;

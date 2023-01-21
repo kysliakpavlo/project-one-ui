@@ -8,7 +8,7 @@ import { stringify } from 'qs';
 import './Footer.scss';
 import SvgComponent from '../SvgComponent';
 
-const Footer = ({ isLoggedIn, showLogin, toggleLogin, footerVendorLogo }) => {
+const Footer = ({ isLoggedIn, showLogin, toggleLogin }) => {
 	const history = useHistory();
 	const path = history.location.pathname;
 	const [pathName, setPathName] = useState(false);
@@ -49,20 +49,11 @@ const Footer = ({ isLoggedIn, showLogin, toggleLogin, footerVendorLogo }) => {
 								to={'/'}
 								alt="slattery"
 							>
-								{/* <img
+								<img
 									className="footerLogo"
 									src={
 										window.location.origin +
 										'/assets/footer-logo.png'
-									}
-									alt="slattery logo"
-								/> */}
-								<img
-									className="footerLogo"
-									src={
-										footerVendorLogo
-											? footerVendorLogo
-											: 'Auctions'
 									}
 									alt="slattery logo"
 								/>

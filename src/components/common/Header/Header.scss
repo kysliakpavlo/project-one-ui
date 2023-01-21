@@ -1,4 +1,4 @@
-@import './../../../scss/variable.scss';
+@import "./../../../scss/variable.scss";
 
 .admin-alert-modal {
 	opacity: 1;
@@ -31,7 +31,7 @@
 	top: 0px;
 	z-index: 1024;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
-
+	
 	.navbar-brand {
 		padding-top: 0;
 		padding-bottom: 0;
@@ -50,7 +50,6 @@
 		&:hover {
 			.dropdown-menu {
 				display: block;
-				left: -33px;
 			}
 		}
 	}
@@ -74,7 +73,7 @@
 			margin-right: 0 !important;
 			.nav-item {
 				display: inline-block;
-
+				
 				.nav-link {
 					color: var(--white-color);
 					font-family: var(--heading-font-family);
@@ -127,7 +126,7 @@
 							border: none;
 							min-width: 100px;
 							display: inline;
-							font-family: var(--heading-font-family, 'Ubuntu');
+							font-family: var(--heading-font-family, "Ubuntu");
 							font-weight: 300;
 						}
 						svg {
@@ -222,13 +221,13 @@
 				display: inline-block;
 				position: relative;
 				margin-right: 10px;
-				font-family: var(--heading-font-family, 'Ubuntu');
+				font-family: var(--heading-font-family, "Ubuntu");
 				min-width: 100px;
 				font-weight: 300;
 			}
 			.nav-item > a {
 				color: var(--black-color);
-				font-family: var(--heading-font-family, 'Ubuntu');
+				font-family: var(--heading-font-family, "Ubuntu");
 				text-transform: lowercase;
 				&::first-letter {
 					text-transform: capitalize;
@@ -499,10 +498,6 @@
 		}
 		.header-buttons.nav-item {
 			border-bottom: none;
-			@media (max-width: 767px) {
-				margin: auto;
-				margin-right: 0;
-			}
 		}
 		.navbar button {
 			display: none;
@@ -516,7 +511,6 @@
 		/* STYLES GO HERE */
 		.app-header {
 			height: 97px;
-			padding-bottom: 5px;
 		}
 		img {
 			width: 131px;
@@ -657,11 +651,5 @@
 	100% {
 		opacity: 0;
 		visibility: hidden;
-	}
-}
-
-.fill-cta-1 {
-	path:nth-of-type(2) {
-		fill: #fff;
 	}
 }

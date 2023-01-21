@@ -1,268 +1,267 @@
-@import '../../../scss/variable.scss';
+@import "../../../scss/variable.scss";
 
 .login-wrap {
-	right: 0;
-	top: 0px;
-	width: 344px;
-	max-width: 100%;
-	position: absolute;
-	border-radius: 5px;
-	border: 0px solid $dark-green;
-	border-top-color: transparent;
-	background-color: $white-color;
-	.login-header {
-		background-color: var(--primary--color);
-		text-align: center;
-		padding: 5px;
-		padding-top: 15px;
-		.arrow-back-white {
-			float: left;
-			cursor: pointer;
-		}
-		.close {
-			// border-radius: 50%;
-			font-weight: 300;
-			line-height: 26px;
-			opacity: 1;
-			// background: $white-color;
-			svg {
-				height: 28px;
-				width: 28px;
-				// background: #fff;
-				// border-radius: 50%;
-				fill: #fff;
-				padding-bottom: 3px;
-			}
-		}
-	}
-	.login-form {
-		padding: 28px 8px 15px 7px;
-		background-color: $header-background;
-		border-radius: 4px;
-		.signin-htm,
-		.reset-htm {
-			.form-input {
-				margin-bottom: 12px;
-				.form-label {
-					background-color: $white-color;
-					position: absolute;
-					left: 15px;
-					font-size: 10px;
-					letter-spacing: 1px;
-					top: -5px;
-					padding: 0 5px;
-					font-family: var(--paragraph-font-family, 'Roboto');
-					font-weight: bold;
-				}
-				.form-control {
-					border: 1px solid;
-					border-radius: 4px;
-					padding: 0 15px;
-				}
-				&.password-field {
-					.password-eye {
-						top: 0;
-					}
-				}
-			}
-			.switch-button {
-				width: calc(100% + 15px);
-				font-size: 14px;
-				margin-bottom: 21px;
-			}
-			.forget-password {
-				label {
-					font-size: 14px;
-					text-decoration: underline;
-				}
-				label:hover {
-					color: initial;
-				}
-			}
-			button {
-				font-size: 14px;
-				font-weight: 700;
-				margin-bottom: 4px !important;
-			}
-			.label-header {
-				background-color: $light-green-background;
-				margin-top: 8px;
-				display: block;
-				min-height: 30px;
-				font-weight: 900;
-				line-height: 20px;
-				font-size: 14px;
-				padding: 5px 70px;
-				margin-bottom: 12px;
-				pointer-events: none;
-			}
-			.no-account-label {
-				background-color: transparent;
-				color: $dark-color;
-			}
-			.btn-sign-in {
-				border-color: $green-color;
-			}
-			.vendor-login-button {
-				// background-color: $green-color;
-				background-color: var(--primary--color);
-				text-align: center;
-				// opacity: 0.8;
-				color: #fff;
-				padding: 5px;
-				border-radius: 4px;
-				font-size: 14px;
-				font-weight: 900;
-				display: block;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				line-height: 24px;
-				a {
-					color: $white-color;
-				}
-			}
-			.sign-up-button {
-				background-color: var(--cta-color-1);
-				border: none;
-				text-align: center;
-				color: #000;
-				padding: 5px;
-				border-radius: 4px;
-				font-size: 14px;
-				font-weight: 900;
-				display: block;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				line-height: 24px;
-				a {
-					color: $white-color;
-				}
-			}
-		}
-	}
-	@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
-		left: 0;
-		right: 0;
-		top: 94px;
-		bottom: 0;
-		z-index: 1;
-		position: fixed;
-		overflow-y: hidden;
-		overflow-x: hidden;
-		margin-left: auto;
-		margin-right: auto;
-		height: fit-content;
-	}
-	@media (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-		left: inherit;
-	}
-	.signin-htm,
-	.reset-htm,
-	.registration {
-		height: 0;
-		overflow: hidden;
-		transform: rotateY(180deg);
-		transition: all 0.4s linear;
-		backface-visibility: hidden;
-		.label-header {
-			background-color: $light-green-background;
-			margin-top: 35px;
-			display: block;
-			min-height: 30px;
-			font-weight: 900;
-			line-height: 20px;
-			font-size: 14px;
-			padding: 5px 45px;
-		}
-		.no-account-label {
-			background-color: transparent;
-			color: $dark-color;
-		}
-		.sign-up-button {
-			background-color: $green-color;
-			text-align: center;
-			color: $white-color;
-			padding: 5px;
-			border-radius: 4px;
-			font-size: 14px;
-			font-weight: 900;
-			display: block;
-			a {
-				color: $white-color;
-			}
-		}
-	}
-	.check {
-		display: none;
-	}
-	.tab,
-	.in-tab {
-		margin: 0;
-		display: inline-block;
-		border-bottom: 2px solid transparent;
-		cursor: pointer;
-		margin-left: 10%;
-		&:hover {
-			color: $white-color;
-		}
-	}
-	.in-tab {
-		font-size: 18px;
-		color: $white-color;
-	}
+  right: 0;
+  top: 0px;
+  width: 344px;
+  max-width: 100%;
+  position: absolute;
+  border-radius: 5px;
+  border: 0px solid $dark-green;
+  border-top-color: transparent;
+  background-color: $white-color;
+  .login-header {
+    background-color: var(--primary--color);
+    text-align: center;
+    padding: 5px;
+    padding-top: 15px;
+    .arrow-back-white {
+      float: left;
+      cursor: pointer;
+    }
+    .close {
+      // border-radius: 50%;
+      font-weight: 300;
+      line-height: 26px;
+      opacity: 1;
+      // background: $white-color;
+      svg {
+        height: 28px;
+        width: 28px;
+        // background: #fff;
+        // border-radius: 50%;
+        fill: #fff;
+		padding-bottom: 3px;
+      }
+    }
+  }
+  .login-form {
+    padding: 28px 8px 15px 7px;
+    background-color: $header-background;
+    border-radius: 4px;
+    .signin-htm,
+    .reset-htm {
+      .form-input {
+        margin-bottom: 12px;
+        .form-label {
+          background-color: $white-color;
+          position: absolute;
+          left: 15px;
+          font-size: 10px;
+          letter-spacing: 1px;
+          top: -5px;
+          padding: 0 5px;
+          font-family: var(--paragraph-font-family, "Roboto");
+          font-weight: bold;
+        }
+        .form-control {
+          border: 1px solid;
+          border-radius: 4px;
+          padding: 0 15px;
+        }
+        &.password-field {
+          .password-eye {
+            top: 0;
+          }
+        }
+      }
+      .switch-button {
+        width: calc(100% + 15px);
+        font-size: 14px;
+        margin-bottom: 21px;
+      }
+      .forget-password {
+        label {
+          font-size: 14px;
+          text-decoration: underline;
+        }
+        label:hover {
+          color: initial;
+        }
+      }
+      button {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 4px !important;
+      }
+      .label-header {
+        background-color: $light-green-background;
+        margin-top: 8px;
+        display: block;
+        min-height: 30px;
+        font-weight: 900;
+        line-height: 20px;
+        font-size: 14px;
+        padding: 5px 70px;
+        margin-bottom: 12px;
+        pointer-events: none;
+      }
+      .no-account-label {
+        background-color: transparent;
+        color: $dark-color;
+      }
+      .btn-sign-in {
+        border-color: $green-color;
+      }
+      .vendor-login-button {
+        // background-color: $green-color;
+        background-color: var(--primary--color);
+        text-align: center;
+        // opacity: 0.8;
+        color: #fff;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 900;
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        line-height: 24px;
+        a {
+          color: $white-color;
+        }
+      }
+      .sign-up-button {
+        background-color: var(--cta-color-1);
+        border: none;
+        text-align: center;
+        color: #000;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 900;
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        line-height: 24px;
+        a {
+          color: $white-color;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    left: 0;
+    right: 0;
+    top: 94px;
+    bottom: 0;
+    z-index: 1;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    left: inherit;
+  }
+  .signin-htm,
+  .reset-htm,
+  .registration {
+    height: 0;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    transition: all 0.4s linear;
+    backface-visibility: hidden;
+    .label-header {
+      background-color: $light-green-background;
+      margin-top: 35px;
+      display: block;
+      min-height: 30px;
+      font-weight: 900;
+      line-height: 20px;
+      font-size: 14px;
+	  padding: 5px 45px;
+    }
+    .no-account-label {
+      background-color: transparent;
+      color: $dark-color;
+    }
+    .sign-up-button {
+      background-color: $green-color;
+      text-align: center;
+      color: $white-color;
+      padding: 5px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 900;
+      display: block;
+      a {
+        color: $white-color;
+      }
+    }
+  }
+  .check {
+    display: none;
+  }
+  .tab,
+  .in-tab {
+    margin: 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+	margin-left: 10%;
+    &:hover {
+      color: $white-color;
+    }
+  }
+  .in-tab {
+    font-size: 18px;
+    color: $white-color;
+}
 
-	.login-form {
-		overflow-y: auto;
-		overflow-x: hidden;
-		position: relative;
-		perspective: 1000px;
-		transform-style: preserve-3d;
-		max-height: calc(100vh - 150px);
-		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
-	}
-	.sign-in:checked + .tab,
-	.sign-up:checked + .in-tab {
-		color: $dark-color;
-	}
-	.sign-in:checked + .in-tab > .back-btn {
-		display: none;
-	}
-	.sign-in:checked ~ .login-form .signin-htm,
-	.sign-up:checked ~ .login-form .reset-htm,
-	.social:checked ~ .login-form .registration {
-		height: auto;
-		overflow: visible;
-		transform: rotate(0);
-	}
-	// .transitionDiv {
-	//   height: 100px;
-	//   // margin: 0 auto;
-	// }
+  .login-form {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    max-height: calc(100vh - 150px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  .sign-in:checked + .tab,
+  .sign-up:checked + .in-tab {
+    color: $dark-color;
+  }
+  .sign-in:checked + .in-tab > .back-btn {
+    display: none;
+  }
+  .sign-in:checked ~ .login-form .signin-htm,
+  .sign-up:checked ~ .login-form .reset-htm,
+  .social:checked ~ .login-form .registration {
+    height: auto;
+    overflow: visible;
+    transform: rotate(0);
+  }
+  // .transitionDiv {
+  //   height: 100px;
+  //   // margin: 0 auto;
+  // }
 
-	// @keyframes inAnimation {
-	//   0% {
-	//     opacity: 0;
-	//     visibility: hidden;
-	//     height: 100px;
-	//   }
-	//   100% {
-	//     opacity: 1;
-	//     visibility: visible;
-	//     height: auto;
-	//   }
-	// }
+  // @keyframes inAnimation {
+  //   0% {
+  //     opacity: 0;
+  //     visibility: hidden;
+  //     height: 100px;
+  //   }
+  //   100% {
+  //     opacity: 1;
+  //     visibility: visible;
+  //     height: auto;
+  //   }
+  // }
 
-	// @keyframes outAnimation {
-	//   0% {
-	//     opacity: 1;
-	//     height: auto;
-	//   }
-	//   100% {
-	//     opacity: 0;
-	//     visibility: hidden;
-	//     height: 0px;
-	//   }
-	// }
+  // @keyframes outAnimation {
+  //   0% {
+  //     opacity: 1;
+  //     height: auto;
+  //   }
+  //   100% {
+  //     opacity: 0;
+  //     visibility: hidden;
+  //     height: 0px;
+  //   }
+  // }
 }

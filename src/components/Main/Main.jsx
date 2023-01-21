@@ -1,71 +1,61 @@
-import React, { useEffect, useMemo, useState, lazy, Suspense } from 'react';
-import _isEmpty from 'lodash/isEmpty';
-import socketIOClient from 'socket.io-client';
-import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
-import Visible from '../common/Visible';
-import AppSpinner from '../common/AppSpinner';
-import ToastMessages from '../common/ToastMessages';
-import { API_PATH } from '../../utils/constants';
-import { scrollToTop, toUrlString } from '../../utils/helpers';
-import Redirector from '../common/Redirector';
-import RedirectorView from '../views/RedirectView/RedirectView';
+import React, { useEffect, useMemo, useState, lazy, Suspense } from "react";
+import _isEmpty from "lodash/isEmpty";
+import socketIOClient from "socket.io-client";
+import { Switch, Route, useLocation, Redirect } from "react-router-dom";
+import Header from "../common/Header";
+import Footer from "../common/Footer";
+import Visible from "../common/Visible";
+import AppSpinner from "../common/AppSpinner";
+import ToastMessages from "../common/ToastMessages";
+import { API_PATH } from "../../utils/constants";
+import { scrollToTop, toUrlString } from "../../utils/helpers";
+import Redirector from "../common/Redirector";
+import RedirectorView from "../views/RedirectView/RedirectView";
 
-const HomeView = lazy(() => import('../views/HomeView'));
-const AuctionsView = lazy(() => import('../views/AuctionsView'));
-const RegistrationView = lazy(() => import('../views/RegistrationView'));
-const ValuationView = lazy(() => import('../views/ValuationView'));
-const EOIView = lazy(() => import('../views/EOIView'));
-const FaqView = lazy(() => import('../views/FaqView'));
-const AboutView = lazy(() => import('../views/AboutUsView'));
-const TransportView = lazy(() => import('../views/TransportView'));
-const PublicConsoleView = lazy(() => import('../views/PublicConsoleView'));
-const AdminConsoleView = lazy(() => import('../views/AdminConsoleView'));
-const AuctionCatalogView = lazy(() => import('../views/AuctionCatalogView'));
-const SearchResultsView = lazy(() => import('../views/SearchResultsView'));
-const CareerView = lazy(() => import('../views/CareerView'));
-const FinancePage = lazy(() => import('../views/FinanceView'));
-const AuctionTender = lazy(() =>
-	import('../views/AuctionTenderView/AuctionTender')
-);
-const AssetDetailView = lazy(() => import('../views/AssetDetailView'));
-const AppTermsCondition = lazy(() => import('../common/AppTermsCondition'));
-const Webinar = lazy(() =>
-	import('../common/WebinarComponent/WebinarComponent')
-);
-const Westpac = lazy(() =>
-	import('../common/RegistrationForm/ProfileForm/Westpac')
-);
-const ChangePassword = lazy(() => import('../common/ChangePassword'));
-const BidderHistories = lazy(() => import('../common/BidderHistories'));
-const LiveNotifications = lazy(() => import('../common/LiveNotifications'));
-const Subscription = lazy(() => import('../common/Subscription'));
-const Subscribe = lazy(() => import('../common/Subscription/Subscribe'));
-const PolicyView = lazy(() => import('../views/PrivacyPolicyView'));
-const TermsCondition = lazy(() => import('../views/Terms&Conidtion'));
-const QuarterlyReportsView = lazy(() => import('../views/QuarterlyReports'));
-const MyAccount = lazy(() => import('../common/MyAccount'));
-const NewsView = lazy(() => import('../views/NewsView'));
-const PostView = lazy(() => import('../views/PostView'));
-const VerifyUser = lazy(() => import('../views/VerifyUser'));
-const ProfileView = lazy(() => import('../views/ProfileView'));
-const PreferencesView = lazy(() => import('../views/PreferencesView'));
-const EOICatalogView = lazy(() => import('../views/EOICatalogView'));
-const IframComponent = lazy(() => import('../common/WordPressPage'));
-const ContactUs = lazy(() => import('../common/ContactUs'));
-const AuctionStatisticsView = lazy(() =>
-	import('../views/AuctionStatisticsView')
-);
-const SellWithUs = lazy(() => import('../common/SellWithUs'));
-const BuyerCardView = lazy(() => import('../views/BuyerCardView'));
-const SiteMapView = lazy(() => import('../views/SiteMapView'));
-const ForgotPassword = lazy(() => import('../common/ForgotPassword'));
-const AssetWatchers = lazy(() => import('../common/AssetWatchers'));
-const ConditionReportView = lazy(() => import('../views/ConditionReportView'));
-const MarketingPreferencesView = lazy(() =>
-	import('../views/MarketingPreferencesView')
-);
+const HomeView = lazy(() => import("../views/HomeView"));
+const AuctionsView = lazy(() => import("../views/AuctionsView"));
+const RegistrationView = lazy(() => import("../views/RegistrationView"));
+const ValuationView = lazy(() => import("../views/ValuationView"));
+const EOIView = lazy(() => import("../views/EOIView"));
+const FaqView = lazy(() => import("../views/FaqView"));
+const AboutView = lazy(() => import("../views/AboutUsView"));
+const TransportView = lazy(() => import("../views/TransportView"));
+const PublicConsoleView = lazy(() => import("../views/PublicConsoleView"));
+const AdminConsoleView = lazy(() => import("../views/AdminConsoleView"));
+const AuctionCatalogView = lazy(() => import("../views/AuctionCatalogView"));
+const SearchResultsView = lazy(() => import("../views/SearchResultsView"));
+const CareerView = lazy(() => import("../views/CareerView"));
+const FinancePage = lazy(() => import("../views/FinanceView"));
+const AuctionTender = lazy(() => import("../views/AuctionTenderView/AuctionTender"));
+const AssetDetailView = lazy(() => import("../views/AssetDetailView"));
+const AppTermsCondition = lazy(() => import("../common/AppTermsCondition"));
+const Webinar = lazy(() => import("../common/WebinarComponent/WebinarComponent"));
+const Westpac = lazy(() => import("../common/RegistrationForm/ProfileForm/Westpac"));
+const ChangePassword = lazy(() => import("../common/ChangePassword"));
+const BidderHistories = lazy(() => import("../common/BidderHistories"));
+const LiveNotifications = lazy(() => import("../common/LiveNotifications"));
+const Subscription = lazy(() => import("../common/Subscription"));
+const Subscribe = lazy(() => import("../common/Subscription/Subscribe"));
+const PolicyView = lazy(() => import("../views/PrivacyPolicyView"));
+const TermsCondition = lazy(() => import("../views/Terms&Conidtion"));
+const QuarterlyReportsView = lazy(() => import("../views/QuarterlyReports"));
+const MyAccount = lazy(() => import("../common/MyAccount"));
+const NewsView = lazy(() => import("../views/NewsView"));
+const PostView = lazy(() => import("../views/PostView"));
+const VerifyUser = lazy(() => import("../views/VerifyUser"));
+const ProfileView = lazy(() => import("../views/ProfileView"));
+const PreferencesView = lazy(() => import("../views/PreferencesView"));
+const EOICatalogView = lazy(() => import("../views/EOICatalogView"));
+const IframComponent = lazy(() => import("../common/WordPressPage"));
+const ContactUs = lazy(() => import("../common/ContactUs"));
+const AuctionStatisticsView = lazy(() => import("../views/AuctionStatisticsView"));
+const SellWithUs = lazy(() => import("../common/SellWithUs"));
+const BuyerCardView = lazy(() => import("../views/BuyerCardView"));
+const SiteMapView = lazy(() => import("../views/SiteMapView"));
+const ForgotPassword = lazy(() => import("../common/ForgotPassword"));
+const AssetWatchers = lazy(() => import("../common/AssetWatchers"));
+const ConditionReportView = lazy(() => import("../views/ConditionReportView"));
+const MarketingPreferencesView = lazy(() => import("../views/MarketingPreferencesView"));
 
 let socket = null;
 let socketConnected = false;
@@ -92,7 +82,6 @@ const App = ({
 	getStaticPage,
 	actionNetworkConnection,
 	vendorLogo,
-	footerVendorLogo,
 	headingFontFamily,
 	headingFontSize,
 	paragraphFontColor,
@@ -115,15 +104,12 @@ const App = ({
 	const handleClose = () => setDisplayPopup(false);
 	const location = useLocation();
 	const { pathname } = location;
-	const isSFPage =
-		pathname.includes('bidder-history') ||
-		pathname.includes('buyer-card') ||
-		pathname.includes('watchers');
+	const isSFPage = pathname.includes("bidder-history") || pathname.includes("buyer-card") || pathname.includes("watchers");
 	const [pageUrl, setPageUrl] = useState([]);
 	const [showSearch, setShowSearch] = useState(false);
 
 	useEffect(() => {
-		const root = document.querySelector('#root');
+		const root = document.querySelector("#root");
 		if (isSFPage) {
 			root.style.paddingBottom = 0;
 		} else {
@@ -159,88 +145,46 @@ const App = ({
 
 	const initVendor = () => {
 		if (headingFontFamily) {
-			document.documentElement.style.setProperty(
-				'--heading-font-family',
-				headingFontFamily
-			);
+			document.documentElement.style.setProperty("--heading-font-family", headingFontFamily);
 		}
 		if (headingFontSize) {
-			document.documentElement.style.setProperty(
-				'--heading-font-size',
-				headingFontSize
-			);
+			document.documentElement.style.setProperty("--heading-font-size", headingFontSize);
 		}
 		if (paragraphFontColor) {
-			document.documentElement.style.setProperty(
-				'--paragraph-font-color',
-				paragraphFontColor
-			);
+			document.documentElement.style.setProperty("--paragraph-font-color", paragraphFontColor);
 		}
 		if (paragraphFontFamily) {
-			document.documentElement.style.setProperty(
-				'--paragraph-font-family',
-				paragraphFontFamily
-			);
+			document.documentElement.style.setProperty("--paragraph-font-family", paragraphFontFamily);
 		}
 		if (iconColor) {
-			document.documentElement.style.setProperty(
-				'--icon-color',
-				iconColor
-			);
+			document.documentElement.style.setProperty("--icon-color", iconColor);
 		}
 		if (headingFontColor) {
-			document.documentElement.style.setProperty(
-				'--heading-font-color',
-				headingFontColor
-			);
+			document.documentElement.style.setProperty("--heading-font-color", headingFontColor);
 		}
 		if (primaryColor) {
-			document.documentElement.style.setProperty(
-				'--primary--color',
-				primaryColor
-			);
+			document.documentElement.style.setProperty("--primary--color", primaryColor);
 		}
 		if (secondaryColor) {
-			document.documentElement.style.setProperty(
-				'--secondary-color',
-				secondaryColor
-			);
+			document.documentElement.style.setProperty("--secondary-color", secondaryColor);
 		}
 		if (ctaColor1) {
-			document.documentElement.style.setProperty(
-				'--cta-color-1',
-				ctaColor1
-			);
+			document.documentElement.style.setProperty("--cta-color-1", ctaColor1);
 		}
 		if (ctaColor2) {
-			document.documentElement.style.setProperty(
-				'--cta-color-2',
-				ctaColor2
-			);
+			document.documentElement.style.setProperty("--cta-color-2", ctaColor2);
 		}
 		if (openingSoonTagColor) {
-			document.documentElement.style.setProperty(
-				'--opening-soon-tag-color',
-				openingSoonTagColor
-			);
+			document.documentElement.style.setProperty("--opening-soon-tag-color", openingSoonTagColor);
 		}
 		if (featuredTagColor) {
-			document.documentElement.style.setProperty(
-				'--featured-tag-color',
-				featuredTagColor
-			);
+			document.documentElement.style.setProperty("--featured-tag-color", featuredTagColor);
 		}
 		if (expressionOfInterestTagColor) {
-			document.documentElement.style.setProperty(
-				'--expression-of-interest-primary-color',
-				expressionOfInterestTagColor
-			);
+			document.documentElement.style.setProperty("--expression-of-interest-primary-color", expressionOfInterestTagColor);
 		}
 		if (closedTagColor) {
-			document.documentElement.style.setProperty(
-				'--closed-tag-color',
-				closedTagColor
-			);
+			document.documentElement.style.setProperty("--closed-tag-color", closedTagColor);
 		}
 
 		if (headingFontFamily || paragraphFontFamily) {
@@ -250,15 +194,15 @@ const App = ({
 
 	const initGFont = (fonts) => {
 		// default font if none set
-		let fontString = 'family=Roboto';
+		let fontString = "family=Roboto";
 
 		// by default we are trying to load google fonts
 		// if you are using a local font
 		// please add the font to the ignore list
-		let ignoreFonts = ['Karbon']; // always lower case pls
-		let fontWeights = ['300', '400', '500', '600', '700'];
-		let weightsString = ':wght@';
-		weightsString = weightsString.concat(fontWeights.join(';'));
+		let ignoreFonts = ["Karbon"]; // always lower case pls
+		let fontWeights = ["300", "400", "500", "600", "700"];
+		let weightsString = ":wght@";
+		weightsString = weightsString.concat(fontWeights.join(";"));
 
 		// check if fonts are an array and not empty
 		if (Array.isArray(fonts) && fonts.length > 0) {
@@ -285,16 +229,14 @@ const App = ({
 			fonts = fonts.map((i) => `family=${i}${weightsString}`);
 
 			// turn array into a string
-			fontString = fonts.join('&');
+			fontString = fonts.join("&");
 
-			var link = document.createElement('link');
-			link.rel = 'stylesheet';
-			link.href = encodeURI(
-				`https://fonts.googleapis.com/css2?${fontString}`
-			);
-			link.media = 'all';
+			var link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.href = encodeURI(`https://fonts.googleapis.com/css2?${fontString}`);
+			link.media = "all";
 
-			document.getElementsByTagName('head')[0].appendChild(link);
+			document.getElementsByTagName("head")[0].appendChild(link);
 		}
 	};
 
@@ -303,17 +245,17 @@ const App = ({
 			return;
 		}
 		const options = {
-			transports: ['websocket', 'polling'],
+			transports: ["websocket", "polling"],
 		};
 		socket = socketIOClient(API_PATH, options);
 
-		socket.on('connect', () => {
+		socket.on("connect", () => {
 			actionNetworkConnection(true);
 		});
-		socket.on('disconnect', () => {
+		socket.on("disconnect", () => {
 			actionNetworkConnection(false);
 		});
-		socket.on('connect_error', () => {
+		socket.on("connect_error", () => {
 			socket.connect();
 		});
 	};
@@ -355,13 +297,8 @@ const App = ({
 				{...commonProps}
 				showMessage={showMessage}
 				loggedInUser={loggedInUser}
-				vendorLogo={vendorLogo}
 			/>
-			<div
-				className={
-					showLogin ? 'page-content backdrop-content' : 'page-content'
-				}
-			>
+			<div className={showLogin ? "page-content backdrop-content" : "page-content"}>
 				<Suspense fallback={<AppSpinner variant="overlay" />}>
 					<Switch>
 						<Route
@@ -647,9 +584,7 @@ const App = ({
 										<RedirectorView
 											{...props}
 											{...commonProps}
-											pageConfigurations={
-												pageConfigurations
-											}
+											pageConfigurations={pageConfigurations}
 											getStaticPage={getStaticPage}
 										/>
 									);
@@ -689,7 +624,6 @@ const App = ({
 			<Footer
 				isLoggedIn={!!loggedInUser}
 				showLogin={showLogin}
-				footerVendorLogo={footerVendorLogo}
 			/>
 			<Visible when={isLoading}>
 				<AppSpinner variant="overlay" />

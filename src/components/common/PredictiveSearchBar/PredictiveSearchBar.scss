@@ -590,6 +590,7 @@
 				}
 			}
 
+			& + svg,
 			& + svg path {
 				fill: grey;
 			}
@@ -648,10 +649,6 @@
 
 			@media (max-width: 575px) {
 				padding-bottom: 1em;
-			}
-
-			@media (max-width: 767px) {
-				margin-top: 1em;
 			}
 		}
 	}
@@ -723,9 +720,7 @@
 			padding: 35px;
 
 			.tablet-advanced-search {
-				// margin-bottom: 17px;
-				margin-top: 1em;
-				padding-top: 0;
+				margin-bottom: 17px;
 			}
 
 			.mobile-field-margin {

@@ -118,6 +118,28 @@ class MyAccount extends React.Component {
 							</div>
 						)}
 
+						{/* <p>BELOW HERE</p> */}
+
+						{/* {tabs.map((x, i) => {
+						let activeWindow =
+							window.location.origin + '/my-account/' + x.key;
+
+						return (
+							<a
+								key={i}
+								id={`nav${i}`}
+								// onClick={this.handleClick(x.key)}
+								onClick={() => this.handleClick(x.key)}
+								href={
+									window.location.origin +
+									'/my-account/' +
+									x.key
+								}
+							>
+								{x.label}
+							</a>
+						);
+					})} */}
 						<Col lg="3">
 							<ScrollableTabs
 								autoScroll

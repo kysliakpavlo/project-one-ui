@@ -6,11 +6,11 @@
 	.card-layout {
 		width: 529px;
 		// height: 285px;
-		padding: 0;
+		padding: 8px 8px 8px 8px;
 		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
 		background: $white-color;
 		margin-bottom: 30px;
-		border-radius: 8px;
+		border-radius: 4px;
 		position: relative;
 		@media (min-width: 1025px) and (max-width: 1280px) {
 			margin: 0 10px;
@@ -83,10 +83,10 @@
 		.item-number-block {
 			padding: 4px 8px;
 			color: #000;
-			font-weight: 400;
-			font-size: 24px;
+			font-weight: bold;
+			font-size: 14px;
 			text-align: left;
-			font-family: var(--heading-font-family, ' Ubuntu ');
+			font-family: 'var(--paragraph-font-family, ' Roboto ')';
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
@@ -111,9 +111,9 @@
 			margin: 0 8px;
 			display: inline-block;
 			.sub-header {
-				font-weight: 300;
+				font-weight: 400;
 				color: #000;
-				font-size: 16px;
+				font-size: 14px;
 				font-family: 'var(--paragraph-font-family, ' Roboto ')';
 				text-align: left;
 				svg {
@@ -315,12 +315,10 @@
 			}
 			.div-time-label {
 				margin-top: inherit;
-
 				.time-label {
 					text-align: center;
-					color: #b9b9b9;
+					color: $timer-font-color;
 					font-size: 12px;
-					font-weight: 400;
 					font-family: var(--paragraph-font-family, 'Roboto');
 					@media (min-width: 768px) and (max-width: 1024px) {
 						width: 32px;
@@ -346,7 +344,6 @@
 					width: 21px;
 					height: 17px;
 					font-size: 8px;
-					min-width: unset;
 				}
 			}
 			@media (min-width: 768px) and (max-width: 1024px) {
@@ -370,35 +367,17 @@
 					max-width: 37px;
 				}
 			}
-
-			.card-icons-wrap {
-				width: 100%;
-				display: flex;
-				align-content: space-evenly;
-				flex-flow: wrap;
-
-				.card-icons {
-					margin: 0;
-					display: inline-block;
-					width: 50%;
-				}
-			}
 		}
 		.current-bid-block {
 			margin-top: 12px;
-			color: #000;
-			// background-color: var(--primary--color);
+			color: $white-color;
+			background-color: var(--primary--color);
 			border-radius: 16px;
 			max-width: 250px;
 			width: max-content;
 			padding-right: 10px;
 			height: 28px;
 			text-align: center;
-			margin: 12px 0 0 0;
-			width: 100%;
-			display: flex;
-			justify-content: space-between;
-
 			@media (min-width: 768px) and (max-width: 1024px) {
 				width: 150px;
 				margin-left: -8px;
@@ -429,10 +408,10 @@
 			}
 			.key,
 			.strong-font {
-				padding: 5px 0;
+				padding: 5px 10px;
 				padding-right: 0px;
-				font-weight: 500;
-				font-size: 14.4px;
+				font-weight: 400;
+				font-size: 14px;
 				text-align: left;
 				vertical-align: text-bottom;
 				@media (min-width: 320px) and (max-width: 767px) {
@@ -475,7 +454,7 @@
 		}
 		.highest-bidder-block {
 			margin-top: 14px;
-			max-width: 100%;
+			max-width: 88%;
 			.key {
 				background-color: var(--primary--color);
 				color: $white-color;
@@ -498,13 +477,12 @@
 			}
 			.gavel-icon {
 				background: var(--cta-color-1);
-				// width: 38px;
-				// height: 29px;
+				width: 38px;
+				height: 29px;
 				display: inline-block;
 				border-radius: 4px;
 				text-align: center;
 				margin-right: 11px;
-				float: right;
 				@media (min-width: 768px) and (max-width: 1024px) {
 					width: 24px;
 					height: 22px;
@@ -528,10 +506,9 @@
 			}
 			.label {
 				color: #000;
+				font-weight: bold;
 				font-size: 14px;
-				text-align: right;
-				float: right;
-				font-weight: 300;
+				text-align: left;
 				@media (min-width: 768px) and (max-width: 1024px) {
 					font-size: 12px;
 				}
@@ -606,7 +583,7 @@
 		.button-block {
 			margin: 0;
 			display: flex;
-			padding: 0;
+			padding: 0 22px;
 			bottom: 8px;
 			display: flex;
 			justify-content: center;
@@ -731,10 +708,6 @@
 			.download-auction-documents {
 				margin-right: 1em;
 			}
-
-			button {
-				width: 30%;
-			}
 		}
 		.div-item {
 			.col-bold {
@@ -786,31 +759,6 @@
 		@media (min-width: 320px) and (max-width: 767px) {
 			width: 287px;
 			height: 210px;
-		}
-
-		> .row:last-of-type {
-			background-color: #f4f4f4;
-			margin: 0;
-			width: 100%;
-			border-radius: 0 0 8px 8px;
-
-			.col {
-				margin: 0;
-				padding: 0;
-
-				.button-block {
-					padding-top: 9px;
-					padding-bottom: 9px;
-
-					.place-bid {
-						width: 30%;
-
-						button {
-							width: 100%;
-						}
-					}
-				}
-			}
 		}
 	}
 
